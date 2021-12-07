@@ -1,0 +1,57 @@
+.main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.main .blog_default {
+  width: 100%;
+}
+
+.main .blog_default .default .title_section {
+  width: 100%;
+  height: 20vh;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  margin-top: 20%;
+}
+
+.main .blog_default .default .title_section .main h1 {
+  font-size: 40px;
+  font-weight: 900;
+  margin-top: 0px;
+  text-transform: uppercase;
+  width: 80%;
+}
+.main .blog_default .default .title_section .main h3 {
+  font-size: 20px;
+  padding-top: 100px;
+  font-weight: 500;
+  width: 80%;
+  color: rgb(36, 41, 46);
+  text-transform: uppercase;
+}
+
+.main .blog_default .default .content {
+  margin-top: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.main .blog_default .default .content .main {
+  width: 80%;
+  display: grid;
+  grid-template-columns: 0.25fr 1fr;
+  grid-row-gap: 0px;
+}
+.main .blog_default .default .content .main .author {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  align-items: start;
+}

@@ -4,9 +4,9 @@ function App() {
   return (
     <div style={{ width: "100%", height: "100vh" }}>
       <Blog
-        type="Github"
+        type="Dev.to"
         codeblock={{
-          theme: "darcula",
+          theme: "atomDark",
         }}
         content={`
 # Hello World
@@ -33,8 +33,9 @@ fn main(){
             "https://github.blog/wp-content/uploads/2021/11/engineering-on-call-chatops_social-card.png?w=1200",
         }}
         author={{
-          avatar: "https://avatars.githubusercontent.com/u/12280011?v=4&s=35",
-          name: "Yaswanth Anantharaju",
+          avatar:
+            "https://assets-global.website-files.com/5f9072399b2640f14d6a2bf4/6195825de99503da0bfe6720_daniel_meas-p-500.jpeg",
+          name: "Daniel Meas",
         }}
       />
     </div>

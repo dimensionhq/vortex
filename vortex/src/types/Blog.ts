@@ -1,4 +1,4 @@
-type BlogType = "Medium" | "Dev.to" | "Hashnode" | "Github";
+type BlogType = "Dev.to" | "Hashnode" | "Github" | "Default";
 
 type Themes =
   | "a11yDark"
@@ -51,11 +51,17 @@ interface BlogProps {
     name: string;
     avatar: string;
   };
+  theme?: {
+    primary: string;
+  };
 }
 
 const defaultValues: BlogProps = {
-  type: "Github",
+  type: "Default",
   banner: undefined,
+  theme: {
+    primary: "#5865f2",
+  },
   content: "",
   codeblock: {
     theme: "atomDark",

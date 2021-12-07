@@ -1,17 +1,13 @@
-import React from "react";
 import { BlogProps } from "../../types/Blog";
 import { Banner } from "./Banner";
-import "../../styles/Github.css";
-import { Author } from "./Author";
 import { Content } from "./Content";
-
-export const Github: React.FC<BlogProps> = (props) => {
+import "../../styles/Default.css";
+export const Default: React.FC<BlogProps> = (props) => {
   return (
     <div className="main">
-      <div className="blog">
-        <div className="github">
+      <div className="blog_default">
+        <div className="default">
           <Banner {...props} />
-          <Author {...props} />
           <Content {...props} />
         </div>
       </div>
