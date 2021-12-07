@@ -1,0 +1,66 @@
+.main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.main .blog {
+  width: 50vw;
+}
+
+.main .blog .github .title {
+  font-weight: 500;
+  font-size: 40px;
+  margin-top: 0px;
+  color: rgb(36, 41, 46);
+}
+
+.main .blog .github .grid {
+  display: grid;
+  grid-template-columns: 1fr 0.25fr;
+  grid-row-gap: 0px;
+}
+.main .blog .github .date {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #959da5;
+}
+
+.main .blog .github .author {
+  margin-top: 0px;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+.main .blog .github .author img {
+  width: 36px;
+  min-width: 36px;
+  height: 36px;
+  border-radius: 100%;
+  border: 2px solid rgb(146, 146, 146);
+}
+.h1 {
+  font-size: xx-large;
+  font-weight: 600;
+  width: fit-content;
+  transition: 0.3s all;
+  cursor: pointer;
+}
+.h1:hover {
+  color: rgba(0, 47, 255, 0.671);
+  text-decoration: underline;
+}
+.h1_parent {
+  border-bottom: 1px solid rgb(97, 97, 97);
+}
+
+.link {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  color: #959da5;
+  grid-row-gap: 0px;
+}
+.link:hover {
+  color: black;
+}
