@@ -8,14 +8,17 @@ export const Banner: React.FC<BlogProps> = (props) => {
         style={{
           display: "flex",
           alignItems: "center",
+          marginTop: "500px",
           justifyContent: "center",
           flexDirection: "column",
         }}
       >
         <img
-          src={props.banner.image}
-          alt={props.banner.title}
-          style={{ width: "50vw" }}
+          src={props.banner.image.src}
+          alt={props.banner.image.alt}
+          width={props.banner.image.width}
+          height={props.banner.image.height}
+          // style={{ width: "50vw" }}
         />
         <div
           style={{

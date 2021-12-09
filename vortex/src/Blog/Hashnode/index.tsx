@@ -2,9 +2,9 @@ import ReactMarkdown from "react-markdown";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { BlogProps } from "../../types/Blog";
 import * as themes from "react-syntax-highlighter/dist/esm/styles/prism";
-import "../../styles/DevTO.css";
+import "../../styles/Hashnode.css";
 
-export const DevTO: React.FC<BlogProps> = (props) => {
+export const Hashnode: React.FC<BlogProps> = (props) => {
   function convertToSlug(Text: string) {
     return Text.toLowerCase()
       .replace(/ /g, "-")
@@ -23,23 +23,25 @@ export const DevTO: React.FC<BlogProps> = (props) => {
               height: props.banner?.image.height,
             }}
           ></div>
+          <div className="title">{props.banner?.title}</div>
+          <hr color="grey" style={{ marginBottom: "20px" }} />
           <div className="author">
             <img
               src={props.author?.avatar}
-              width="30px"
+              width="48px"
               style={{ borderRadius: "100%" }}
               alt=""
             />
             <div className="text">
-              <h1 style={{ fontSize: "15px", marginBottom: "0px" }}>
+              <h1 style={{ fontSize: "17px", marginBottom: "0px" }}>
                 {props.author?.name}
               </h1>
-              <p style={{ marginTop: "0px", fontSize: "10px" }}>
+              <p style={{ marginTop: "0px", fontSize: "13px" }}>
                 {props.banner?.date}
               </p>
             </div>
           </div>
-          <div className="title">{props.banner?.title}</div>
+          <hr style={{ marginTop: "20px" }} />
           <div>
             <ReactMarkdown
               children={props.content}

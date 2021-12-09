@@ -4,9 +4,9 @@ function App() {
   return (
     <div style={{ width: "100%", height: "100vh" }}>
       <Blog
-        type="Dev.to"
+        type="Github"
         codeblock={{
-          theme: "atomDark",
+          theme: "darcula",
         }}
         content={`
 # Hello World
@@ -29,8 +29,12 @@ fn main(){
           title: " Using ChatOps to help Actions on-call engineers ",
           category: "Engineering",
           date: "December 1, 2021",
-          image:
-            "https://github.blog/wp-content/uploads/2021/11/engineering-on-call-chatops_social-card.png?w=1200",
+          image: {
+            src: "https://github.blog/wp-content/uploads/2021/11/engineering-on-call-chatops_social-card.png",
+            alt: "ChatOps",
+            width: "70%",
+            height: "80%",
+          },
         }}
         author={{
           avatar:

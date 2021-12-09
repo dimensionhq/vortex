@@ -10,6 +10,7 @@ export const Content: React.FC<BlogProps> = (props) => {
       .replace(/ /g, "-")
       .replace(/[^\w-]+/g, "");
   }
+
   return (
     <div className="content">
       <div className="main">
@@ -48,8 +49,8 @@ export const Content: React.FC<BlogProps> = (props) => {
                 ) : (
                   <code
                     style={{
-                      backgroundColor: "#f7f7f7",
-                      padding: "0.4em",
+                      backgroundColor: "#dbdbdb",
+                      padding: "0px 5px",
                       borderRadius: "5px",
                       fontFamily: "Source Code Pro",
                     }}

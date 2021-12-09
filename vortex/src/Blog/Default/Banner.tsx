@@ -2,16 +2,11 @@ import { BlogProps } from "../../types/Blog";
 
 export const Banner: React.FC<BlogProps> = (props) => {
   return (
-    <div
-      className="root"
-      style={{
-        width: "100%",
-      }}
-    >
+    <div className="root">
       <div
         style={{
-          height: "45vh",
-          position: "relative",
+          height: "600px",
+          zIndex: 99999,
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
@@ -19,21 +14,12 @@ export const Banner: React.FC<BlogProps> = (props) => {
         }}
       >
         <img
-          src={props.banner?.image}
-          style={{
-            top: "2vh",
-            borderRadius: "10px",
-            position: "absolute",
-          }}
-          width="80%"
-          alt={props.banner?.title}
+          src={props.banner?.image.src}
+          alt={props.banner?.image.alt}
+          width={props.banner?.image.width}
+          height={props.banner?.image.height}
+          style={{ zIndex: 99999, marginTop: "500px" }}
         />
-      </div>
-      <div className="title_section">
-        <div className="main">
-          <h3>{props.banner?.category}</h3>
-          <h1>{props.banner?.title}</h1>
-        </div>
       </div>
     </div>
   );

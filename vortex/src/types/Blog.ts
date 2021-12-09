@@ -45,7 +45,12 @@ interface BlogProps {
     title: string;
     category: string;
     date: string;
-    image: string;
+    image: {
+      src: string;
+      alt: string;
+      width: string;
+      height: string;
+    };
   };
   author?: {
     name: string;
