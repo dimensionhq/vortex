@@ -4,7 +4,7 @@ import { Content } from "./Content";
 import "../../styles/Default.css";
 export const Default: React.FC<BlogProps> = (props) => {
   return (
-    <div className="main">
+    <div className="main" style={{ backgroundColor: props.theme?.bgColor }}>
       <div className="blog_default">
         <div className="default">
           <Banner {...props} />

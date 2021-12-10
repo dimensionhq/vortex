@@ -7,7 +7,7 @@ import { Content } from "./Content";
 
 export const Github: React.FC<BlogProps> = (props) => {
   return (
-    <div className="main">
+    <div className="main" style={{ backgroundColor: props.theme?.bgColor }}>
       <div className="blog">
         <div className="github">
           <Banner {...props} />

@@ -4,7 +4,12 @@ function App() {
   return (
     <div style={{ width: "100vw", height: "auto" }}>
       <Blog
-        type="Hackernoon"
+        type="Dev.to"
+        theme={{
+          bgColor: "black",
+          primary: "blue",
+          text: "#fff",
+        }}
         codeblock={{
           theme: "gruvboxDark",
         }}
@@ -60,6 +65,7 @@ Well, you could interpret it as \`demolish-emoji\` or \`de-emoji\` 😁.
           name: "Tejas",
         }}
         banner={{
+          marginBottom: "20px",
           category: "Engineering",
           date: "Dec 9, 2021",
           image: {

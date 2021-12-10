@@ -11,7 +11,10 @@ export const Hashnode: React.FC<BlogProps> = (props) => {
       .replace(/[^\w-]+/g, "");
   }
   return (
-    <main className="main">
+    <main
+      style={{ backgroundColor: props.theme?.bgColor ?? "" }}
+      className="main"
+    >
       <div className="dev_to">
         <div className="dev_to_sub">
           <div
@@ -66,7 +69,7 @@ export const Hashnode: React.FC<BlogProps> = (props) => {
                   ) : (
                     <code
                       style={{
-                        backgroundColor: "#f7f7f7",
+                        backgroundColor: "transparent",
                         padding: "0.4em",
                         borderRadius: "5px",
                         fontFamily: "Source Code Pro",

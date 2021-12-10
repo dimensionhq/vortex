@@ -10,6 +10,7 @@ export const Banner: React.FC<BlogProps> = (props) => {
           alignItems: "center",
           justifyContent: "center",
           flexDirection: "column",
+          marginBottom: props.banner.marginBottom ?? "0",
         }}
       >
         <div

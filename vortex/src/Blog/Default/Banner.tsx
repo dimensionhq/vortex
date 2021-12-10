@@ -6,6 +6,7 @@ export const Banner: React.FC<BlogProps> = (props) => {
       <div
         style={{
           height: "400px",
+          width: "100%",
           zIndex: 99999,
           display: "flex",
           alignItems: "center",
@@ -25,7 +26,6 @@ export const Banner: React.FC<BlogProps> = (props) => {
             borderRadius: props.banner?.image.rounded,
           }}
         ></div>
-        {/* {props.banner?.image} */}
       </div>
     </div>
   );

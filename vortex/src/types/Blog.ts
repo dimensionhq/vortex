@@ -107,6 +107,7 @@ interface BlogProps {
     raw?: {};
   };
   banner?: {
+    marginBottom?: string;
     title: string;
     category: string;
     date: string;

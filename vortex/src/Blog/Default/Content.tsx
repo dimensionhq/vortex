@@ -20,7 +20,13 @@ export const Content: React.FC<BlogProps> = (props) => {
             src={props.author?.avatar}
             alt=""
           />
-          <h1 style={{ marginTop: "2px", fontSize: "20px", color: "#303030" }}>
+          <h1
+            style={{
+              marginTop: "2px",
+              fontSize: "20px",
+              color: props.theme?.text,
+            }}
+          >
             {props.author?.name}
           </h1>
           <p style={{ marginTop: "0px", fontSize: "13px", color: "grey" }}>
@@ -28,6 +34,7 @@ export const Content: React.FC<BlogProps> = (props) => {
           </p>
         </div>
         <div style={{ width: "100%" }} className="md">
+          <h1 style={{ fontSize: "3rem" }}>{props.banner?.title}</h1>
           <ReactMarkdown
             children={props.content}
             components={{
