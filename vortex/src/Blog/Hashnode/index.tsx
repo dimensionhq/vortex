@@ -12,7 +12,10 @@ export const Hashnode: React.FC<BlogProps> = (props) => {
   }
   return (
     <main
-      style={{ backgroundColor: props.theme?.bgColor ?? "" }}
+      style={{
+        backgroundColor: props.theme?.bgColor ?? "",
+        color: props.theme?.text ?? "",
+      }}
       className="main"
     >
       <div className="dev_to">

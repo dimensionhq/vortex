@@ -4,7 +4,7 @@ function App() {
   return (
     <div style={{ width: "100vw", height: "auto" }}>
       <Blog
-        type="Dev.to"
+        type="Hashnode"
         theme={{
           bgColor: "black",
           primary: "blue",

@@ -14,7 +14,10 @@ export const DevTO: React.FC<BlogProps> = (props) => {
   return (
     <main
       className="main"
-      style={{ backgroundColor: props.theme?.bgColor ?? "" }}
+      style={{
+        backgroundColor: props.theme?.bgColor ?? "",
+        color: props.theme?.text ?? "",
+      }}
     >
       <div className="dev_to">
         <div className="dev_to_sub">
