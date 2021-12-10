@@ -8,18 +8,20 @@ export const Banner: React.FC<BlogProps> = (props) => {
         style={{
           display: "flex",
           alignItems: "center",
-          marginTop: "500px",
           justifyContent: "center",
           flexDirection: "column",
         }}
       >
-        <img
-          src={props.banner.image.src}
-          alt={props.banner.image.alt}
-          width={props.banner.image.width}
-          height={props.banner.image.height}
-          // style={{ width: "50vw" }}
-        />
+        <div
+          style={{
+            width: "100%",
+            height: "40vh",
+            backgroundImage: `url(${props.banner?.image.src})`,
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "cover",
+            borderRadius: props.banner?.image.rounded,
+          }}
+        ></div>
         <div
           style={{
             marginTop: "2rem",

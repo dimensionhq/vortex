@@ -1,45 +1,110 @@
-type BlogType = "Dev.to" | "Hashnode" | "Github" | "Default";
+type BlogType = "Dev.to" | "Hashnode" | "Github" | "Default" | "Hackernoon";
 
 type Themes =
   | "a11yDark"
-  | "atomDark"
-  | "base16AteliersulphurpoolLight"
-  | "cb"
-  | "coldarkCold"
-  | "coldarkDark"
-  | "coyWithoutShadows"
-  | "coy"
+  | "a11yLight"
+  | "agate"
+  | "anOldHope"
+  | "androidstudio"
+  | "arduinoLight"
+  | "arta"
+  | "ascetic"
+  | "atelierCaveDark"
+  | "atelierCaveLight"
+  | "atelierDuneDark"
+  | "atelierDuneLight"
+  | "atelierEstuaryDark"
+  | "atelierEstuaryLight"
+  | "atelierForestDark"
+  | "atelierForestLight"
+  | "atelierHeathDark"
+  | "atelierHeathLight"
+  | "atelierLakesideDark"
+  | "atelierLakesideLight"
+  | "atelierPlateauDark"
+  | "atelierPlateauLight"
+  | "atelierSavannaDark"
+  | "atelierSavannaLight"
+  | "atelierSeasideDark"
+  | "atelierSeasideLight"
+  | "atelierSulphurpoolDark"
+  | "atelierSulphurpoolLight"
+  | "atomOneDarkReasonable"
+  | "atomOneDark"
+  | "atomOneLight"
+  | "brownPaper"
+  | "codepenEmbed"
+  | "colorBrewer"
   | "darcula"
-  | "duotoneDark"
-  | "duotoneEarth"
-  | "duotoneForest"
-  | "duotoneLight"
-  | "duotoneSea"
-  | "duotoneSpace"
-  | "funky"
-  | "ghcolors"
+  | "dark"
+  | "defaultStyle"
+  | "docco"
+  | "dracula"
+  | "far"
+  | "foundation"
+  | "githubGist"
+  | "github"
+  | "gml"
+  | "googlecode"
+  | "gradientDark"
+  | "gradientLight"
+  | "grayscale"
+  | "gruvboxDark"
+  | "gruvboxLight"
   | "hopscotch"
-  | "materialDark"
-  | "materialLight"
-  | "materialOceanic"
+  | "hybrid"
+  | "idea"
+  | "irBlack"
+  | "isblEditorDark"
+  | "isblEditorLight"
+  | "kimbieDark"
+  | "kimbieLight"
+  | "lightfair"
+  | "lioshi"
+  | "magula"
+  | "monoBlue"
+  | "monokaiSublime"
+  | "monokai"
+  | "nightOwl"
+  | "nnfxDark"
+  | "nnfx"
   | "nord"
-  | "okaidia"
+  | "obsidian"
+  | "ocean"
+  | "paraisoDark"
+  | "paraisoLight"
   | "pojoaque"
-  | "prism"
+  | "purebasic"
+  | "qtcreatorDark"
+  | "qtcreatorLight"
+  | "railscasts"
+  | "rainbow"
+  | "routeros"
+  | "schoolBook"
   | "shadesOfPurple"
-  | "solarizedlight"
-  | "synthwave84"
+  | "solarizedDark"
+  | "solarizedLight"
+  | "srcery"
+  | "stackoverflowDark"
+  | "stackoverflowLight"
+  | "sunburst"
+  | "tomorrowNightBlue"
+  | "tomorrowNightBright"
+  | "tomorrowNightEighties"
+  | "tomorrowNight"
   | "tomorrow"
-  | "twilight"
   | "vs"
-  | "xonokai"
-  | "vscDarkPlus";
+  | "vs2015"
+  | "xcode"
+  | "xt256"
+  | "zenburn";
 
 interface BlogProps {
   type?: BlogType;
   content: string;
   codeblock?: {
     theme: Themes;
+    raw?: {};
   };
   banner?: {
     title: string;
@@ -47,9 +112,8 @@ interface BlogProps {
     date: string;
     image: {
       src: string;
-      alt: string;
-      width: string;
-      height: string;
+      shadow: string;
+      rounded: string;
     };
   };
   author?: {
@@ -58,6 +122,8 @@ interface BlogProps {
   };
   theme?: {
     primary: string;
+    text?: string;
+    bgColor?: string;
   };
 }
 
@@ -69,7 +135,7 @@ const defaultValues: BlogProps = {
   },
   content: "",
   codeblock: {
-    theme: "atomDark",
+    theme: "a11yLight",
   },
 };
 

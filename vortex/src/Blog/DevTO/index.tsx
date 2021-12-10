@@ -1,7 +1,7 @@
 import ReactMarkdown from "react-markdown";
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import SyntaxHighlighter from "react-syntax-highlighter";
 import { BlogProps } from "../../types/Blog";
-import * as themes from "react-syntax-highlighter/dist/esm/styles/prism";
+import * as themes from "react-syntax-highlighter/dist/esm/styles/hljs";
 import "../../styles/DevTO.css";
 
 export const DevTO: React.FC<BlogProps> = (props) => {
@@ -10,17 +10,19 @@ export const DevTO: React.FC<BlogProps> = (props) => {
       .replace(/ /g, "-")
       .replace(/[^\w-]+/g, "");
   }
+
   return (
     <main className="main">
       <div className="dev_to">
         <div className="dev_to_sub">
           <div
             style={{
+              width: "100%",
+              height: "40vh",
               backgroundImage: `url(${props.banner?.image.src})`,
               backgroundRepeat: "no-repeat",
               backgroundSize: "cover",
-              width: props.banner?.image.width,
-              height: props.banner?.image.height,
+              borderRadius: props.banner?.image.rounded,
             }}
           ></div>
           <div className="author">

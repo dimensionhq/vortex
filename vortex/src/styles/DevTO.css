@@ -18,9 +18,12 @@
   font-size: 2.5rem;
   font-weight: 700;
 }
-.main .dev_to .dev_to_sub {
-  width: 50%;
-  height: 100%;
+
+@media only screen and (max-width: 1000px) {
+  .main .dev_to .dev_to_sub {
+    width: 75% !important;
+    height: 100%;
+  }
 }
 
 .main .dev_to .dev_to_sub .author {

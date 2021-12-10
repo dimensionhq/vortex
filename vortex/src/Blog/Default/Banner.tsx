@@ -5,7 +5,7 @@ export const Banner: React.FC<BlogProps> = (props) => {
     <div className="root">
       <div
         style={{
-          height: "600px",
+          height: "400px",
           zIndex: 99999,
           display: "flex",
           alignItems: "center",
@@ -13,13 +13,19 @@ export const Banner: React.FC<BlogProps> = (props) => {
           backgroundColor: props.theme?.primary,
         }}
       >
-        <img
-          src={props.banner?.image.src}
-          alt={props.banner?.image.alt}
-          width={props.banner?.image.width}
-          height={props.banner?.image.height}
-          style={{ zIndex: 99999, marginTop: "500px" }}
-        />
+        <div
+          style={{
+            width: "80%",
+            marginTop: "100px",
+            height: "60vh",
+            backgroundImage: `url(${props.banner?.image.src})`,
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "cover",
+            boxShadow: props.banner?.image.shadow,
+            borderRadius: props.banner?.image.rounded,
+          }}
+        ></div>
+        {/* {props.banner?.image} */}
       </div>
     </div>
   );

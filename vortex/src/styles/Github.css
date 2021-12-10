@@ -5,20 +5,53 @@
   align-items: center;
   justify-content: center;
 }
-.main .blog {
-  width: 50vw;
+
+@media only screen and (max-width: 1000px) {
+  .main .blog {
+    width: 75% !important;
+  }
+}
+
+.main .dev_to .dev_to_sub {
+  width: 75% !important;
 }
 
 .main .blog .github .title {
   font-weight: 500;
   font-size: 40px;
+  text-align: start;
+  width: 100%;
   margin-top: 0px;
   color: rgb(36, 41, 46);
+}
+
+@media only screen and (max-width: 1000px) {
+  .main .blog .github .grid {
+    display: flex !important;
+    flex-direction: column-reverse;
+  }
+  .main .blog .github .grid .share {
+    display: flex !important;
+    align-items: flex-start !important;
+    justify-content: start !important;
+    width: 100% !important;
+    flex-direction: column;
+    gap: 1em;
+  }
+}
+
+.main .blog .github .grid .share {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1em;
 }
 
 .main .blog .github .grid {
   display: grid;
   grid-template-columns: 1fr 0.25fr;
+  width: 100%;
   grid-row-gap: 0px;
 }
 .main .blog .github .date {

@@ -2,48 +2,75 @@ import { Blog } from "./Blog/Blog";
 
 function App() {
   return (
-    <div style={{ width: "100%", height: "100vh" }}>
+    <div style={{ width: "100vw", height: "auto" }}>
       <Blog
-        type="Github"
+        type="Hackernoon"
         codeblock={{
-          theme: "darcula",
+          theme: "gruvboxDark",
         }}
         content={`
-# Hello World
+# Demoji
 
-### This is a markdown file
-This is a normal paragraph. Here goes something \`inline\`. Now a code block will follow.
+A lightweight and snappy crate to remove emojis from a string.
 
-\`\`\`js
-console.log("Hello World")
-console.log("Hello World")
-\`\`\`
+# Overview
+
+This crate allows for removal of emojis given a string, and that's it!
+
+This crate aims to be:
+
+- Fast
+- Lightweight
+- Easy To Use
+
+## Examples
 
 \`\`\`rust
-fn main(){
-  println!("{}", "I am fast :sunglasses:")
+// Remove all emojis from this string
+let demojified_string = demoji("⚡hel✅🙂lo🙂")
+assert_eq!(demojified_string, String::from("hello"));
+\`\`\`
+
+\`\`\`json
+{
+  "$id": " ",
+  "$schema": " ",
+  "title": "PresenceUI",
+  "type": "design_system",
+  "properties": {
+    "Typography": {
+      "h1": "800",
+      "h2": "700"
+    },
+    "Colors": {
+      "Primary": "#000000",
+      "Secondary": "#FFFFFF"
+    },
+
+  }
 }
 \`\`\`
-        `}
-        banner={{
-          title: " Using ChatOps to help Actions on-call engineers ",
-          category: "Engineering",
-          date: "December 1, 2021",
-          image: {
-            src: "https://github.blog/wp-content/uploads/2021/11/engineering-on-call-chatops_social-card.png",
-            alt: "ChatOps",
-            width: "70%",
-            height: "80%",
-          },
-        }}
+
+### What does the name mean?
+
+Well, you could interpret it as \`demolish-emoji\` or \`de-emoji\` 😁.
+`}
         author={{
-          avatar:
-            "https://assets-global.website-files.com/5f9072399b2640f14d6a2bf4/6195825de99503da0bfe6720_daniel_meas-p-500.jpeg",
-          name: "Daniel Meas",
+          avatar: "https://avatars.githubusercontent.com/u/81620813?s=200&v=4",
+          name: "Tejas",
+        }}
+        banner={{
+          category: "Engineering",
+          date: "Dec 9, 2021",
+          image: {
+            src: "https://assets-global.website-files.com/5f9072399b2640f14d6a2bf4/616876e96507aa5597503b2f_Merch%20Blog%20Header-p-1600.png",
+            rounded: "5px",
+            shadow: "-1px 1px 18px 0px rgba(0,0,0,0.75)",
+          },
+          title: "How to build a website",
         }}
       />
     </div>
   );
 }
-
 export default App;

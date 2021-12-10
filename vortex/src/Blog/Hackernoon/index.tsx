@@ -1,48 +1,66 @@
+import { BlogProps } from "../../types/Blog";
 import ReactMarkdown from "react-markdown";
 import SyntaxHighlighter from "react-syntax-highlighter";
-import { BlogProps } from "../../types/Blog";
 import * as themes from "react-syntax-highlighter/dist/esm/styles/hljs";
-import "../../styles/Hashnode.css";
+import "../../styles/Hackernoon.css";
 
-export const Hashnode: React.FC<BlogProps> = (props) => {
+export const Hackernoon: React.FC<BlogProps> = (props) => {
   function convertToSlug(Text: string) {
     return Text.toLowerCase()
       .replace(/ /g, "-")
       .replace(/[^\w-]+/g, "");
   }
   return (
-    <main className="main">
-      <div className="dev_to">
-        <div className="dev_to_sub">
+    <div
+      className="main"
+      style={{ backgroundColor: props.theme?.bgColor ?? "#212428" }}
+    >
+      <div style={{ color: props.theme?.text ?? "white" }} className="title">
+        {props.banner?.title}
+      </div>
+      <div
+        style={{
+          paddingRight: "25px",
+          paddingLeft: "10px",
+          display: "flex",
+          flexDirection: "column",
+          gap: "2.5rem",
+        }}
+      >
+        <div
+          style={{
+            color: props.theme?.text ?? "white",
+          }}
+          className="sub"
+        >
+          <p>{props.banner?.date}</p>
+          <div></div>
+        </div>
+        <div
+          style={{
+            width: "100%",
+            height: "auto",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <img src={props.banner?.image.src} width="100%" alt="" />
+        </div>
+        <div className="grid">
           <div
             style={{
               width: "100%",
-              height: "50vh",
-              backgroundImage: `url(${props.banner?.image.src})`,
-              backgroundRepeat: "no-repeat",
-              backgroundSize: "cover",
-              borderRadius: props.banner?.image.rounded,
+              height: "auto",
+              display: "flex",
+              alignItems: "start",
+              flexDirection: "column",
+              justifyContent: "start",
             }}
-          ></div>
-          <div className="title">{props.banner?.title}</div>
-          <hr color="grey" style={{ marginBottom: "20px" }} />
-          <div className="author">
-            <img
-              src={props.author?.avatar}
-              width="48px"
-              style={{ borderRadius: "100%" }}
-              alt=""
-            />
-            <div className="text">
-              <h1 style={{ fontSize: "17px", marginBottom: "0px" }}>
-                {props.author?.name}
-              </h1>
-              <p style={{ marginTop: "0px", fontSize: "13px" }}>
-                {props.banner?.date}
-              </p>
-            </div>
+          >
+            <img width="78px" src={props.author?.avatar} alt="" />
+            <a style={{ fontSize: "30px" }}>{props.author?.name}</a>
           </div>
-          <hr style={{ marginTop: "20px" }} />
           <div>
             <ReactMarkdown
               children={props.content}
@@ -66,7 +84,7 @@ export const Hashnode: React.FC<BlogProps> = (props) => {
                   ) : (
                     <code
                       style={{
-                        backgroundColor: "#f7f7f7",
+                        backgroundColor: "transparent",
                         padding: "0.4em",
                         borderRadius: "5px",
                         fontFamily: "Source Code Pro",
@@ -88,6 +106,6 @@ export const Hashnode: React.FC<BlogProps> = (props) => {
           </div>
         </div>
       </div>
-    </main>
+    </div>
   );
 };

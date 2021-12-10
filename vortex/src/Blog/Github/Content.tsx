@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 import { BlogProps } from "../../types/Blog";
 import ReactMarkdown from "react-markdown";
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import * as themes from "react-syntax-highlighter/dist/esm/styles/prism";
+import SyntaxHighlighter from "react-syntax-highlighter";
+import * as themes from "react-syntax-highlighter/dist/esm/styles/hljs";
 
 export const Content: React.FC<BlogProps> = (props) => {
   function convertToSlug(Text: string) {
@@ -48,6 +48,28 @@ export const Content: React.FC<BlogProps> = (props) => {
                 </code>
               );
             },
+            h2: ({ children }) => (
+              <div className="h1_parent">
+                <h2
+                  onClick={() => {
+                    let slug = convertToSlug(children.toString());
+                    let url = window.location.href;
+                    if (!url.includes(slug)) {
+                      url += "#" + slug;
+                    }
+                    navigator.clipboard.writeText(url);
+                    window.location.replace(url.toString());
+                  }}
+                  className="h1"
+                  id={convertToSlug(children.toString().toLowerCase())}
+                >
+                  {children}
+                </h2>
+              </div>
+            ),
+            li: ({ children }) => (
+              <li style={{ marginBottom: "0.25rem" }}>{children}</li>
+            ),
             h1: ({ children }) => (
               <div className="h1_parent">
                 <h1
@@ -70,15 +92,7 @@ export const Content: React.FC<BlogProps> = (props) => {
           }}
         />
       </div>
-      <div
-        style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "start",
-          flexDirection: "column",
-          gap: "1em",
-        }}
-      >
+      <div className="share">
         <h1 style={{ color: "grey", fontWeight: "300" }}>Share</h1>
         <a
           className="link"

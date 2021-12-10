@@ -7,7 +7,7 @@ body {
   height: auto;
   width: 100vw;
   font-family: "Inter", sans-serif;
-  /* overflow-x: hidden; */
+  overflow-x: hidden;
 }
 
 code {

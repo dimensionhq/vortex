@@ -2,9 +2,10 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
 }
+
 .main .blog_default {
   width: 100%;
 }
@@ -15,7 +16,7 @@
   display: flex;
   align-content: center;
   justify-content: center;
-  margin-top: 20%;
+  margin-top: 5%;
 }
 
 .main .blog_default .default .title_section .main h1 {
@@ -25,6 +26,7 @@
   text-transform: uppercase;
   width: 80%;
 }
+
 .main .blog_default .default .title_section .main h3 {
   font-size: 20px;
   padding-top: 100px;
@@ -35,13 +37,20 @@
 }
 
 .main .blog_default .default .content {
-  margin-top: 200px;
+  margin-top: 100px;
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
 }
 
+@media only screen and (max-width: 1000px) {
+  .main .blog_default .default .content .main {
+    width: 80% !important;
+    display: flex !important;
+    flex-direction: column !important;
+  }
+}
 .main .blog_default .default .content .main {
   width: 80%;
   display: grid;

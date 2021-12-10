@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 import ReactMarkdown from "react-markdown";
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import SyntaxHighlighter from "react-syntax-highlighter";
 import { BlogProps } from "../../types/Blog";
-import * as themes from "react-syntax-highlighter/dist/esm/styles/prism";
+import * as themes from "react-syntax-highlighter/dist/esm/styles/hljs";
 
 export const Content: React.FC<BlogProps> = (props) => {
   function convertToSlug(Text: string) {
@@ -10,7 +10,6 @@ export const Content: React.FC<BlogProps> = (props) => {
       .replace(/ /g, "-")
       .replace(/[^\w-]+/g, "");
   }
-
   return (
     <div className="content">
       <div className="main">
@@ -21,12 +20,14 @@ export const Content: React.FC<BlogProps> = (props) => {
             src={props.author?.avatar}
             alt=""
           />
-          <h1 style={{ marginTop: "2px", fontSize: "20px" }}>
+          <h1 style={{ marginTop: "2px", fontSize: "20px", color: "#303030" }}>
             {props.author?.name}
           </h1>
-          <p style={{ marginTop: "0px" }}>{props.banner?.date}</p>
+          <p style={{ marginTop: "0px", fontSize: "13px", color: "grey" }}>
+            {props.banner?.date}
+          </p>
         </div>
-        <div className="md">
+        <div style={{ width: "100%" }} className="md">
           <ReactMarkdown
             children={props.content}
             components={{
@@ -37,10 +38,13 @@ export const Content: React.FC<BlogProps> = (props) => {
                   // @ts-expect-error
                   <SyntaxHighlighter
                     children={String(children).replace(/\n$/, "")}
-                    style={{
-                      // @ts-expect-error
-                      ...themes[theme],
+                    customStyle={{
+                      borderRadius: "5px",
+                      width: "auto",
+                      overflow: "auto",
                     }}
+                    // @ts-expect-error
+                    style={{ ...themes[theme] }}
                     showLineNumbers={true}
                     language={match[1]}
                     PreTag="div"
