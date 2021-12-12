@@ -2,24 +2,23 @@ import ReactMarkdown from "react-markdown";
 import { SpecialComponents } from "react-markdown/lib/ast-to-react";
 import { NormalComponents } from "react-markdown/lib/complex-types";
 import SyntaxHighlighter from "react-syntax-highlighter";
-import rehypeRaw from "rehype-raw";
 import { BlogProps } from "../../types/Blog";
 import * as themes from "react-syntax-highlighter/dist/esm/styles/hljs";
+import remarkGfm from "remark-gfm";
 
-const Github: React.FC<BlogProps> = (props) => {
+const DevTO: React.FC<BlogProps> = (props) => {
   const options = {
     year: "numeric",
     month: "long",
     day: "numeric",
   };
-
   const components: Partial<
     Omit<NormalComponents, keyof SpecialComponents> & SpecialComponents
   > = {
     h1: ({ children }) => (
       <h1
         style={{ color: props.theme?.inlineColor }}
-        className="text-2xl font-extrabold xl:text-5xl md:text-4xl mt-1 mb-2"
+        className="text-2xl font-extrabold xl:text-[2.75rem] 2xl:text-[2.75rem] md:text-4xl mt-4 mb-2"
       >
         {children}
       </h1>
@@ -64,27 +63,45 @@ const Github: React.FC<BlogProps> = (props) => {
         {children}
       </h6>
     ),
-    p: ({ children }) => <p className="mt-2 mb-2">{children}</p>,
-
-    a: ({ children, ...rest }) => (
-      <a
-        href={rest.href}
-        className="no-underline hover:underline mt-4 mb-4 text-blue-500"
-        style={{ textDecorationColor: props.theme?.inlineBgColor }}
-      >
-        {children}
-      </a>
-    ),
-    link: ({ children, ...rest }) => (
-      <a
-        href={rest.href}
-        className="no-underline hover:underline mt-2 mb-2"
-        style={{ textDecorationColor: props.theme?.inlineBgColor }}
-      >
-        {children}
-      </a>
-    ),
-
+    // p: ({ children }) => <p className="mt-2 mb-2">{children}</p>,
+    link: ({ children, ...rest }) => {
+      let id =
+        rest.href?.match(/twitter.com\/.*\/([0-9]+).*/)?.toString() ??
+        "1468899596730441730";
+      console.log(id);
+      if (rest.href?.startsWith("https://twitter.com")) {
+        return <div />;
+      } else {
+        return (
+          <a
+            href={rest.href}
+            className="no-underline hover:underline mt-4 mb-4 text-blue-500"
+            style={{ textDecorationColor: props.theme?.inlineBgColor }}
+          >
+            {children}
+          </a>
+        );
+      }
+    },
+    a: ({ children, ...rest }) => {
+      let id =
+        rest.href?.match(/twitter.com\/.*\/([0-9]+).*/)?.toString() ??
+        "1468899596730441730";
+      console.log(id);
+      if (rest.href?.startsWith("https://twitter.com")) {
+        return <div />;
+      } else {
+        return (
+          <a
+            href={rest.href}
+            className="no-underline hover:underline mt-4 mb-4 text-blue-500"
+            style={{ textDecorationColor: props.theme?.inlineBgColor }}
+          >
+            {children}
+          </a>
+        );
+      }
+    },
     code({ node, inline, className, children, ...propso2 }) {
       const match = /language-(\w+)/.exec(className || "");
       const theme: string = props.codeblock?.theme as any;
@@ -123,57 +140,43 @@ const Github: React.FC<BlogProps> = (props) => {
     },
   };
   return (
-    <div
-      className="w-full h-full flex items-center justify-center"
-      style={{
-        backgroundColor: props.theme?.bgColor,
-        color: props.theme?.textColor,
-      }}
-    >
-      <div className="w-[95%] xl:w-[50%] h-auto">
-        <div className="w-full flex items-center justify-center relative">
-          <img src={props.banner?.image?.src} alt="" />
-        </div>
-        <div className="mt-14 xl:mt-28 w-full h-auto">
-          <div className="w-full flex items-center gap-5">
-            <p
-              className="text-sm "
-              style={{ color: props.theme?.inlineBgColor }}
-            >
-              {new Date(props.metadata.date).toLocaleDateString(
-                "en-US",
-                options as any
-              )}
-            </p>
-            <a
-              className="text-sm hover:text-blue-500"
-              href={props.banner?.category.url}
-              style={{ color: props.theme?.inlineBgColor }}
-            >
-              {props.banner?.category.title}
-            </a>
+    <div className="w-full h-full flex items-center justify-center">
+      <div
+        className="w-[80%] lg:w-[40%] h-full px-2 py-5"
+        style={{
+          backgroundColor: props.theme?.bgColor,
+          color: props.theme?.textColor,
+        }}
+      >
+        <img
+          src={props.banner?.image?.src}
+          alt="Image"
+          style={{ borderRadius: props.banner?.image?.rounded ?? "10px" }}
+        />
+        <div className="w-full mt-[32px]">
+          <div className="flex items-center justify-start gap-3">
+            <img
+              width="40px"
+              style={{ borderRadius: "50%" }}
+              src={props.author.avatar}
+              alt=""
+            />
+            <div className="flex flex-col">
+              <h1 className="text-lg font-bold">{props.author.name}</h1>
+              <p
+                style={{ color: props.theme?.inlineBgColor }}
+                className="text-xs"
+              >
+                Posted on {props.metadata.date}
+              </p>
+            </div>
           </div>
-          <h1 className="text-3xl font-bold md:text-5xl mt-9">
-            {props.banner?.title}
-          </h1>
         </div>
-        <div className="flex w-full items-center justify-start mt-5 gap-4">
-          <img
-            src={props.author.avatar}
-            width="36px"
-            className="rounded-full"
-            alt=""
-          />
-          <p style={{ color: props.theme?.inlineBgColor }}>
-            {props.author.name}
-          </p>
-        </div>
-        <div className="w-full h-full pt-10">
-          <ReactMarkdown
-            rehypePlugins={[rehypeRaw]}
-            // remarkPlugins={[remarkGfm, remarkHTML]}
-            components={components}
-          >
+        <h1 className="mt-7 mb-5 text-5xl font-extrabold">
+          {props.banner?.title}
+        </h1>
+        <div>
+          <ReactMarkdown plugins={[remarkGfm]} components={components}>
             {props.content}
           </ReactMarkdown>
         </div>
@@ -182,4 +185,4 @@ const Github: React.FC<BlogProps> = (props) => {
   );
 };
 
-export default Github;
+export default DevTO;

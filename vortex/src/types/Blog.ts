@@ -113,15 +113,16 @@ export interface Banner {
 export interface Theme {
   primary?: string;
   bgColor?: string;
-  grey?: string;
+  inlineColor?: string;
   linkColor?: string;
   textColor?: string;
-  lightGrey?: string;
+  inlineBgColor?: string;
 }
 
 export interface BlogProps {
   theme?: Theme;
   banner?: Banner;
+  font?: string;
   type?: "Default" | "DevTO" | "Github" | "Hackernoon" | "Hashnode";
   content: string;
   codeblock?: {
@@ -152,12 +153,12 @@ export const defaultProps: BlogProps = {
     name: "",
   },
   theme: {
-    textColor: "black",
+    textColor: "white",
     primary: "#23272a",
-    grey: "#333",
-    bgColor: "#ffffff",
+    inlineColor: "#333",
+    bgColor: "black",
     linkColor: "#5862f2",
-    lightGrey: "#7c7c7c",
+    inlineBgColor: "#7c7c7c",
   },
   banner: undefined,
 };

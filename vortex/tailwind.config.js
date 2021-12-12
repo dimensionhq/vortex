@@ -7,6 +7,9 @@ module.exports = {
           100: "#333333",
         },
       },
+      fontFamily: {
+        manrope: "Manrope, sans-serif",
+      },
     },
   },
   plugins: [],

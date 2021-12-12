@@ -4,592 +4,110 @@ function App() {
   return (
     <div className="w-screen h-auto overflow-x-hidden">
       <Blog
-        type="Github"
-        metadata={{
-          date: "11 December, 2021",
-        }}
+        font="Manrope, sans-serif"
+        type="Hashnode"
+        content={`
+AI used to be a buzzword, Just as Crypto or Blockchain is today. It was thrown around inflationary until everyone knew the term but did not really know what it was all about. But mentioning AI made everything new, shiny, modern, and sounded really successful. Products were meant to have AI as a marketing stunt while not really including the AI they overpromised.
+
+I remember talking to someone years ago who launched an AI system that would automatically recognize Creditcard numbers being held into a Webcam. But the system wasn't working on the launch day and so they cheaply hired people who would sit there and type in the credit card numbers manually. They were afterward praised for their flawlessly working text recognition.
+
+So not all AI we see is really AI or does change our world massively the way it does. Mainly because of the promises that were made before launch and the disappointment afterward when those promised were not kept.
+
+## But then there was GitHub Copilot
+
+GitHub Copilot did something that had hardly been done before. Not only did it undersell its potential and was basically thrown into the testing phase in an almost humble matter, but it also managed to impress programmers themselves who do have a clue about machine learning and AI and who know about the potential of the technology.
+
+## Is Copilot bad for learners?
+
+To undersell it myself, I would say it's an advanced autocompletion. And in a way it actually is. But in my eyes, the strength of Copilot lies in the ability to create own code from only comments in the code. I have been intensively playing around with Copilot and I was warned not to because I am just a beginner and Copilot would only make me lazy and not want to code anything myself anymore. But I feel different about it.
+
+But what is it really? It's how they call it, your AI pair programmer. Pair programming is when two people work on code together and constantly review and explain it to each other and bounce off ideas. It's a really popular way of developing code and even learning how to code.
+
+But not everyone has the privilege to have someone doing pair programming with them. Many new learners look for fitting mentors for months to then just give up disappointed without help and direction. I am in the lucky position to have someone mentoring me, but I can't claim that person's time 100%, so being able to jump into VSCode and write down my ideas I have at 3 am and have Copilot suggesting me ways how to do it and also helping me structuring my code more, is such a good thing.
+
+Not only that. While I sometimes had some great ideas and already struggled with putting them down into code. I now can just write down my ideas in comments and let Copilot give me hints on how to tackle them. Getting me then to learning the methods of problem-solving for the future. It's like the mentor you can ask the same questions over and over again without him getting annoyed, but you learn at your own speed.
+
+## Give me a graph
+
+A few days ago, I imported my YouTube Statistics into a Python program to play around with them. With the help of Copilot, I made some code snippets that would take the Data and calculate averages, future predictions, etc. At some point, I thought, how nice it would be if I could visualize the information I had. From my previous experiments with data visualization, I know this is usually an evening-filling activity for me.
+
+I did write two lines of comments at the bottom of the code I previously wrote, so Copilot had something to refer to.
+
+![My Input](https://cdn.hashnode.com/res/hashnode/image/upload/v1638904760180/U13bD3Hmw.png?auto=compress,format&format=webp)
+
+**And this is what Copilot came up with:**
+
+\`\`\`python
+with open("data.html", "w") as file:
+    file.write("<html>\n")
+    file.write("<head>\n")
+    file.write(
+        "<script type=\"text/javascript\" src=\"https://www.gstatic.com/charts/loader.js\"></script>\n")
+    file.write("<script type=\"text/javascript\">\n")
+    file.write("google.charts.load('current', {'packages':['bar']});\n")
+    file.write("google.charts.setOnLoadCallback(drawChart);\n")
+    file.write("function drawChart() {\n")
+    file.write("var data = google.visualization.arrayToDataTable([\n")
+    file.write("['Month', 'Subscriber'],\n")
+    for key, value in subscriber.items():
+        file.write("['{}', {}],\n".format(key, value))
+    file.write("]);\n")
+    file.write("var options = {\n")
+    file.write("chart: {title: 'Subscriber count by month'},\n")
+    file.write("bars: 'vertical'\n")
+    file.write("};\n")
+    file.write(
+        "var chart = new google.charts.Bar(document.getElementById('chart_div'));\n")
+    file.write("chart.draw(data, options);\n")
+    file.write("}\n")
+    file.write("</script>\n")
+    file.write("</head>\n")
+    file.write("<body>\n")
+    file.write(
+        "<div id=\"chart_div\" style=\"width: 900px; height: 500px;\"></div>\n")
+    file.write("</body>\n")
+    file.write("</html>\n")
+\`\`\`
+Which presented me this:
+
+![My Output](https://cdn.hashnode.com/res/hashnode/image/upload/v1638905722920/3iDiiKhwp.png?auto=compress,format&format=webp)
+
+I have seen people being dismissive about how "simple" the solution really is and that this doesn't take a lot of time. But in reality - I gave Copilot effectively 2 lines of comment. And it did not only create the file, wrote the implementation in JavaScript while starting the whole process in Python, but also understood exactly what I wanted and chose Google Charts as the most efficient way to implement my wish. If you ask me, this is huge.
+
+I did learn about the existence of Google Charts and looked into it to further adjust my needs to the code provided. I learned that you can easily create JavaScript Code within Python to make an HTML-File. It was almost as if Copilot hinted me towards the possibility and gave me this solution to proceed with and learn from.
+
+And while it seems cheaty to some. It's nothing else than a mentor, teacher, friend, or even StackOverflow presenting you a solution to work with. It's just inside your IDE.
+
+## It's impressing even people from the field
+
+I did tweet about my experience cause I was mind blown about the solution and that tweet won a lot of traction within the tech twitter community. Some mentioned they fear being replaced by AI at some point but others see the possibility for a more efficient workflow. It feels uncanny but also exciting. And I think that's the main feeling AI - well-made AI - leaves behind.
+
+<a href="https://twitter.com/notcnrad/status/1469711578698289165">lol </a>
+
+
+I am excited about how it will help me learn and progress. **But I also want to formally apologize to Copilot for making it depressed after feeding it a whole file full of Squidward Q. Tentacles quotes. The autocompletion made me feel like a terrible person.**
+
+![lol](https://cdn.hashnode.com/res/hashnode/image/upload/v1638906382303/jj3dEbbYC.png?auto=compress,format&format=webp)
+`}
         author={{
-          name: "Tejas",
-          avatar: "https://avatars.githubusercontent.com/u/63039748?v=4",
+          avatar:
+            "https://blog.tiia.rocks/_next/image?url=https%3A%2F%2Fcdn.hashnode.com%2Fres%2Fhashnode%2Fimage%2Fupload%2Fv1631555930761%2FcF4G93tvG.jpeg%3Fw%3D200%26h%3D200%26fit%3Dcrop%26crop%3Dfaces%26auto%3Dcompress%2Cformat%26format%3Dwebp&w=256&q=75",
+          name: "Tiia",
+        }}
+        metadata={{
+          date: "Dec 7, 2021",
         }}
         banner={{
-          title:
-            "Precise code navigation for Python, and code navigation in pull requests",
-          category: {
-            url: "category/engineering",
-            title: "Engineering & Development",
-          },
           image: {
-            src: "https://assets-global.website-files.com/5f9072399b2640f14d6a2bf4/61aa7642a72a1b627d695f49_Discord-Elixir-Blog-Header.png",
-            rounded: "21px",
+            src: "https://blog.tiia.rocks/_next/image?url=https%3A%2F%2Fcdn.hashnode.com%2Fres%2Fhashnode%2Fimage%2Fupload%2Fv1638892097010%2FgRkRvLXQh.png%3Fw%3D1600%26h%3D840%26fit%3Dcrop%26crop%3Dentropy%26auto%3Dcompress%2Cformat%26format%3Dwebp&w=1920&q=75",
+            rounded: "5px",
           },
+          category: {
+            title: "Artificial Intelligence & Development",
+            url: "",
+          },
+          title: "GitHub Copilot is here to stay",
         }}
-        content={`
-# Size Limit [![Cult Of Martians][cult-img]][cult]
-
-<img src="https://ai.github.io/size-limit/logo.svg" align="right"
-      alt="Size Limit logo by Anton Lovchikov" width="120" height="178">
-
-Size Limit is a performance budget tool for JavaScript. It checks every commit
-on CI, calculates the real cost of your JS for end-users and throws an error
-if the cost exceeds the limit.
-
-* **ES modules** and **tree-shaking** support.
-* Add Size Limit to **Travis CI**, **Circle CI**, **GitHub Actions**
-  or another CI system to know if a pull request adds a massive dependency.
-* **Modular** to fit different use cases: big JS applications
-  that use their own bundler or small npm libraries with many files.
-* Can calculate **the time** it would take a browser
-  to download and **execute** your JS. Time is a much more accurate
-  and understandable metric compared to the size in bytes.
-* Calculations include **all dependencies and polyfills**
-  used in your JS.
-
-<p align="center">
-  <img src="./img/example.png" alt="Size Limit CLI" width="738">
-</p>
-
-With **[GitHub action]** Size Limit will post bundle size changes as a comment
-in pull request discussion.
-
-<p align="center">
-<img src="https://raw.githubusercontent.com/andresz1/size-limit-action/master/assets/pr.png"
-  alt="Size Limit comment in pull request about bundle size changes"
-  width="686" height="289">
-</p>
-
-With \`--why\`, Size Limit can tell you *why* your library is of this size
-and show the real cost of all your internal dependencies.
-We are using [Statoscope] for this analysis.
-
-<p align="center">
-  <img src="./img/why.png" alt="Statoscope example" width="650">
-</p>
-
-<p align="center">
-  <a href="https://evilmartians.com/?utm_source=size-limit">
-    <img src="https://evilmartians.com/badges/sponsored-by-evil-martians.svg"
-          alt="Sponsored by Evil Martians" width="236" height="54">
-  </a>
-</p>
-
-[GitHub action]: https://github.com/andresz1/size-limit-action
-[Statoscope]:    https://github.com/statoscope/statoscope
-[cult-img]:      http://cultofmartians.com/assets/badges/badge.svg
-[cult]:          http://cultofmartians.com/tasks/size-limit-config.html
-
-## Who Uses Size Limit
-
-* [MobX](https://github.com/mobxjs/mobx)
-* [Material-UI](https://github.com/callemall/material-ui)
-* [Autoprefixer](https://github.com/postcss/autoprefixer)
-* [PostCSS](https://github.com/postcss/postcss) reduced
-  [25% of the size](https://github.com/postcss/postcss/commit/150edaa42f6d7ede73d8c72be9909f0a0f87a70f).
-* [Browserslist](https://github.com/browserslist/browserslist) reduced
-  [25% of the size](https://github.com/browserslist/browserslist/commit/640b62fa83a20897cae75298a9f2715642531623).
-* [EmojiMart](https://github.com/missive/emoji-mart) reduced
-  [20% of the size](https://github.com/missive/emoji-mart/pull/111)
-* [nanoid](https://github.com/ai/nanoid) reduced
-  [33% of the size](https://github.com/ai/nanoid/commit/036612e7d6cc5760313a8850a2751a5e95184eab).
-* [React Focus Lock](https://github.com/theKashey/react-focus-lock) reduced
-  [32% of the size](https://github.com/theKashey/react-focus-lock/pull/48).
-* [Logux](https://github.com/logux) reduced
-  [90% of the size](https://github.com/logux/logux-client/commit/62b258e20e1818b23ae39b9c4cd49e2495781e91).
-
-
-## How It Works
-
-1. Size Limit contains a CLI tool, 3 plugins (\`file\`, \`webpack\`, \`time\`)
-    and 3 plugin presets for popular use cases (\`app\`, \`big-lib\`, \`small-lib\`).
-    A CLI tool finds plugins in \`package.json\` and loads the config.
-2. If you use the \`webpack\` plugin, Size Limit will bundle your JS files into
-    a single file. It is important to track dependencies and webpack polyfills.
-    It is also useful for small libraries with many small files and without
-    a bundler.
-3. The \`webpack\` plugin creates an empty webpack project, adds your library
-    and looks for the bundle size difference.
-4. The \`time\` plugin compares the current machine performance with that of
-    a low-priced Android devices to calculate the CPU throttling rate.
-5. Then the \`time\` plugin runs headless Chrome (or desktop Chrome if it’s
-    available) to track the time a browser takes to compile and execute your JS.
-    Note that these measurements depend on available resources and might
-    be unstable. [See here](https://github.com/mbalabash/estimo/issues/5)
-    for more details.
-
-
-## Usage
-
-### JS Applications
-
-Suitable for applications that have their own bundler and send the JS bundle
-directly to a client (without publishing it to npm). Think of a user-facing app
-or website, like an email client, a CRM, a landing page or a blog with
-interactive elements, using React/Vue/Svelte lib or vanilla JS.
-
-<details><summary><b>Show instructions</b></summary>
-
-1. Install the preset:
-
-    \`\`\`sh
-    $ npm install --save-dev size-limit @size-limit/file
-    \`\`\`
-
-2. Add the \`size-limit\` section and the \`size\` script to your \`package.json\`:
-
-    \`\`\`diff
-    + "size-limit": [
-    +   {
-    +     "path": "dist/app-*.js"
-    +   }
-    + ],
-      "scripts": {
-        "build": "webpack ./webpack.config.js",
-    +   "size": "npm run build && size-limit",
-        "test": "jest && eslint ."
-      }
-    \`\`\`
-
-3. Here’s how you can get the size for your current project:
-
-    \`\`\`sh
-    $ npm run size
-
-      Package size: 30.08 kB with all dependencies, minified and gzipped
-    \`\`\`
-
-4. Now, let’s set the limit. Add 25% to the current total size and use that as
-    the limit in your \`package.json\`:
-
-    \`\`\`diff
-      "size-limit": [
-        {
-    +     "limit": "35 kB",
-          "path": "dist/app-*.js"
-        }
-      ],
-    \`\`\`
-
-5. Add the \`size\` script to your test suite:
-
-    \`\`\`diff
-      "scripts": {
-        "build": "webpack ./webpack.config.js",
-        "size": "npm run build && size-limit",
-    -   "test": "jest && eslint ."
-    +   "test": "jest && eslint . && npm run size"
-      }
-    \`\`\`
-
-6. If you don’t have a continuous integration service running, don’t forget
-    to add one — start with [Travis CI].
-
-</details>
-
-
-### JS Application and Time-based Limit
-
-File size limit (in kB) is not the best way to describe your JS application
-cost for developers. Developers will compare the size of the JS bundle
-with the size of images. But browsers need much more time to parse 100 kB
-of JS than 100 kB of an image since JS compilers are very complex.
-
-This is why Size Limit support time-based limit. It runs headless Chrome
-to track the time a browser takes to compile and execute your JS.
-
-<details><summary><b>Show instructions</b></summary>
-
-1. Install the preset:
-
-    \`\`\`sh
-    $ npm install --save-dev size-limit @size-limit/preset-app
-    \`\`\`
-
-2. Add the \`size-limit\` section and the \`size\` script to your \`package.json\`:
-
-    \`\`\`diff
-    + "size-limit": [
-    +   {
-    +     "path": "dist/app-*.js"
-    +   }
-    + ],
-      "scripts": {
-        "build": "webpack ./webpack.config.js",
-    +   "size": "npm run build && size-limit",
-        "test": "jest && eslint ."
-      }
-    \`\`\`
-
-3. Here’s how you can get the size for your current project:
-
-    \`\`\`sh
-    $ npm run size
-
-      Package size: 30.08 kB with all dependencies, minified and gzipped
-      Loading time: 602 ms   on slow 3G
-      Running time: 214 ms   on Snapdragon 410
-      Total time:   815 ms
-    \`\`\`
-
-4. Now, let’s set the limit. Add 25% to the current total time and use that as
-    the limit in your \`package.json\`:
-
-    \`\`\`diff
-      "size-limit": [
-        {
-    +     "limit": "1 s",
-          "path": "dist/app-*.js"
-        }
-      ],
-    \`\`\`
-
-5. Add the \`size\` script to your test suite:
-
-    \`\`\`diff
-      "scripts": {
-        "build": "webpack ./webpack.config.js",
-        "size": "npm run build && size-limit",
-    -   "test": "jest && eslint ."
-    +   "test": "jest && eslint . && npm run size"
-      }
-    \`\`\`
-
-6. If you don’t have a continuous integration service running, don’t forget
-    to add one — start with [Travis CI].
-
-</details>
-
-
-### Big Libraries
-
-JS libraries > 10 kB in size.
-
-This preset includes headless Chrome, and will measure your lib’s execution
-time. You likely don’t need this overhead for a small 2 kB lib, but for larger
-ones the execution time is a more accurate and understandable metric that
-the size in bytes. Library like [React] is a good example for this preset.
-
-<details><summary><b>Show instructions</b></summary>
-
-1. Install preset:
-
-    \`\`\`sh
-    $ npm install --save-dev size-limit @size-limit/preset-big-lib
-    \`\`\`
-
-2. Add the \`size-limit\` section and the \`size\` script to your \`package.json\`:
-
-    \`\`\`diff
-    + "size-limit": [
-    +   {
-    +     "path": "dist/react.production-*.js"
-    +   }
-    + ],
-      "scripts": {
-        "build": "webpack ./scripts/rollup/build.js",
-    +   "size": "npm run build && size-limit",
-        "test": "jest && eslint ."
-      }
-    \`\`\`
-
-3. If you use ES modules you can test the size after tree-shaking with \`import\`
-    option:
-
-    \`\`\`diff
-      "size-limit": [
-        {
-          "path": "dist/react.production-*.js",
-    +     "import": "{ createComponent }"
-        }
-      ],
-    \`\`\`
-
-4. Here’s how you can get the size for your current project:
-
-    \`\`\`sh
-    $ npm run size
-
-      Package size: 30.08 kB with all dependencies, minified and gzipped
-      Loading time: 602 ms   on slow 3G
-      Running time: 214 ms   on Snapdragon 410
-      Total time:   815 ms
-    \`\`\`
-
-5. Now, let’s set the limit. Add 25% to the current total time and use that
-    as the limit in your \`package.json\`:
-
-    \`\`\`diff
-      "size-limit": [
-        {
-    +     "limit": "1 s",
-          "path": "dist/react.production-*.js"
-        }
-      ],
-    \`\`\`
-
-6. Add a \`size\` script to your test suite:
-
-    \`\`\`diff
-      "scripts": {
-        "build": "rollup ./scripts/rollup/build.js",
-        "size": "npm run build && size-limit",
-    -   "test": "jest && eslint ."
-    +   "test": "jest && eslint . && npm run size"
-      }
-    \`\`\`
-
-7. If you don’t have a continuous integration service running, don’t forget
-    to add one — start with [Travis CI].
-8. Add the library size to docs, it will help users to choose your project:
-
-    \`\`\`diff
-      # Project Name
-
-      Short project description
-
-      * **Fast.** 10% faster than competitor.
-    + * **Small.** 15 kB (minified and gzipped).
-    +   [Size Limit](https://github.com/ai/size-limit) controls the size.
-    \`\`\`
-
-</details>
-
-
-### Small Libraries
-
-JS libraries < 10 kB in size.
-
-This preset will only measure the size, without the execution time, so it’s
-suitable for small libraries. If your library is larger, you likely want
-the Big Libraries preset above. [Nano ID] or [Storeon] are good examples
-for this preset.
-
-<details><summary><b>Show instructions</b></summary>
-
-1. First, install \`size-limit\`:
-
-    \`\`\`sh
-    $ npm install --save-dev size-limit @size-limit/preset-small-lib
-    \`\`\`
-
-2. Add the \`size-limit\` section and the \`size\` script to your \`package.json\`:
-
-    \`\`\`diff
-    + "size-limit": [
-    +   {
-    +     "path": "index.js"
-    +   }
-    + ],
-      "scripts": {
-    +   "size": "size-limit",
-        "test": "jest && eslint ."
-      }
-    \`\`\`
-
-3. Here’s how you can get the size for your current project:
-
-    \`\`\`sh
-    $ npm run size
-
-      Package size: 177 B with all dependencies, minified and gzipped
-    \`\`\`
-
-4. If your project size starts to look bloated, run \`--why\` for analysis:
-
-    \`\`\`sh
-    $ npm run size -- --why
-    \`\`\`
-
-    > We use [Statoscope](https://github.com/statoscope/statoscope) as bundle analyzer.
-
-6. Now, let’s set the limit. Determine the current size of your library,
-    add just a little bit (a kilobyte, maybe) and use that as the limit
-    in your \`package.json\`:
-
-    \`\`\`diff
-      "size-limit": [
-        {
-    +     "limit": "9 kB",
-          "path": "index.js"
-        }
-      ],
-    \`\`\`
-
-7. Add the \`size\` script to your test suite:
-
-    \`\`\`diff
-      "scripts": {
-        "size": "size-limit",
-    -   "test": "jest && eslint ."
-    +   "test": "jest && eslint . && npm run size"
-      }
-    \`\`\`
-
-8. If you don’t have a continuous integration service running, don’t forget
-    to add one — start with [Travis CI].
-9. Add the library size to docs, it will help users to choose your project:
-
-    \`\`\`diff
-      # Project Name
-
-      Short project description
-
-      * **Fast.** 10% faster than competitor.
-    + * **Small.** 500 bytes (minified and gzipped). No dependencies.
-    +   [Size Limit](https://github.com/ai/size-limit) controls the size.
-    \`\`\`
-
-</details>
-
-[Travis CI]: https://github.com/dwyl/learn-travis
-[Storeon]: https://github.com/ai/storeon/
-[Nano ID]: https://github.com/ai/nanoid/
-[React]: https://github.com/facebook/react/
-
-
-## Reports
-
-Size Limit has a [GitHub action] that comments and rejects pull requests based
-on Size Limit output.
-
-1. Install and configure Size Limit as shown above.
-2. Add the following action inside \`.github/workflows/size-limit.yml\`
-
-\`\`\`yaml
-name: "size"
-on:
-  pull_request:
-    branches:
-      - master
-jobs:
-  size:
-    runs-on: ubuntu-latest
-    env:
-      CI_JOB_NUMBER: 1
-    steps:
-      - uses: actions/checkout@v1
-      - uses: andresz1/size-limit-action@v1
-        with:
-          github_token: \${\{ secrets.GITHUB_TOKEN \}}
-\`\`\`
-
-
-## Config
-
-Size Limits supports three ways to define config.
-
-1. \`size-limit\` section in \`package.json\`:
-
-    \`\`\`json
-      "size-limit": [
-        {
-          "path": "index.js",
-          "import": "{ createStore }",
-          "limit": "500 ms"
-        }
-      ]
-    \`\`\`
-
-2. or a separate \`.size-limit.json\` config file:
-
-    \`\`\`js
-    [
-      {
-        "path": "index.js",
-        "import": "{ createStore }",
-        "limit": "500 ms"
-      }
-    ]
-    \`\`\`
-
-3. or a more flexible \`.size-limit.js\` or \`.size-limit.cjs\` config file:
-
-    \`\`\`js
-    module.exports = [
-      {
-        path: "index.js",
-        import: "{ createStore }",
-        limit: "500 ms"
-      }
-    ]
-    \`\`\`
-
-Each section in the config can have these options:
-
-* **path**: relative paths to files. The only mandatory option.
-  It could be a path \`"index.js"\`, a [pattern] \`"dist/app-*.js"\`
-  or an array \`["index.js", "dist/app-*.js", "!dist/app-exclude.js"]\`.
-* **import**: partial import to test tree-shaking. It could be \`"{ lib }"\`
-  to test \`import { lib } from 'lib'\` or \`{ "a.js": "{ a }", "b.js": "{ b }" }\`
-  to test multiple files.
-* **limit**: size or time limit for files from the \`path\` option. It should be
-  a string with a number and unit, separated by a space.
-  Format: \`100 B\`, \`10 kB\`, \`500 ms\`, \`1 s\`.
-* **name**: the name of the current section. It will only be useful
-  if you have multiple sections.
-* **entry**: when using a custom webpack config, a webpack entry could be given.
-  It could be a string or an array of strings.
-  By default, the total size of all entry points will be checked.
-* **webpack**: with \`false\` it will disable webpack.
-* **running**: with \`false\` it will disable calculating running time.
-* **gzip**: with \`false\` it will disable gzip compression.
-* **brotli**: with \`true\` it will use brotli compression and disable
-  gzip compression.
-* **config**: a path to a custom webpack config.
-* **ignore**: an array of files and dependencies to exclude from
-  the project size calculation.
-* **modifyWebpackConfig**: (.size-limit.js only) function that can be used
-  to do last-minute changes to the webpack config, like adding a plugin.
-* **compareWith**: path to \`stats.json\` from another build to compare
-  (when \`--why\` is using).
-* **uiReports**: custom UI reports list (see [Statoscope docs]).
-
-If you use Size Limit to track the size of CSS files, make sure to set
-\`webpack: false\`. Otherwise, you will get wrong numbers, because webpack
-inserts \`style-loader\` runtime (≈2 kB) into the bundle.
-
-[Statoscope docs]: https://github.com/statoscope/statoscope/tree/master/packages/webpack-plugin#optionsreports-report
-[pattern]: https://github.com/sindresorhus/globby#globbing-patterns
-
-
-## Plugins and Presets
-
-Plugins:
-
-* \`@size-limit/file\` checks the size of files with Gzip, Brotli
-  or without compression.
-* \`@size-limit/webpack\` adds your library to empty webpack project
-  and prepares bundle file for \`file\` plugin.
-* \`@size-limit/webpack-why\` adds reports for \`webpack\` plugin
-  about your library is of this size to show the cost of all your
-  dependencies.
-* \`@size-limit/webpack-css\` adds css support for \`webpack\` plugin.
-* \`@size-limit/esbuild\` is like \`webpack\` plugin, but uses \`esbuild\`
-  to be faster and use less space in \`node_modules\`.
-* \`@size-limit/time\` uses headless Chrome to track time to execute JS.
-* \`@size-limit/dual-publish\` compiles files to ES modules with [\`dual-publish\`]
-  to check size after tree-shaking.
-
-Plugin presets:
-
-* \`@size-limit/preset-app\` contains \`file\` and \`time\` plugins.
-* \`@size-limit/preset-big-lib\` contains \`webpack\`, \`file\`, and \`time\` plugins.
-* \`@size-limit/preset-small-lib\` contains \`esbuild\` and \`file\` plugins.
-
-[\`dual-publish\`]: https://github.com/ai/dual-publish
-
-
-## JS API
-
-\`\`\`js
-const sizeLimit = require('size-limit')
-const filePlugin = require('@size-limit/file')
-const webpackPlugin = require('@size-limit/webpack')
-
-sizeLimit([filePlugin, webpackPlugin], [filePath]).then(result => {
-  result //=> { size: 12480 }
-})
-\`\`\`
-`}
       />
     </div>
   );
