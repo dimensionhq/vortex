@@ -1,22 +1,19 @@
 import { BlogProps } from "../../types/Blog";
-import { Banner } from "./Banner";
-import { Content } from "./Content";
-import "../../styles/Default.css";
-export const Default: React.FC<BlogProps> = (props) => {
+import Banner from "./Banner";
+import Content from "./Content";
+
+const Default: React.FC<BlogProps> = (props) => {
   return (
     <div
-      className="main"
+      className="w-full h-full flex items-center justify-center flex-col"
       style={{
         backgroundColor: props.theme?.bgColor,
-        color: props.theme?.text ?? "",
+        color: props.theme?.textColor,
       }}
     >
-      <div className="blog_default">
-        <div className="default">
-          <Banner {...props} />
-          <Content {...props} />
-        </div>
-      </div>
+      <Banner {...props} />
+      <Content {...props} />
     </div>
   );
 };
+export default Default;

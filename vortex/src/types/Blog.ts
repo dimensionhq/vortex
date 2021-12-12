@@ -1,4 +1,4 @@
-type BlogType = "Dev.to" | "Hashnode" | "Github" | "Default" | "Hackernoon";
+import { PluggableList } from "react-markdown/lib/react-markdown";
 
 type Themes =
   | "a11yDark"
@@ -99,46 +99,65 @@ type Themes =
   | "xt256"
   | "zenburn";
 
-interface BlogProps {
-  type?: BlogType;
+export interface Banner {
+  image?: {
+    src: string;
+    rounded: string;
+  };
+  category: {
+    url: string;
+    title: string;
+  };
+  title?: string;
+}
+export interface Theme {
+  primary?: string;
+  bgColor?: string;
+  grey?: string;
+  linkColor?: string;
+  textColor?: string;
+  lightGrey?: string;
+}
+
+export interface BlogProps {
+  theme?: Theme;
+  banner?: Banner;
+  type?: "Default" | "DevTO" | "Github" | "Hackernoon" | "Hashnode";
   content: string;
   codeblock?: {
     theme: Themes;
-    raw?: {};
+    carbon_sh?: boolean;
   };
-  banner?: {
-    marginBottom?: string;
-    title: string;
-    category: string;
+  metadata: {
     date: string;
-    image: {
-      src: string;
-      shadow: string;
-      rounded: string;
-    };
   };
-  author?: {
+  author: {
     name: string;
     avatar: string;
   };
-  theme?: {
-    primary: string;
-    text?: string;
-    bgColor?: string;
-  };
 }
 
-const defaultValues: BlogProps = {
-  type: "Default",
-  banner: undefined,
-  theme: {
-    primary: "#5865f2",
-  },
+export const defaultProps: BlogProps = {
   content: "",
+  type: "Default",
   codeblock: {
-    theme: "a11yLight",
+    theme: "atomOneDark",
+    carbon_sh: true,
   },
+  metadata: {
+    date: Date.now().toString(),
+  },
+  author: {
+    avatar: "",
+    name: "",
+  },
+  theme: {
+    textColor: "black",
+    primary: "#23272a",
+    grey: "#333",
+    bgColor: "#ffffff",
+    linkColor: "#5862f2",
+    lightGrey: "#7c7c7c",
+  },
+  banner: undefined,
 };
-
-export { defaultValues };
-export type { BlogType, BlogProps };

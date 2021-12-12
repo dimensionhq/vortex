@@ -1,32 +1,23 @@
-import { BlogProps } from "../../types/Blog";
+import { Banner as BannerType, BlogProps } from "../../types/Blog";
 
-export const Banner: React.FC<BlogProps> = (props) => {
-  return (
-    <div className="root">
+const Banner: React.FC<BlogProps> = (props) => {
+  if (props) {
+    return (
       <div
-        style={{
-          height: "400px",
-          width: "100%",
-          zIndex: 99999,
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          backgroundColor: props.theme?.primary,
-        }}
+        className="w-full h-35 md:h-48 xl:h-auto flex items-center justify-center relative"
+        style={{ backgroundColor: props.theme?.primary }}
       >
-        <div
-          style={{
-            width: "80%",
-            marginTop: "100px",
-            height: "60vh",
-            backgroundImage: `url(${props.banner?.image.src})`,
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "cover",
-            boxShadow: props.banner?.image.shadow,
-            borderRadius: props.banner?.image.rounded,
-          }}
-        ></div>
+        <img
+          className="w-[80%] relative top-11 md:top-32"
+          src={props.banner?.image?.src}
+          style={{ borderRadius: props.banner?.image?.rounded ?? "5px" }}
+          alt=""
+        />
       </div>
-    </div>
-  );
+    );
+  } else {
+    return <div></div>;
+  }
 };
+
+export default Banner;
