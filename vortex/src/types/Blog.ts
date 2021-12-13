@@ -123,7 +123,7 @@ export interface BlogProps {
   theme?: Theme;
   banner?: Banner;
   font?: string;
-  type?: "Default" | "DevTO" | "Github" | "Hackernoon" | "Hashnode";
+  type?: "Default" | "DevTO" | "Hackernoon" | "Hashnode";
   content: string;
   codeblock?: {
     theme: Themes;

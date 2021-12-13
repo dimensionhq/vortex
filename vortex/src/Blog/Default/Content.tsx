@@ -151,7 +151,7 @@ const Content: React.FC<BlogProps> = (props) => {
     },
   };
   return (
-    <div className="mt-16 sm:mt-20 md:mt-72 xl:mt-40 2xl:mt-40 flex items-start justify-center w-[90%] flex-col">
+    <div className="mt-16 sm:mt-20 md:mt-72 xl:mt-40 2xl:mt-40 flex items-start justify-center w-[90%] 2xl:w-[50%] flex-col">
       <a
         href={props.banner?.category.url}
         style={{ color: props.theme?.linkColor }}

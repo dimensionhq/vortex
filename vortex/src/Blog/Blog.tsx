@@ -14,12 +14,6 @@ const Blog: React.FC<BlogProps> = (props) => {
         <Default {...blog_props} />
       </div>
     );
-  } else if (blog_props.type === "Github") {
-    return (
-      <div className="w-full h-full" style={{ fontFamily: props.font }}>
-        <Github {...blog_props} />
-      </div>
-    );
   } else if (blog_props.type === "DevTO") {
     return (
       <div className="w-full h-full" style={{ fontFamily: props.font }}>
