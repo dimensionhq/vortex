@@ -3,6 +3,7 @@ import Default from "./Default";
 import Github from "./Github";
 import DevTO from "./DevTO";
 import Hashnode from "./Hashnode";
+// import "../styles.css";
 
 const Blog: React.FC<BlogProps> = (props) => {
   const blog_props: BlogProps = { ...defaultProps, ...props };

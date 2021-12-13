@@ -22,7 +22,7 @@ const Content: React.FC<BlogProps> = (props) => {
     h1: ({ children }) => (
       <h1
         style={{ color: props.theme?.inlineColor }}
-        className="text-2xl font-extrabold xl:text-[2.75rem] 2xl:text-[2.75rem] md:text-4xl mt-4 mb-2"
+        className="text-3xl font-extrabold xl:text-[2.75rem] 2xl:text-[2.75rem] md:text-4xl mt-4 mb-7"
       >
         {children}
       </h1>
@@ -30,7 +30,7 @@ const Content: React.FC<BlogProps> = (props) => {
     h2: ({ children }) => (
       <h2
         style={{ color: props.theme?.inlineColor }}
-        className="text-xl font-bold xl:text-2xl md:text-3xl 2xl:text-3xl mt-2 mb-3"
+        className="text-xl font-bold xl:text-3xl md:text-3xl 2xl:text-3xl mt-5 mb-3"
       >
         {children}
       </h2>
@@ -67,7 +67,14 @@ const Content: React.FC<BlogProps> = (props) => {
         {children}
       </h6>
     ),
-    // p: ({ children }) => <p className="mt-2 mb-2">{children}</p>,
+    p: ({ children }) => (
+      <p
+        style={{ color: props.theme?.inlineColor }}
+        className="mt-2 mb-2 text-xl leading-relaxed"
+      >
+        {children}
+      </p>
+    ),
     link: ({ children, ...rest }) => {
       let id =
         rest.href?.match(/twitter.com\/.*\/([0-9]+).*/)?.toString() ??
@@ -144,7 +151,7 @@ const Content: React.FC<BlogProps> = (props) => {
     },
   };
   return (
-    <div className="m-16 sm:m-20 md:m-60 xl:m-40 2xl:m-40 flex items-start justify-center w-[80%] flex-col gap-0">
+    <div className="mt-16 sm:mt-20 md:mt-72 xl:mt-40 2xl:mt-40 flex items-start justify-center w-[90%] flex-col">
       <a
         href={props.banner?.category.url}
         style={{ color: props.theme?.linkColor }}
@@ -153,15 +160,40 @@ const Content: React.FC<BlogProps> = (props) => {
         {props.banner?.category.title}
       </a>
       <h1
-        className={`uppercase mt-[10px] text-2xl font-black xl:text-5xl md:text-4xl`}
+        className={`uppercase mt-[0px] text-2xl font-black xl:text-5xl md:text-4xl`}
       >
         {props.banner?.title}
       </h1>
-      <div className="w-full h-full">
-        <div className="flex justify-start w-full h-full flex-col">
-          <ReactMarkdown plugins={[]} components={components}>
-            {props.content}
-          </ReactMarkdown>
+      <div className="mt-8 sm:mt-10 md:mt-20 xl:mt-20 2xl:mt-20">
+        <div className="flex grid-cols-9  md:grid justify-start flex-col">
+          <div className="col-span-2 flex items-start justify-start flex-col">
+            <img
+              width="72px"
+              className="rounded-full"
+              src={props.author.avatar}
+              alt=""
+            />
+            <h1
+              className="font-medium text-xl mt-3"
+              style={{ color: props.theme?.inlineColor }}
+            >
+              {props.author.name}
+            </h1>
+            <h6
+              className="text-sm"
+              style={{ color: props.theme?.inlineBgColor }}
+            >
+              {new Date(props.metadata.date).toLocaleDateString(
+                "en-US",
+                options as any
+              )}
+            </h6>
+          </div>
+          <div className="col-span-7">
+            <ReactMarkdown plugins={[]} components={components}>
+              {props.content}
+            </ReactMarkdown>
+          </div>
         </div>
       </div>
     </div>

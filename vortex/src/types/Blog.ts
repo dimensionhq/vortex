@@ -141,6 +141,7 @@ export interface BlogProps {
 export const defaultProps: BlogProps = {
   content: "",
   type: "Default",
+  font: "'Inter', sans-serif",
   codeblock: {
     theme: "atomOneDark",
     carbon_sh: true,
@@ -153,10 +154,10 @@ export const defaultProps: BlogProps = {
     name: "",
   },
   theme: {
-    textColor: "white",
+    textColor: "black",
     primary: "#23272a",
     inlineColor: "#333",
-    bgColor: "black",
+    bgColor: "white",
     linkColor: "#5862f2",
     inlineBgColor: "#7c7c7c",
   },
