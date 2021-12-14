@@ -7,6 +7,7 @@ function App() {
         metadata={{
           date: "December 3, 2021",
         }}
+        type="DevTO"
         font="Inter, sans-serif"
         banner={{
           title: "Why You Should Keep a Programming Journal",

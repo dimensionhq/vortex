@@ -5,6 +5,7 @@ import SyntaxHighlighter from "react-syntax-highlighter";
 import { BlogProps } from "../../types/Blog";
 import * as themes from "react-syntax-highlighter/dist/esm/styles/hljs";
 import remarkGfm from "remark-gfm";
+import TweetEmbed from "react-tweet-embed";
 
 const DevTO: React.FC<BlogProps> = (props) => {
   const options = {
@@ -18,7 +19,7 @@ const DevTO: React.FC<BlogProps> = (props) => {
     h1: ({ children }) => (
       <h1
         style={{ color: props.theme?.inlineColor }}
-        className="text-2xl font-extrabold xl:text-[2.75rem] 2xl:text-[2.75rem] md:text-4xl mt-4 mb-2"
+        className="text-xl font-extrabold xl:text-[2.75rem] 2xl:text-[2.75rem] md:text-4xl mt-4 mb-7"
       >
         {children}
       </h1>
@@ -26,7 +27,7 @@ const DevTO: React.FC<BlogProps> = (props) => {
     h2: ({ children }) => (
       <h2
         style={{ color: props.theme?.inlineColor }}
-        className="text-xl font-bold xl:text-2xl md:text-3xl 2xl:text-3xl mt-2 mb-3"
+        className="text-xl font-bold xl:text-3xl md:text-3xl 2xl:text-3xl mt-5 mb-3"
       >
         {children}
       </h2>
@@ -63,14 +64,21 @@ const DevTO: React.FC<BlogProps> = (props) => {
         {children}
       </h6>
     ),
-    // p: ({ children }) => <p className="mt-2 mb-2">{children}</p>,
+    p: ({ children }) => (
+      <p
+        style={{ color: props.theme?.inlineColor }}
+        className="mt-2 mb-2 text-xl leading-relaxed"
+      >
+        {children}
+      </p>
+    ),
     link: ({ children, ...rest }) => {
       let id =
         rest.href?.match(/twitter.com\/.*\/([0-9]+).*/)?.toString() ??
         "1468899596730441730";
       console.log(id);
       if (rest.href?.startsWith("https://twitter.com")) {
-        return <div />;
+        return <TweetEmbed id={id} />;
       } else {
         return (
           <a
@@ -89,7 +97,7 @@ const DevTO: React.FC<BlogProps> = (props) => {
         "1468899596730441730";
       console.log(id);
       if (rest.href?.startsWith("https://twitter.com")) {
-        return <div />;
+        return <TweetEmbed id={id} />;
       } else {
         return (
           <a
@@ -139,10 +147,11 @@ const DevTO: React.FC<BlogProps> = (props) => {
       );
     },
   };
+
   return (
     <div className="w-full h-full flex items-center justify-center">
       <div
-        className="w-[80%] lg:w-[40%] h-full px-2 py-5"
+        className="w-[95%] lg:w-[50%] h-full px-2 pb-5"
         style={{
           backgroundColor: props.theme?.bgColor,
           color: props.theme?.textColor,
@@ -172,7 +181,7 @@ const DevTO: React.FC<BlogProps> = (props) => {
             </div>
           </div>
         </div>
-        <h1 className="mt-7 mb-5 text-5xl font-extrabold">
+        <h1 className="mt-7 mb-5 text-5xl font-extrabold whitespace-wrap">
           {props.banner?.title}
         </h1>
         <div>

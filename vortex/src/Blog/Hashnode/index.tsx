@@ -142,7 +142,7 @@ const DevTO: React.FC<BlogProps> = (props) => {
   return (
     <div className="w-full h-full flex items-center justify-center">
       <div
-        className="w-[80%] lg:w-[40%] h-full px-2 py-5"
+        className="w-[80%] lg:w-[50%] h-full px-2 pb-5"
         style={{
           backgroundColor: props.theme?.bgColor,
           color: props.theme?.textColor,
