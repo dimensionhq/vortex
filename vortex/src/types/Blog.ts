@@ -118,11 +118,19 @@ export interface Theme {
   textColor?: string;
   inlineBgColor?: string;
 }
-
+export interface Reaction {
+  name: string;
+  upvotes: number;
+  emote: string;
+}
 export interface BlogProps {
   theme?: Theme;
   banner?: Banner;
   font?: string;
+  reactions?: {
+    reactions: Reaction[];
+    onClick: (val: string) => void;
+  };
   type?: "Default" | "DevTO" | "Hackernoon" | "Hashnode";
   content: string;
   codeblock?: {

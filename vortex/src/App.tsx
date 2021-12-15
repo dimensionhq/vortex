@@ -7,7 +7,29 @@ function App() {
         metadata={{
           date: "December 3, 2021",
         }}
-        type="DevTO"
+        reactions={{
+          onClick: (val: string) => {
+            return console.log(val);
+          },
+          reactions: [
+            {
+              upvotes: 5,
+              emote: "⚡",
+              name: "Zap",
+            },
+            {
+              upvotes: 6,
+              emote: "💯",
+              name: "100",
+            },
+            {
+              emote: "✨",
+              name: "Star",
+              upvotes: 7,
+            },
+          ],
+        }}
+        type="Hashnode"
         font="Inter, sans-serif"
         banner={{
           title: "Why You Should Keep a Programming Journal",
