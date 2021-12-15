@@ -131,7 +131,7 @@ export interface BlogProps {
     reactions: Reaction[];
     onClick: (val: string) => void;
   };
-  type?: "Default" | "DevTO" | "Hackernoon" | "Hashnode";
+  type?: "Default" | "DevTO" | "Hashnode";
   content: string;
   codeblock?: {
     theme: Themes;
