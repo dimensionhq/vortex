@@ -6,7 +6,7 @@ export const Reaction: React.FC<BlogProps> = (props) => {
   let [reaction_visible, set_reaction_visible] = useState(false);
 
   const setIsVisible = () => {
-    if (window.scrollY <= 300) {
+    if (window.scrollY <= 500) {
       set_reaction_visible(false);
     } else {
       set_reaction_visible(true);
