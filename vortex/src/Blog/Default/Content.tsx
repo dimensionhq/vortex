@@ -71,7 +71,7 @@ const Content: React.FC<BlogProps> = (props) => {
     p: ({ children }) => (
       <p
         style={{ color: props.theme?.inlineColor, whiteSpace: "initial" }}
-        className="mt-2 mb-2 text-xl leading-relaxed"
+        className="mt-2 mb-2 text-xl leading-relaxed break-all"
       >
         {children}
       </p>
@@ -197,7 +197,7 @@ const Content: React.FC<BlogProps> = (props) => {
               )}
             </h6>
           </div>
-          <div className="col-span-7 w-[40%] sm:w-[50%] md:w-[95%] lg:w-[100%]">
+          <div className="col-span-7 sm:w-[calc(100%-50%)] md:w-full">
             <ReactMarkdown rehypePlugins={[rehypeRaw]} components={components}>
               {props.content}
             </ReactMarkdown>

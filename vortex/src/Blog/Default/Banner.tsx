@@ -8,7 +8,7 @@ const Banner: React.FC<BlogProps> = (props) => {
         style={{ backgroundColor: props.theme?.primary }}
       >
         <img
-          className="w-[90%] 2xl:w-[50%]  relative top-11 md:top-32"
+          className="w-[95%] 2xl:w-[50%]  relative top-11 md:top-32"
           src={props.banner?.image?.src}
           style={{ borderRadius: props.banner?.image?.rounded ?? "5px" }}
           alt=""
