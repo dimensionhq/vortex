@@ -4,9 +4,26 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "turbo run dev --parallel",
+    "build": "turbo run build"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "turbo": {
+    "pipeline": {
+      "dev": {
+        "cache": true
+      },
+      "build": {
+        "dependsOn": [
+          "^build"
+        ],
+        "outputs": [".next/**", "dist/**"]
+      }
+    }
+  },
+  "devDependencies": {
+    "turbo": "^1.0.13"
+  }
 }

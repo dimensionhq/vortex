@@ -1,2 +1,5 @@
 /node_modules
 /vortex_old
+.turbo
+.next
+dist
