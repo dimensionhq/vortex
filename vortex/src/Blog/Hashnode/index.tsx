@@ -1,18 +1,19 @@
 import ReactMarkdown from "react-markdown";
 import { SpecialComponents } from "react-markdown/lib/ast-to-react";
 import { NormalComponents } from "react-markdown/lib/complex-types";
-import SyntaxHighlighter from "react-syntax-highlighter";
-import { BlogProps, Reaction } from "../../types/Blog";
-import * as themes from "react-syntax-highlighter/dist/esm/styles/hljs";
 import remarkGfm from "remark-gfm";
+import { BlogProps, Reaction } from "../../types/Blog";
+import SyntaxHighlighter from "react-syntax-highlighter";
+import * as themes from "react-syntax-highlighter/dist/esm/styles/hljs";
 import { useEffect, useState } from "react";
 
-const DevTO: React.FC<BlogProps> = (props) => {
+const Hashnode: React.FC<BlogProps> = (props) => {
   const options = {
     year: "numeric",
     month: "long",
     day: "numeric",
   };
+
   let [final_reactions, set_final_reactions] = useState<Reaction[][]>([]);
   useEffect(() => {
     let reactions_length = props.reactions?.reactions.length ?? 0;
@@ -160,74 +161,86 @@ const DevTO: React.FC<BlogProps> = (props) => {
     },
   };
   return (
-    <div className="w-full h-full flex flex-col lg:flex-row items-center justify-center">
-      <div className="flex items-center col-span-10 w-[100%] max-w-3xl">
-        <div
-          className="h-full px-2 pb-5 col-span-11"
-          style={{
-            backgroundColor: props.theme?.bgColor,
-            color: props.theme?.textColor,
-          }}
-        >
+    <div
+      className="w-full h-full max-w-5xl flex flex-col lg:flex-row justify-start"
+      style={{
+        background: props.theme?.bgColor,
+        color: props.theme?.textColor,
+      }}
+    >
+      <div className="w-full h-full lg:w-[75%] ">
+        <div className="flex flex-col gap-10">
           <img
             src={props.banner?.image?.src}
-            alt="Image"
+            alt={props.banner?.title}
+            className="mb-4"
             style={{ borderRadius: props.banner?.image?.rounded ?? "10px" }}
           />
-          <h1 className="mt-7 mb-5 text-5xl font-extrabold">
-            {props.banner?.title}
-          </h1>
+          <div className="flex items-start flex-col justify-center gap-1">
+            <h1
+              style={{ fontSize: props.banner?.subtitle ? "2rem" : "3rem" }}
+              className="font-extrabold"
+            >
+              {props.banner?.title}
+            </h1>
+            <h5 className="mt-0 text-2xl font-normal">
+              {props.banner?.subtitle}
+            </h5>
+          </div>
+
           <div
-            className="w-full mt-[32px] border-t border-b py-7"
-            style={{ borderColor: props.theme?.inlineColor }}
+            style={{ borderColor: props.theme?.inlineBgColor }}
+            className="px-1 py-3 border-b border-t flex items-center justify-start gap-5"
           >
-            <div className="flex items-center justify-start gap-3">
-              <img
-                width="64px"
-                style={{ borderRadius: "50%" }}
-                src={props.author.avatar}
-                alt=""
-              />
-              <div className="flex flex-col">
-                <h1 className="text-lg font-bold">{props.author.name}</h1>
-                <p
-                  style={{ color: props.theme?.inlineBgColor }}
-                  className="text-xs"
-                >
-                  Posted on {props.metadata.date}
-                </p>
-              </div>
+            <img
+              className="rounded-full"
+              src={props.author.avatar}
+              width="64px"
+              alt=""
+            />
+            <div className="flex items-start justify-center flex-col">
+              <h1 className="text-xl font-extrabold">{props.author.name}</h1>
+              <p className="text-sm">
+                Published on{" "}
+                <span className="font-extrabold">
+                  {new Date(props.metadata.date).toLocaleDateString(
+                    "en-US",
+                    options as any
+                  )}
+                </span>
+              </p>
             </div>
           </div>
-          <div className="mt-9">
-            <ReactMarkdown plugins={[remarkGfm]} components={components}>
-              {props.content}
-            </ReactMarkdown>
-          </div>
+
+          <ReactMarkdown plugins={[remarkGfm]} components={components}>
+            {props.content}
+          </ReactMarkdown>
         </div>
       </div>
-      <div className="col-span-2 w-full lg:w-[30%] h-full flex items-center justify-center lg:flex-col">
-        {final_reactions?.map((reactions, i) => (
-          <div className="grid grid-cols-2" key={i}>
-            {reactions.map((reaction) => (
-              <div
-                onClick={() => {
-                  props.reactions?.onClick(reaction.name);
-                }}
-                key={reaction.name}
-                className="text-2xl gap-2 flex items-center px-2 py-2 bg-opacity-30 hover:bg-slate-200 transition-all duration-100 rounded-md cursor-pointer col-span-1"
-              >
-                {reaction.emote}
-                <span className="text-lg font-semibold">
-                  {reaction.upvotes}
-                </span>
-              </div>
-            ))}
-          </div>
-        ))}
+      <div className="w-full lg:w-[150px] right-0 items-center justify-center">
+        <div className="w-auto col-span-2 lg:h-[100vh] lg:ml-[50px] lg:fixed lg:w-auto flex lg:flex-col items-center justify-center">
+          {final_reactions?.map((reactions, i) => (
+            <div className="grid grid-cols-2" key={i}>
+              {reactions.map((reaction) => (
+                <div
+                  onClick={() => {
+                    props.reactions?.onClick(reaction.name);
+                  }}
+                  key={reaction.name}
+                  className="text-2xl gap-2 flex items-center px-2 py-2 bg-opacity-30 hover:bg-slate-50 transition-all duration-100 rounded-md cursor-pointer col-span-1"
+                >
+                  {reaction.emote}
+                  <span className="text-lg font-semibold">
+                    {reaction.upvotes}
+                  </span>
+                </div>
+              ))}
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
 };
 
-export default DevTO;
+export default Hashnode;

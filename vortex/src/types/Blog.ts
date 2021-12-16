@@ -104,6 +104,8 @@ export interface Banner {
     src: string;
     rounded: string;
   };
+
+  subtitle?: string;
   category: {
     url: string;
     title: string;
@@ -121,7 +123,7 @@ export interface Theme {
 export interface Reaction {
   name: string;
   upvotes: number;
-  emote: string;
+  emote: string | JSX.Element;
 }
 export interface BlogProps {
   theme?: Theme;
@@ -135,7 +137,6 @@ export interface BlogProps {
   content: string;
   codeblock?: {
     theme: Themes;
-    carbon_sh?: boolean;
   };
   metadata: {
     date: string;
@@ -152,7 +153,6 @@ export const defaultProps: BlogProps = {
   font: "'Inter', sans-serif",
   codeblock: {
     theme: "atomOneDark",
-    carbon_sh: true,
   },
   metadata: {
     date: Date.now().toString(),

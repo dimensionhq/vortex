@@ -1,18 +1,20 @@
 import Blog from "./Blog/Blog";
 
+function Emote(): JSX.Element {
+  return (
+    <img
+      style={{ width: "28px" }}
+      src="https://blog.tiia.rocks/_next/image?url=https%3A%2F%2Fcdn.hashnode.com%2Fres%2Fhashnode%2Fimage%2Fupload%2Fv1594643793473%2FwxrlC2BFn.png%3Fh%3D64%26w%3D64%26fit%3Dcrop%26crop%3Dentropy%26auto%3Dcompress%26auto%3Dcompress%2Cformat%26format%3Dwebp&w=128&q=75"
+      alt=""
+    />
+  );
+}
+
 function App() {
   return (
-    <div
-      className="w-screen h-auto overflow-x-hidden"
-      style={{
-        fontFamily: "Inter",
-        fontSize: "1.125rem",
-        lineHeight: "1.7777778",
-        backgroundColor: "#19181a",
-      }}
-    >
+    <div className="w-full h-auto overflow-x-hidden">
       <Blog
-        type="Hashnode"
+        type="Default"
         author={{
           name: "Tiia",
           avatar:
@@ -21,6 +23,7 @@ function App() {
         theme={{
           bgColor: "#19181a",
           textColor: "#9ca3af",
+          inlineBgColor: "#424242",
         }}
         reactions={{
           onClick: (val: string) => {
@@ -29,7 +32,7 @@ function App() {
           reactions: [
             {
               upvotes: 5,
-              emote: "⚡",
+              emote: Emote(),
               name: "Zap",
             },
             {
@@ -47,6 +50,7 @@ function App() {
         font="Inter, sans-serif"
         banner={{
           title: "GitHub Copilot is here to stay",
+          subtitle: "A gimpse into the AI-Future that we can expect",
           category: {
             title: "",
             url: "",
