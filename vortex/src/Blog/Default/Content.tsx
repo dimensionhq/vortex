@@ -163,11 +163,15 @@ const Content: React.FC<BlogProps> = (props) => {
       >
         {props.banner?.category.title}
       </a>
-      <h1
-        className={`uppercase mt-0text-2xl font-black xl:text-5xl md:text-4xl`}
-      >
-        {props.banner?.title}
-      </h1>
+      <div className="flex items-start flex-col justify-center gap-1 mt-4 mb-8">
+        <h1
+          style={{ fontSize: props.banner?.subtitle ? "3rem" : "3rem" }}
+          className="font-extrabold mb-0"
+        >
+          {props.banner?.title}
+        </h1>
+        <h5 className="mt-0 text-2xl font-normal">{props.banner?.subtitle}</h5>
+      </div>
       <div className="mt-8 sm:mt-10 md:mt-20 xl:mt-20 2xl:mt-20">
         <div className="flex grid-cols-12  md:grid justify-start flex-col">
           <div className="col-span-2 flex items-start justify-start flex-col">
