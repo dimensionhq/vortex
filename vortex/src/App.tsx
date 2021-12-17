@@ -14,7 +14,7 @@ function App() {
   return (
     <div className="w-full h-auto overflow-x-hidden">
       <Blog
-        type="Hashnode"
+        layout="Hashnode"
         author={{
           name: "Tiia",
           avatar:
@@ -23,11 +23,11 @@ function App() {
         theme={{
           bgColor: "#19181a",
           textColor: "#9ca3af",
-          inlineBgColor: "#424242",
+          inlineBgColor: "#ebebeb",
         }}
         reactions={{
-          onClick: (val: string) => {
-            return console.log(val);
+          onClick: (val: string, upvote: boolean) => {
+            return console.log(val, upvote);
           },
           reactions: [
             {
@@ -47,22 +47,20 @@ function App() {
             },
           ],
         }}
-        font="Inter, sans-serif"
-        banner={{
+        // font="Inter, sans-serif"
+        header={{
           title: "GitHub Copilot is here to stay",
           subtitle: "A gimpse into the AI-Future that we can expect",
           category: {
-            title: "",
-            url: "",
+            title: "A",
+            url: "B",
           },
           image: {
-            rounded: "0px",
+            borderRadius: "0px",
             src: "https://blog.tiia.rocks/_next/image?url=https%3A%2F%2Fcdn.hashnode.com%2Fres%2Fhashnode%2Fimage%2Fupload%2Fv1638892097010%2FgRkRvLXQh.png%3Fw%3D1600%26h%3D840%26fit%3Dcrop%26crop%3Dentropy%26auto%3Dcompress%2Cformat%26format%3Dwebp&w=1920&q=75",
           },
         }}
-        metadata={{
-          date: "Dec 7, 2021",
-        }}
+        date="Dec 7, 2021"
         content={`
 AI used to be a buzzword, Just as Crypto or Blockchain is today. It was thrown around inflationary until everyone knew the term but did not really know what it was all about. But mentioning AI made everything new, shiny, modern, and sounded really successful. Products were meant to have AI as a marketing stunt while not really including the AI they overpromised.
 
@@ -96,8 +94,8 @@ I did write two lines of comments at the bottom of the code I previously wrote, 
 
 \`\`\`py
 with open("data.html", "w") as file:
-    file.write("<html>\\n")
-    file.write("<head>\\n")
+    file.write("<html>\n")
+    file.write("<head>\n")
     file.write(
         "<script type=\"text/javascript\" src=\"https://www.gstatic.com/charts/loader.js\"></script>\\n")
     file.write("<script type=\"text/javascript\">\\n")
@@ -148,6 +146,7 @@ I did tweet about my experience cause I was mind blown about the solution and th
 
 ## Codepen embeds
 [lol](https://codepen.io/alvaromontoro/pen/vYexLGV)
+
 I am excited about how it will help me learn and progress. **But I also want to formally apologize to Copilot for making it depressed after feeding it a whole file full of Squidward Q. Tentacles quotes. The autocompletion made me feel like a terrible person.**
 
 ![lol](https://cdn.hashnode.com/res/hashnode/image/upload/v1638906382303/jj3dEbbYC.png?auto=compress,format&format=webp)

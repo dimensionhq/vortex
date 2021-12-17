@@ -102,7 +102,7 @@ type Themes =
 export interface Banner {
   image?: {
     src: string;
-    rounded: string;
+    borderRadius: string;
   };
 
   subtitle?: string;
@@ -115,35 +115,41 @@ export interface Banner {
 export interface Theme {
   primary?: string;
   bgColor?: string;
-  inlineColor?: string;
+  textHeaderColor?: string;
+  dateColor?: string;
+  inlineTextColor?: string;
   linkColor?: string;
   textColor?: string;
   inlineBgColor?: string;
+  twitter?: {
+    theme?: "light" | "dark";
+  };
 }
 export interface Reaction {
   name: string;
+  upvoted?: boolean;
   upvotes: number;
   emote: string | JSX.Element;
 }
 export interface BlogProps {
   theme?: Theme;
-  banner?: Banner;
-  font?: string;
+  header?: Banner;
+  font?: {
+    header: string;
+    body: string;
+    title: string;
+    category: string;
+  };
   reactions?: {
     reactions: Reaction[];
-    onClick: (val: string) => void;
+    onClick: (val: string, upvote: boolean) => void;
   };
-  type?: "Default" | "DevTO" | "Hashnode";
+  layout: "Default" | "DevTO" | "Hashnode";
   content: string;
   codeblock?: {
     theme: Themes;
   };
-  metadata: {
-    date: string;
-    twitter?:{
-      theme?: "light" | "dark";
-    }
-  };
+  date?: string;
   author: {
     name: string;
     avatar: string;
@@ -152,28 +158,27 @@ export interface BlogProps {
 
 export const defaultProps: BlogProps = {
   content: "",
-  type: "Default",
-  font: "'Inter', sans-serif",
+  layout: "Default",
+  font: { body: "'Inter', sans-serif" },
   codeblock: {
     theme: "atomOneDark",
   },
-  metadata: {
-    twitter: {
-      theme: "dark",
-    },
-    date: Date.now().toString(),
-  },
+  date: Date.now().toString(),
   author: {
     avatar: "",
     name: "",
   },
   theme: {
     textColor: "black",
+    twitter: {
+      theme: "dark",
+    },
     primary: "#23272a",
-    inlineColor: "#333",
+    dateColor: "white",
+    inlineTextColor: "#333",
     bgColor: "white",
     linkColor: "#5862f2",
-    inlineBgColor: "#7c7c7c",
+    inlineBgColor: "#ebebeb",
   },
-  banner: undefined,
+  header: undefined,
 };

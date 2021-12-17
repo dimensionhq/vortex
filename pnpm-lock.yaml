@@ -13,13 +13,16 @@ importers:
       '@types/node': ^16.11.12
       '@types/react': ^17.0.33
       '@types/react-dom': ^17.0.10
+      '@types/react-embed-gist': ^1.0.0
       '@types/react-syntax-highlighter': ^13.5.2
       '@vitejs/plugin-react': ^1.0.7
       autoprefixer: ^10.4.0
       github-markdown-css: ^5.1.0
       postcss: ^8.4.4
       react: ^17.0.2
+      react-codepen-embed: ^1.0.2
       react-dom: ^17.0.2
+      react-embed-gist: ^1.0.12
       react-helmet: ^6.1.0
       react-markdown: ^7.1.1
       react-seo-component: ^2.0.2
@@ -33,9 +36,12 @@ importers:
       vite: ^2.7.0
       vite-plugin-dts: ^0.9.6
     dependencies:
+      '@types/react-embed-gist': 1.0.0
       github-markdown-css: 5.1.0
       react: 17.0.2
+      react-codepen-embed: 1.0.2_react@17.0.2
       react-dom: 17.0.2_react@17.0.2
+      react-embed-gist: 1.0.12
       react-helmet: 6.1.0_react@17.0.2
       react-markdown: 7.1.1_cfedea9b3ed0faf0dded75c187406c5e
       react-seo-component: 2.0.2_react-helmet@6.1.0+react@17.0.2
@@ -423,13 +429,18 @@ packages:
 
   /@types/prop-types/15.7.4:
     resolution: {integrity: sha512-rZ5drC/jWjrArrS8BR6SIr4cWpW09RNTYt9AMZo3Jwwif+iacXAqgVjm0B0Bv/S1jhDXKHqRVNCbACkJ89RAnQ==}
-    dev: true
 
   /@types/react-dom/17.0.11:
     resolution: {integrity: sha512-f96K3k+24RaLGVu/Y2Ng3e1EbZ8/cVJvypZWd7cy0ofCBaf2lcM46xNhycMZ2xGwbBjRql7hOlZ+e2WlJ5MH3Q==}
     dependencies:
       '@types/react': 17.0.37
     dev: true
+
+  /@types/react-embed-gist/1.0.0:
+    resolution: {integrity: sha512-wGr7XP6/cRMzkOFh/BqxybyANPW9/1VkqylWgWy+j8hcm4w3fAFq2D1he+WP9GzxPGkhFG+u3h6geo5cyas1xA==}
+    dependencies:
+      '@types/react': 17.0.37
+    dev: false
 
   /@types/react-syntax-highlighter/13.5.2:
     resolution: {integrity: sha512-sRZoKZBGKaE7CzMvTTgz+0x/aVR58ZYUTfB7HN76vC+yQnvo1FWtzNARBt0fGqcLGEVakEzMu/CtPzssmanu8Q==}
@@ -443,11 +454,9 @@ packages:
       '@types/prop-types': 15.7.4
       '@types/scheduler': 0.16.2
       csstype: 3.0.10
-    dev: true
 
   /@types/scheduler/0.16.2:
     resolution: {integrity: sha512-hppQEBDmlwhFAXKJX2KnWLYu5yMfi91yazPb2l+lbJiwW+wdo1gNeRA+3RgNSO39WYX2euey41KEwnqesU2Jew==}
-    dev: true
 
   /@types/unist/2.0.6:
     resolution: {integrity: sha512-PBjIUxZHOuj0R15/xuwJYjFi+KZdNFrehocChv4g5hu6aFroHue8m0lBP0POdK2nKzbw0cgV1mws8+V/JAcEkQ==}
@@ -707,7 +716,6 @@ packages:
 
   /csstype/3.0.10:
     resolution: {integrity: sha512-2u44ZG2OcNUO9HDp/Jl8C07x6pU/eTR3ncV91SiK3dhG9TWvRVsCoJw14Ckx5DgWkzGA3waZWO3d7pgqpUI/XA==}
-    dev: true
 
   /debug/4.3.3:
     resolution: {integrity: sha512-/zxw5+vh1Tfv+4Qn7a5nsbcJKPaSvCDhojn6FEl9vupwK2VCSDtEiEtqr8DFtzYFOdz63LBkxec7DYuc2jon6Q==}
@@ -1959,6 +1967,15 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
+  /react-codepen-embed/1.0.2_react@17.0.2:
+    resolution: {integrity: sha512-yHIlU2yI/Pv+3Gx1zPn5ReuIRK9xa7uBQgwUNb6V/i26fOBtoIhgcU8iEJQ++s+T62DKHI+lKRtDg8GxGIfA4A==}
+    peerDependencies:
+      react: ^16.8.0
+    dependencies:
+      prop-types: 15.7.2
+      react: 17.0.2
+    dev: false
+
   /react-dom/17.0.2_react@17.0.2:
     resolution: {integrity: sha512-s4h96KtLDUQlsENhMn1ar8t2bEa+q/YAtj8pPPdIjPDGBDIVNsrD9aXNWqspUe6AzKCIG0C1HZZLqLV7qpOBGA==}
     peerDependencies:
@@ -1968,6 +1985,12 @@ packages:
       object-assign: 4.1.1
       react: 17.0.2
       scheduler: 0.20.2
+    dev: false
+
+  /react-embed-gist/1.0.12:
+    resolution: {integrity: sha512-NcKsv5UKtHtzx8mDfi6L+3ZB76SUAw2paXuv48+0KnDNwiLwh5gK1gEf7wnfXie18Quq/VBu4mUf0wOajIM3bA==}
+    dependencies:
+      react: 17.0.2
     dev: false
 
   /react-fast-compare/3.2.0:

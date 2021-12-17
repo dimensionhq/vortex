@@ -18,7 +18,7 @@ const Github: React.FC<BlogProps> = (props) => {
   > = {
     h1: ({ children }) => (
       <h1
-        style={{ color: props.theme?.inlineColor }}
+        style={{ color: props.theme?.inlineTextColor }}
         className="text-2xl font-extrabold xl:text-5xl md:text-4xl mt-1 mb-2"
       >
         {children}
@@ -26,7 +26,7 @@ const Github: React.FC<BlogProps> = (props) => {
     ),
     h2: ({ children }) => (
       <h2
-        style={{ color: props.theme?.inlineColor }}
+        style={{ color: props.theme?.inlineTextColor }}
         className="text-xl font-bold xl:text-2xl md:text-3xl 2xl:text-3xl mt-2 mb-3"
       >
         {children}
@@ -34,7 +34,7 @@ const Github: React.FC<BlogProps> = (props) => {
     ),
     h3: ({ children }) => (
       <h3
-        style={{ color: props.theme?.inlineColor }}
+        style={{ color: props.theme?.inlineTextColor }}
         className="text-lg font-bold xl:text-xl md:text-2xl 2xl:text-2xl mt-2 mb-3"
       >
         {children}
@@ -42,7 +42,7 @@ const Github: React.FC<BlogProps> = (props) => {
     ),
     h4: ({ children }) => (
       <h4
-        style={{ color: props.theme?.inlineColor }}
+        style={{ color: props.theme?.inlineTextColor }}
         className="text-base font-bold xl:text-lg md:text-xl 2xl:text-xl"
       >
         {children}
@@ -50,7 +50,7 @@ const Github: React.FC<BlogProps> = (props) => {
     ),
     h5: ({ children }) => (
       <h5
-        style={{ color: props.theme?.inlineColor }}
+        style={{ color: props.theme?.inlineTextColor }}
         className="text-sm font-bold xl:text-base md:text-lg 2xl:text-lg"
       >
         {children}
@@ -58,7 +58,7 @@ const Github: React.FC<BlogProps> = (props) => {
     ),
     h6: ({ children }) => (
       <h6
-        style={{ color: props.theme?.inlineColor }}
+        style={{ color: props.theme?.inlineTextColor }}
         className="text-xs font-bold xl:text-sm md:text-base 2xl:text-lgx"
       >
         {children}
@@ -91,12 +91,13 @@ const Github: React.FC<BlogProps> = (props) => {
       return !inline && match ? (
         // @ts-expect-error
         <SyntaxHighlighter
-          children={String(children).replace(/\n$/, "")}
+          children={String(children)}
           customStyle={{
             borderRadius: "5px",
             width: "auto",
+            padding: "0px",
             overflow: "auto",
-            margin: "0px 5px 0px 5px",
+            margin: "0px 0px 0px 5px",
           }}
           // @ts-expect-error
           style={{ ...themes[theme] }}
@@ -132,7 +133,7 @@ const Github: React.FC<BlogProps> = (props) => {
     >
       <div className="w-[95%] xl:w-[50%] h-auto">
         <div className="w-full flex items-center justify-center relative">
-          <img src={props.banner?.image?.src} alt="" />
+          <img src={props.header?.image?.src} alt="" />
         </div>
         <div className="mt-14 xl:mt-28 w-full h-auto">
           <div className="w-full flex items-center gap-5">
@@ -147,15 +148,13 @@ const Github: React.FC<BlogProps> = (props) => {
             </p>
             <a
               className="text-sm hover:text-blue-500"
-              href={props.banner?.category.url}
+              href={props.header?.category.url}
               style={{ color: props.theme?.inlineBgColor }}
             >
-              {props.banner?.category.title}
+              {props.header?.category.title}
             </a>
           </div>
-          <h1 className="text-3xl font-bold md:text-5xl mt-9">
-            {props.banner?.title}
-          </h1>
+          <h1 className="text-3xl font-bold md:text-5xl mt-9">{props.title}</h1>
         </div>
         <div className="flex w-full items-center justify-start mt-5 gap-4">
           <img

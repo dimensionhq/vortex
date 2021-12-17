@@ -8,11 +8,11 @@ import SEO from "react-seo-component";
 const SEOComponent: React.FC<BlogProps> = (props) => {
   return (
     <SEO
-      description={props.banner?.title ?? ""}
-      title={props.banner?.title ?? ""}
-      image={props.banner?.image?.src}
+      description={props.header?.title ?? ""}
+      title={props.header?.title ?? ""}
+      image={props.header?.image?.src}
       author={props.author.avatar}
-      datePublished={props.metadata.date}
+      datePublished={props.date}
       article={true}
       titleTemplate={""}
       pathname={""}
@@ -26,30 +26,30 @@ const SEOComponent: React.FC<BlogProps> = (props) => {
 const Blog: React.FC<BlogProps> = (props) => {
   const blog_props: BlogProps = { ...defaultProps, ...props };
   console.log(blog_props);
-  if (blog_props.type === "Default") {
+  if (blog_props.layout === "Default") {
     return (
-      <div className="w-full h-full" style={{ fontFamily: props.font }}>
+      <div className="w-full h-full" style={{ fontFamily: props.font?.body }}>
         <SEOComponent {...blog_props}></SEOComponent>
         <Default {...blog_props} />
       </div>
     );
-  } else if (blog_props.type === "DevTO") {
+  } else if (blog_props.layout === "DevTO") {
     return (
-      <div className="w-full h-full" style={{ fontFamily: props.font }}>
+      <div className="w-full h-full" style={{ fontFamily: props.font?.body }}>
         <SEOComponent {...blog_props}></SEOComponent>
         <DevTO {...blog_props} />
       </div>
     );
-  } else if (blog_props.type === "Hashnode") {
+  } else if (blog_props.layout === "Hashnode") {
     return (
-      <div className="w-full h-full" style={{ fontFamily: props.font }}>
+      <div className="w-full h-full" style={{ fontFamily: props.font?.body }}>
         <SEOComponent {...blog_props}></SEOComponent>
         <Hashnode {...blog_props} />
       </div>
     );
   } else {
     return (
-      <div className="w-full h-full" style={{ fontFamily: props.font }}>
+      <div className="w-full h-full" style={{ fontFamily: props.font?.body }}>
         <SEOComponent {...blog_props}></SEOComponent>
         <Default {...blog_props} />
       </div>

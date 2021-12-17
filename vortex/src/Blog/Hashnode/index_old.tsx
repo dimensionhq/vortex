@@ -33,7 +33,7 @@ const DevTO: React.FC<BlogProps> = (props) => {
   > = {
     h1: ({ children }) => (
       <h1
-        style={{ color: props.theme?.inlineColor }}
+        style={{ color: props.theme?.inlineTextColor }}
         className="text-2xl font-extrabold xl:text-[2.75rem] 2xl:text-[2.75rem] md:text-4xl mt-4 mb-2"
       >
         {children}
@@ -41,7 +41,7 @@ const DevTO: React.FC<BlogProps> = (props) => {
     ),
     h2: ({ children }) => (
       <h2
-        style={{ color: props.theme?.inlineColor }}
+        style={{ color: props.theme?.inlineTextColor }}
         className="text-xl font-bold xl:text-2xl md:text-3xl 2xl:text-3xl mt-2 mb-3"
       >
         {children}
@@ -49,7 +49,7 @@ const DevTO: React.FC<BlogProps> = (props) => {
     ),
     h3: ({ children }) => (
       <h3
-        style={{ color: props.theme?.inlineColor }}
+        style={{ color: props.theme?.inlineTextColor }}
         className="text-lg font-bold xl:text-xl md:text-2xl 2xl:text-2xl mt-2 mb-3"
       >
         {children}
@@ -57,7 +57,7 @@ const DevTO: React.FC<BlogProps> = (props) => {
     ),
     h4: ({ children }) => (
       <h4
-        style={{ color: props.theme?.inlineColor }}
+        style={{ color: props.theme?.inlineTextColor }}
         className="text-base font-bold xl:text-lg md:text-xl 2xl:text-xl"
       >
         {children}
@@ -65,7 +65,7 @@ const DevTO: React.FC<BlogProps> = (props) => {
     ),
     h5: ({ children }) => (
       <h5
-        style={{ color: props.theme?.inlineColor }}
+        style={{ color: props.theme?.inlineTextColor }}
         className="text-sm font-bold xl:text-base md:text-lg 2xl:text-lg"
       >
         {children}
@@ -73,7 +73,7 @@ const DevTO: React.FC<BlogProps> = (props) => {
     ),
     h6: ({ children }) => (
       <h6
-        style={{ color: props.theme?.inlineColor }}
+        style={{ color: props.theme?.inlineTextColor }}
         className="text-xs font-bold xl:text-sm md:text-base 2xl:text-lgx"
       >
         {children}
@@ -170,16 +170,16 @@ const DevTO: React.FC<BlogProps> = (props) => {
           }}
         >
           <img
-            src={props.banner?.image?.src}
+            src={props.header?.image?.src}
             alt="Image"
-            style={{ borderRadius: props.banner?.image?.rounded ?? "10px" }}
+            style={{
+              borderRadius: props.header?.image?.borderRadius ?? "10px",
+            }}
           />
-          <h1 className="mt-7 mb-5 text-5xl font-extrabold">
-            {props.banner?.title}
-          </h1>
+          <h1 className="mt-7 mb-5 text-5xl font-extrabold">{props.title}</h1>
           <div
             className="w-full mt-[32px] border-t border-b py-7"
-            style={{ borderColor: props.theme?.inlineColor }}
+            style={{ borderColor: props.theme?.inlineTextColor }}
           >
             <div className="flex items-center justify-start gap-3">
               <img
