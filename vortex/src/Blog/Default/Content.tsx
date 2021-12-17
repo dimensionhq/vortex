@@ -10,6 +10,9 @@ import TweetEmbed from "react-tweet-embed";
 import rehypeRaw from "rehype-raw";
 import React from "react";
 import Reaction from "./Reaction";
+import ReactEmbedGist from 'react-embed-gist';
+// @ts-expect-error
+import Codepen from "react-codepen-embed";
 
 const Content: React.FC<BlogProps> = (props) => {
   const options = {
@@ -78,13 +81,30 @@ const Content: React.FC<BlogProps> = (props) => {
       </p>
     ),
     link: ({ children, ...rest }) => {
-      let id =
-        rest.href?.match(/twitter.com\/.*\/([0-9]+).*/) ??
-        "1468899596730441730";
-      console.log(id);
       if (rest.href?.startsWith("https://twitter.com")) {
-        return <TweetEmbed id={id[1]} options={{themes: props.metadata.twitter?.theme}} />;
-      } else {
+        let id =
+          rest.href?.match(/twitter.com\/.*\/([0-9]+).*/) ??
+          "1468899596730441730";
+        return <TweetEmbed id={id[1]} options={{ theme: props.metadata.twitter?.theme ?? "dark" }} />;
+      } else if (rest.href?.startsWith("https://gist.github.com")) {
+        let id = rest.href?.match(/gist.github.com\/(.*\/[(\w)+].*)(#[(\w)+].*)/) ?? ["", "c332ab20f5b721a0828759d70a52b986", "#file-discord-ex"]
+        return (
+          <ReactEmbedGist
+            gist={id[1] as any}
+            wrapperClass="gist__bash"
+            loadingClass="loading__screen"
+            titleClass="gist__title"
+            errorClass="gist__error"
+            contentClass="gist__content"
+            file={id[2]}
+          />
+        )
+      } else if (rest.href?.startsWith("https://codepen.io/")){
+        let id = rest.href?.match(/codepen.io\/([(\w)+]*.)\/pen\/([(\w)+]*.)/) ?? ["", "alvaromontoro", "vYexLGV"]
+        return (
+           <Codepen hash={id[2]} user={id[1]} />
+        )
+      }else {
         return (
           <a
             href={rest.href}
@@ -97,13 +117,30 @@ const Content: React.FC<BlogProps> = (props) => {
       }
     },
     a: ({ children, ...rest }) => {
-      let id =
-        rest.href?.match(/twitter.com\/.*\/([0-9]+).*/) ??
-        "1468899596730441730";
-      console.log(id);
       if (rest.href?.startsWith("https://twitter.com")) {
-        return <TweetEmbed id={id[1]} options={{theme: props.metadata.twitter?.theme ?? "dark"}} />;
-      } else {
+        let id =
+          rest.href?.match(/twitter.com\/.*\/([0-9]+).*/) ??
+          "1468899596730441730";
+        return <TweetEmbed id={id[1]} options={{ theme: props.metadata.twitter?.theme ?? "dark" }} />;
+      } else if (rest.href?.startsWith("https://gist.github.com")) {
+        let id = rest.href?.match(/gist.github.com\/(.*\/[(\w)+].*)(#[(\w)+].*)/) ?? ["", "c332ab20f5b721a0828759d70a52b986", "#file-discord-ex"]
+        return (
+          <ReactEmbedGist
+            gist={id[1] as any}
+            wrapperClass="gist__bash"
+            loadingClass="loading__screen"
+            titleClass="gist__title"
+            errorClass="gist__error"
+            contentClass="gist__content"
+            file={id[2]}
+          />
+        )
+      } else if (rest.href?.startsWith("https://codepen.io/")){
+        let id = rest.href?.match(/codepen.io\/([(\w)+]*.)\/pen\/([(\w)+]*.)/) ?? ["", "alvaromontoro", "vYexLGV"]
+        return (
+           <Codepen hash={id[2]} user={id[1]} />
+        )
+      }else {
         return (
           <a
             href={rest.href}
@@ -116,12 +153,12 @@ const Content: React.FC<BlogProps> = (props) => {
       }
     },
     code({ node, inline, className, children, ...propso2 }) {
-      const match = /language-(\w+)/.exec(className || "");
+      const match = /language-(\w+)/.exec(className || "") ?? "default";
       const theme: string = props.codeblock?.theme as any;
       return !inline && match ? (
         // @ts-expect-error
         <SyntaxHighlighter
-          children={String(children).replace(/\n$/, "")}
+          children={String(children)}
           customStyle={{
             borderRadius: "5px",
             width: "auto",

@@ -14,7 +14,7 @@ function App() {
   return (
     <div className="w-full h-auto overflow-x-hidden">
       <Blog
-        type="Default"
+        type="Hashnode"
         author={{
           name: "Tiia",
           avatar:
@@ -94,36 +94,36 @@ I did write two lines of comments at the bottom of the code I previously wrote, 
 
 **And this is what Copilot came up with:**
 
-\`\`\`python
+\`\`\`py
 with open("data.html", "w") as file:
-    file.write("<html>\n")
-    file.write("<head>\n")
+    file.write("<html>\\n")
+    file.write("<head>\\n")
     file.write(
-        "<script type=\"text/javascript\" src=\"https://www.gstatic.com/charts/loader.js\"></script>\n")
-    file.write("<script type=\"text/javascript\">\n")
-    file.write("google.charts.load('current', {'packages':['bar']});\n")
-    file.write("google.charts.setOnLoadCallback(drawChart);\n")
-    file.write("function drawChart() {\n")
-    file.write("var data = google.visualization.arrayToDataTable([\n")
-    file.write("['Month', 'Subscriber'],\n")
+        "<script type=\"text/javascript\" src=\"https://www.gstatic.com/charts/loader.js\"></script>\\n")
+    file.write("<script type=\"text/javascript\">\\n")
+    file.write("google.charts.load('current', {'packages':['bar']});\\n")
+    file.write("google.charts.setOnLoadCallback(drawChart);\\n")
+    file.write("function drawChart() {\\n")
+    file.write("var data = google.visualization.arrayToDataTable([\\n")
+    file.write("['Month', 'Subscriber'],\\n")
     for key, value in subscriber.items():
-        file.write("['{}', {}],\n".format(key, value))
-    file.write("]);\n")
-    file.write("var options = {\n")
-    file.write("chart: {title: 'Subscriber count by month'},\n")
-    file.write("bars: 'vertical'\n")
-    file.write("};\n")
+        file.write("['{}', {}],\\n".format(key, value))
+    file.write("]);\\n")
+    file.write("var options = {\\n")
+    file.write("chart: {title: 'Subscriber count by month'},\\n")
+    file.write("bars: 'vertical'\\n")
+    file.write("};\\n")
     file.write(
-        "var chart = new google.charts.Bar(document.getElementById('chart_div'));\n")
-    file.write("chart.draw(data, options);\n")
-    file.write("}\n")
-    file.write("</script>\n")
-    file.write("</head>\n")
-    file.write("<body>\n")
+        "var chart = new google.charts.Bar(document.getElementById('chart_div'));\\n")
+    file.write("chart.draw(data, options);\\n")
+    file.write("}\\n")
+    file.write("</script>\\n")
+    file.write("</head>\\n")
+    file.write("<body>\\n")
     file.write(
-        "<div id=\"chart_div\" style=\"width: 900px; height: 500px;\"></div>\n")
-    file.write("</body>\n")
-    file.write("</html>\n")
+        "<div id=\"chart_div\" style=\"width: 900px; height: 500px;\"></div>\\n")
+    file.write("</body>\\n")
+    file.write("</html>\\n")
 \`\`\`
 
 Which presented me this:
@@ -142,7 +142,12 @@ I did tweet about my experience cause I was mind blown about the solution and th
 
 [ehh](https://twitter.com/TiiaAurora/status/1467698228963463178?ref_src=twsrc%5Etfw%7Ctwcamp%5Etweetembed%7Ctwterm%5E1467698228963463178%7Ctwgr%5E%7Ctwcon%5Es1_&ref_url=https%3A%2F%2Fblog.tiia.rocks%2Fgithub-copilot-is-here-to-stay)
 
+## Github embeds
 
+[lmao](https://gist.github.com/DiscordBlog/c332ab20f5b721a0828759d70a52b986#file-discord.ex)
+
+## Codepen embeds
+[lol](https://codepen.io/alvaromontoro/pen/vYexLGV)
 I am excited about how it will help me learn and progress. **But I also want to formally apologize to Copilot for making it depressed after feeding it a whole file full of Squidward Q. Tentacles quotes. The autocompletion made me feel like a terrible person.**
 
 ![lol](https://cdn.hashnode.com/res/hashnode/image/upload/v1638906382303/jj3dEbbYC.png?auto=compress,format&format=webp)
