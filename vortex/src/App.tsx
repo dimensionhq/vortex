@@ -140,7 +140,7 @@ And while it seems cheaty to some. It's nothing else than a mentor, teacher, fri
 
 I did tweet about my experience cause I was mind blown about the solution and that tweet won a lot of traction within the tech twitter community. Some mentioned they fear being replaced by AI at some point but others see the possibility for a more efficient workflow. It feels uncanny but also exciting. And I think that's the main feeling AI - well-made AI - leaves behind.
 
-![ehh](https://twitter.com/TiiaAurora/status/1467698228963463178?ref_src=twsrc%5Etfw%7Ctwcamp%5Etweetembed%7Ctwterm%5E1467698228963463178%7Ctwgr%5E%7Ctwcon%5Es1_&ref_url=https%3A%2F%2Fblog.tiia.rocks%2Fgithub-copilot-is-here-to-stay)
+[ehh](https://twitter.com/TiiaAurora/status/1467698228963463178?ref_src=twsrc%5Etfw%7Ctwcamp%5Etweetembed%7Ctwterm%5E1467698228963463178%7Ctwgr%5E%7Ctwcon%5Es1_&ref_url=https%3A%2F%2Fblog.tiia.rocks%2Fgithub-copilot-is-here-to-stay)
 
 
 I am excited about how it will help me learn and progress. **But I also want to formally apologize to Copilot for making it depressed after feeding it a whole file full of Squidward Q. Tentacles quotes. The autocompletion made me feel like a terrible person.**

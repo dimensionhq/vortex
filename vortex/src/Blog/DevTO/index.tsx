@@ -6,6 +6,7 @@ import { BlogProps, Reaction } from "../../types/Blog";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import * as themes from "react-syntax-highlighter/dist/esm/styles/hljs";
 import { useEffect, useState } from "react";
+import TweetEmbed from "react-tweet-embed";
 
 const Hashnode: React.FC<BlogProps> = (props) => {
   const options = {
@@ -87,11 +88,11 @@ const Hashnode: React.FC<BlogProps> = (props) => {
     ),
     link: ({ children, ...rest }) => {
       let id =
-        rest.href?.match(/twitter.com\/.*\/([0-9]+).*/)?.toString() ??
+        rest.href?.match(/twitter.com\/.*\/([0-9]+).*/) ??
         "1468899596730441730";
       console.log(id);
       if (rest.href?.startsWith("https://twitter.com")) {
-        return <div />;
+        return <TweetEmbed id={id[1]} options={{theme: props.metadata.twitter?.theme}} />;
       } else {
         return (
           <a
@@ -106,11 +107,11 @@ const Hashnode: React.FC<BlogProps> = (props) => {
     },
     a: ({ children, ...rest }) => {
       let id =
-        rest.href?.match(/twitter.com\/.*\/([0-9]+).*/)?.toString() ??
+        rest.href?.match(/twitter.com\/.*\/([0-9]+).*/) ??
         "1468899596730441730";
       console.log(id);
       if (rest.href?.startsWith("https://twitter.com")) {
-        return <div />;
+        return <TweetEmbed id={id[1]} options={{theme: props.metadata.twitter?.theme}} />;
       } else {
         return (
           <a

@@ -10,6 +10,7 @@ import TweetEmbed from "react-tweet-embed";
 import rehypeRaw from "rehype-raw";
 import React from "react";
 import Reaction from "./Reaction";
+
 const Content: React.FC<BlogProps> = (props) => {
   const options = {
     year: "numeric",
@@ -78,11 +79,11 @@ const Content: React.FC<BlogProps> = (props) => {
     ),
     link: ({ children, ...rest }) => {
       let id =
-        rest.href?.match(/twitter.com\/.*\/([0-9]+).*/)?.toString() ??
+        rest.href?.match(/twitter.com\/.*\/([0-9]+).*/) ??
         "1468899596730441730";
       console.log(id);
       if (rest.href?.startsWith("https://twitter.com")) {
-        return <TweetEmbed id={id} />;
+        return <TweetEmbed id={id[1]} options={{themes: props.metadata.twitter?.theme}} />;
       } else {
         return (
           <a
@@ -97,11 +98,11 @@ const Content: React.FC<BlogProps> = (props) => {
     },
     a: ({ children, ...rest }) => {
       let id =
-        rest.href?.match(/twitter.com\/.*\/([0-9]+).*/)?.toString() ??
+        rest.href?.match(/twitter.com\/.*\/([0-9]+).*/) ??
         "1468899596730441730";
       console.log(id);
       if (rest.href?.startsWith("https://twitter.com")) {
-        return <TweetEmbed id={id} />;
+        return <TweetEmbed id={id[1]} options={{theme: props.metadata.twitter?.theme ?? "dark"}} />;
       } else {
         return (
           <a

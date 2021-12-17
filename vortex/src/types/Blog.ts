@@ -140,6 +140,9 @@ export interface BlogProps {
   };
   metadata: {
     date: string;
+    twitter?:{
+      theme?: "light" | "dark";
+    }
   };
   author: {
     name: string;
@@ -155,6 +158,9 @@ export const defaultProps: BlogProps = {
     theme: "atomOneDark",
   },
   metadata: {
+    twitter: {
+      theme: "dark",
+    },
     date: Date.now().toString(),
   },
   author: {
