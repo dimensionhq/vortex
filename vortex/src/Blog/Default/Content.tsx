@@ -40,7 +40,7 @@ const Content: React.FC<BlogProps> = (props) => {
           color: props.theme?.textHeaderColor,
           fontFamily: props.font?.header,
         }}
-        className="text-xl font-bold xl:text-3xl md:text-3xl 2xl:text-3xl mt-7 mb-3"
+        className="text-xl font-bold xl:text-3xl md:text-3xl 2xl:text-3xl mt-9 mb-3"
       >
         {children}
       </h2>
