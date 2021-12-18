@@ -240,9 +240,10 @@ const Hashnode: React.FC<BlogProps> = (props) => {
                   <p className="text-sm">
                     Published on{" "}
                     <span className="font-extrabold">
-                      {new Date(
-                        props.theme?.twitter?.theme ?? "dark"
-                      ).toLocaleDateString("en-US", options as any)}
+                      {new Date(props.date).toLocaleDateString(
+                        "en-US",
+                        options as any
+                      )}
                     </span>
                   </p>
                 ) : (
