@@ -156,6 +156,19 @@ export interface BlogProps {
   };
 }
 
+export const defaultTheme: Theme = {
+  textColor: "black",
+  twitter: {
+    theme: "dark",
+  },
+  primary: "#23272a",
+  dateColor: "white",
+  inlineTextColor: "#333",
+  bgColor: "white",
+  linkColor: "#5862f2",
+  inlineBgColor: "#ebebeb",
+};
+
 export const defaultProps: BlogProps = {
   content: "",
   layout: "Default",
@@ -171,17 +184,6 @@ export const defaultProps: BlogProps = {
   reactions: undefined,
   date: Date.now().toString(),
   author: undefined,
-  theme: {
-    textColor: "black",
-    twitter: {
-      theme: "dark",
-    },
-    primary: "#23272a",
-    dateColor: "white",
-    inlineTextColor: "#333",
-    bgColor: "white",
-    linkColor: "#5862f2",
-    inlineBgColor: "#ebebeb",
-  },
+  theme: defaultTheme,
   header: undefined,
 };

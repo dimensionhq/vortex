@@ -1,4 +1,4 @@
-import { BlogProps, defaultProps } from "../types/Blog";
+import { BlogProps, defaultProps, defaultTheme, Theme } from "../types/Blog";
 import Default from "./Default";
 import DevTO from "./DevTO";
 import Hashnode from "./Hashnode";
@@ -25,7 +25,8 @@ const SEOComponent: React.FC<BlogProps> = (props) => {
 
 const Blog: React.FC<BlogProps> = (props) => {
   const blog_props: BlogProps = { ...defaultProps, ...props };
-  console.log(blog_props);
+  const blog_themes: Theme = { ...defaultTheme, ...props.theme };
+  blog_props.theme = blog_themes;
   if (blog_props.layout === "Default") {
     return (
       <div className="w-full h-full" style={{ fontFamily: props.font?.body }}>
