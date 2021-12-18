@@ -104,8 +104,8 @@ export interface Banner {
   };
 
   subtitle?: string;
-  category: {
-    url: string;
+  category?: {
+    url?: string;
     title: string;
   };
   title?: string;
