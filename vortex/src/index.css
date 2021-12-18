@@ -7,9 +7,10 @@
 
   display: none;
 }
-.gist__content .gist .gist-file {
-  border: 0px;
+.gist .gist-file {
+  border: 0px !important;
 }
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

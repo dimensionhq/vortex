@@ -2,17 +2,16 @@ import { BlogProps } from "../../types/Blog";
 import ReactMarkdown from "react-markdown";
 import { NormalComponents } from "react-markdown/lib/complex-types";
 import { SpecialComponents } from "react-markdown/lib/ast-to-react";
-import SyntaxHighlighter from "react-syntax-highlighter";
-import * as themes from "react-syntax-highlighter/dist/esm/styles/hljs";
 // import rehypeRaw from "rehype-raw";
-import "github-markdown-css/github-markdown.css";
 import TweetEmbed from "react-tweet-embed";
 import rehypeRaw from "rehype-raw";
 import React from "react";
 import Reaction from "./Reaction";
-import ReactEmbedGist from "react-embed-gist";
 // @ts-expect-error
 import Codepen from "react-codepen-embed";
+import { CodeBlock } from "../components/CodeBlock";
+// @ts-expect-error
+import SuperReactGist from "super-react-gist";
 
 const Content: React.FC<BlogProps> = (props) => {
   const options = {
@@ -26,7 +25,10 @@ const Content: React.FC<BlogProps> = (props) => {
   > = {
     h1: ({ children }) => (
       <h1
-        style={{ color: props.theme?.textHeaderColor }}
+        style={{
+          color: props.theme?.textHeaderColor,
+          fontFamily: props.font?.header,
+        }}
         className="text-3xl font-extrabold xl:text-[2.75rem] 2xl:text-[2.75rem] md:text-4xl mt-4 mb-7"
       >
         {children}
@@ -34,7 +36,10 @@ const Content: React.FC<BlogProps> = (props) => {
     ),
     h2: ({ children }) => (
       <h2
-        style={{ color: props.theme?.textHeaderColor }}
+        style={{
+          color: props.theme?.textHeaderColor,
+          fontFamily: props.font?.header,
+        }}
         className="text-xl font-bold xl:text-3xl md:text-3xl 2xl:text-3xl mt-5 mb-3"
       >
         {children}
@@ -42,7 +47,10 @@ const Content: React.FC<BlogProps> = (props) => {
     ),
     h3: ({ children }) => (
       <h3
-        style={{ color: props.theme?.textHeaderColor }}
+        style={{
+          color: props.theme?.textHeaderColor,
+          fontFamily: props.font?.header,
+        }}
         className="text-lg font-bold xl:text-xl md:text-2xl 2xl:text-2xl mt-2 mb-3"
       >
         {children}
@@ -50,7 +58,10 @@ const Content: React.FC<BlogProps> = (props) => {
     ),
     h4: ({ children }) => (
       <h4
-        style={{ color: props.theme?.textHeaderColor }}
+        style={{
+          color: props.theme?.textHeaderColor,
+          fontFamily: props.font?.header,
+        }}
         className="text-base font-bold xl:text-lg md:text-xl 2xl:text-xl"
       >
         {children}
@@ -58,7 +69,10 @@ const Content: React.FC<BlogProps> = (props) => {
     ),
     h5: ({ children }) => (
       <h5
-        style={{ color: props.theme?.textHeaderColor }}
+        style={{
+          color: props.theme?.textHeaderColor,
+          fontFamily: props.font?.header,
+        }}
         className="text-sm font-bold xl:text-base md:text-lg 2xl:text-lg"
       >
         {children}
@@ -66,7 +80,10 @@ const Content: React.FC<BlogProps> = (props) => {
     ),
     h6: ({ children }) => (
       <h6
-        style={{ color: props.theme?.textHeaderColor }}
+        style={{
+          color: props.theme?.textHeaderColor,
+          fontFamily: props.font?.header,
+        }}
         className="text-xs font-bold xl:text-sm md:text-base 2xl:text-lgx"
       >
         {children}
@@ -74,7 +91,10 @@ const Content: React.FC<BlogProps> = (props) => {
     ),
     p: ({ children }) => (
       <p
-        style={{ color: props.theme?.inlineTextColor }}
+        style={{
+          color: props.theme?.inlineTextColor,
+          fontFamily: props.font?.body,
+        }}
         className="mt-2 mb-5 text-xl leading-normal "
       >
         {children}
@@ -92,20 +112,7 @@ const Content: React.FC<BlogProps> = (props) => {
           />
         );
       } else if (rest.href?.startsWith("https://gist.github.com")) {
-        let id = rest.href?.match(
-          /gist.github.com\/(.*\/[(\w)+].*)(#[(\w)+].*)/
-        ) ?? ["", "c332ab20f5b721a0828759d70a52b986", "#file-discord-ex"];
-        return (
-          <ReactEmbedGist
-            gist={id[1] as any}
-            wrapperClass="gist__bash"
-            loadingClass="loading__screen"
-            titleClass="gist__title"
-            errorClass="gist__error"
-            contentClass="gist__content"
-            file={id[2]}
-          />
-        );
+        return <SuperReactGist url={rest.href} />;
       } else if (rest.href?.startsWith("https://codepen.io/")) {
         let id = rest.href?.match(
           /codepen.io\/([(\w)+]*.)\/pen\/([(\w)+]*.)/
@@ -135,20 +142,7 @@ const Content: React.FC<BlogProps> = (props) => {
           />
         );
       } else if (rest.href?.startsWith("https://gist.github.com")) {
-        let id = rest.href?.match(
-          /gist.github.com\/(.*\/[(\w)+].*)(#[(\w)+].*)/
-        ) ?? ["", "c332ab20f5b721a0828759d70a52b986", "#file-discord-ex"];
-        return (
-          <ReactEmbedGist
-            gist={id[1] as any}
-            wrapperClass="gist__bash"
-            loadingClass="loading__screen"
-            titleClass="gist__title"
-            errorClass="gist__error"
-            contentClass="gist__content"
-            file={id[2]}
-          />
-        );
+        return <SuperReactGist url={rest.href} />;
       } else if (rest.href?.startsWith("https://codepen.io/")) {
         let id = rest.href?.match(
           /codepen.io\/([(\w)+]*.)\/pen\/([(\w)+]*.)/
@@ -171,24 +165,15 @@ const Content: React.FC<BlogProps> = (props) => {
       }
     },
     code({ node, inline, className, children, ...propso2 }) {
-      const match = /language-(\w+)/.exec(className || "") ?? "default";
+      const match = /language-(\w+)/.exec(className || "");
       const theme: string = props.codeblock?.theme as any;
       return !inline && match ? (
-        // @ts-expect-error
-        <SyntaxHighlighter
-          children={String(children).replace("\\", "\\\\")}
-          customStyle={{
-            borderRadius: "5px",
-            width: "auto",
-            overflow: "auto",
-            margin: "0px 5px 0px 5px",
-          }}
-          // @ts-expect-error
-          style={{ ...themes[theme] }}
-          showLineNumbers={true}
-          language={match[1]}
-          PreTag="div"
-          {...propso2}
+        <CodeBlock
+          children={children}
+          props={props}
+          theme={theme}
+          match={match}
+          propso2={propso2}
         />
       ) : (
         <code
@@ -215,47 +200,77 @@ const Content: React.FC<BlogProps> = (props) => {
     >
       <a
         href={props.header?.category.url}
-        style={{ color: props.theme?.linkColor }}
+        style={{
+          color: props.theme?.linkColor,
+          fontFamily: props.font?.category,
+        }}
         className="uppercase font-bold text-lg no-underline"
       >
         {props.header?.category.title}
       </a>
       <div className="flex items-start flex-col justify-center mt-0 mb-8">
-        <h1 style={{ fontSize: "3rem" }} className="font-extrabold mb-0">
+        <h1
+          style={{ fontSize: "3rem", fontFamily: props.font?.title }}
+          className="font-extrabold mb-0"
+        >
           {props.header?.title}
         </h1>
         <h5 className="mt-0 text-2xl font-normal">{props.header?.subtitle}</h5>
       </div>
       <div className="mt-8 sm:mt-10 md:mt-20 xl:mt-20 2xl:mt-20">
-        <div className="flex grid-cols-12  md:grid justify-start flex-col">
-          <div className="col-span-2 flex items-start justify-start flex-col">
-            <img
-              width="72px"
-              className="rounded-full"
-              src={props.author.avatar}
-              alt=""
-            />
-            <h1
-              className="font-medium text-xl mt-3"
-              style={{ color: props.theme?.dateColor }}
+        <div className={`flex grid-cols-11 md:grid justify-start flex-col`}>
+          {props.author ? (
+            <div className="col-span-2 flex items-start justify-start flex-col">
+              <img
+                width="72px"
+                className="rounded-full"
+                src={props.author.avatar}
+                alt=""
+              />
+              <h1
+                className="font-medium text-xl mt-3"
+                style={{ color: props.theme?.dateColor }}
+              >
+                {props.author.name}
+              </h1>
+              <h6
+                className="text-sm"
+                style={{ color: props.theme?.inlineBgColor }}
+              >
+                {new Date(props.date ?? "").toLocaleDateString(
+                  "en-US",
+                  options as any
+                )}
+              </h6>
+            </div>
+          ) : (
+            <></>
+          )}
+          {props.author && props.reactions ? (
+            <div
+              className={`col-span-7 w-[40%] sm:w-[50%] md:w-[95%] lg:w-[100%]`}
             >
-              {props.author.name}
-            </h1>
-            <h6
-              className="text-sm"
-              style={{ color: props.theme?.inlineBgColor }}
+              <ReactMarkdown
+                rehypePlugins={[rehypeRaw]}
+                components={components}
+              >
+                {props.content}
+              </ReactMarkdown>
+            </div>
+          ) : (
+            <div
+              className={`${
+                props.reactions || props.author ? "col-span-9" : "col-span-11"
+              } w-[40%] sm:w-[50%] md:w-[95%] lg:w-[100%]`}
             >
-              {new Date(props.date ?? "").toLocaleDateString(
-                "en-US",
-                options as any
-              )}
-            </h6>
-          </div>
-          <div className="col-span-7 w-[40%] sm:w-[50%] md:w-[95%] lg:w-[100%]">
-            <ReactMarkdown rehypePlugins={[rehypeRaw]} components={components}>
-              {props.content}
-            </ReactMarkdown>
-          </div>
+              <ReactMarkdown
+                rehypePlugins={[rehypeRaw]}
+                components={components}
+              >
+                {props.content}
+              </ReactMarkdown>
+            </div>
+          )}
           <Reaction {...props} />
         </div>
       </div>

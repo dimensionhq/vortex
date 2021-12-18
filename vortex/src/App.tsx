@@ -12,9 +12,9 @@ function Emote(): JSX.Element {
 
 function App() {
   return (
-    <div className="w-full h-auto overflow-x-hidden">
+    <div className="w-full h-auto overflow-x-hidden flex items-center justify-center">
       <Blog
-        layout="Hashnode"
+        layout="Default"
         author={{
           name: "Tiia",
           avatar:
@@ -25,28 +25,28 @@ function App() {
           textColor: "#9ca3af",
           inlineBgColor: "#ebebeb",
         }}
-        reactions={{
-          onClick: (val: string, upvote: boolean) => {
-            return console.log(val, upvote);
-          },
-          reactions: [
-            {
-              upvotes: 5,
-              emote: Emote(),
-              name: "Zap",
-            },
-            {
-              upvotes: 6,
-              emote: "💯",
-              name: "100",
-            },
-            {
-              emote: "✨",
-              name: "Star",
-              upvotes: 7,
-            },
-          ],
-        }}
+        // reactions={{
+        //   onClick: (val: string, upvote: boolean) => {
+        //     return console.log(val, upvote);
+        //   },
+        //   reactions: [
+        //     {
+        //       upvotes: 5,
+        //       emote: Emote(),
+        //       name: "Zap",
+        //     },
+        //     {
+        //       upvotes: 6,
+        //       emote: "💯",
+        //       name: "100",
+        //     },
+        //     {
+        //       emote: "✨",
+        //       name: "Star",
+        //       upvotes: 7,
+        //     },
+        //   ],
+        // }}
         // font="Inter, sans-serif"
         header={{
           title: "GitHub Copilot is here to stay",
@@ -94,8 +94,8 @@ I did write two lines of comments at the bottom of the code I previously wrote, 
 
 \`\`\`py
 with open("data.html", "w") as file:
-    file.write("<html>\n")
-    file.write("<head>\n")
+    file.write("<html>\\n")
+    file.write("<head>\\n")
     file.write(
         "<script type=\"text/javascript\" src=\"https://www.gstatic.com/charts/loader.js\"></script>\\n")
     file.write("<script type=\"text/javascript\">\\n")

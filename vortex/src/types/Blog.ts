@@ -150,7 +150,7 @@ export interface BlogProps {
     theme: Themes;
   };
   date?: string;
-  author: {
+  author?: {
     name: string;
     avatar: string;
   };
@@ -159,15 +159,18 @@ export interface BlogProps {
 export const defaultProps: BlogProps = {
   content: "",
   layout: "Default",
-  font: { body: "'Inter', sans-serif" },
+  font: {
+    body: "'Inter', sans-serif",
+    category: "'Inter', sans-serif",
+    header: "'Inter', sans-serif",
+    title: "'Inter', sans-serif",
+  },
   codeblock: {
     theme: "atomOneDark",
   },
+  reactions: undefined,
   date: Date.now().toString(),
-  author: {
-    avatar: "",
-    name: "",
-  },
+  author: undefined,
   theme: {
     textColor: "black",
     twitter: {
