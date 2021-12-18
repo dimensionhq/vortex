@@ -218,7 +218,7 @@ const Content: React.FC<BlogProps> = (props) => {
       )}
       <div className="flex items-start flex-col justify-center mt-4 mb-8 gap-2">
         <h1
-          style={{ fontFamily: props.font?.title, marginLeft: "2px" }}
+          style={{ fontFamily: props.font?.title, marginRight: "2px" }}
           className="font-extrabold mb-0 text-2xl md:text-5xl"
         >
           {props.header?.title}
