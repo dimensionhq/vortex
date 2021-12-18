@@ -7,9 +7,9 @@
 
   display: none;
 }
-.gist .gist-file {
+/* .gist .gist-file {
   border: 0px !important;
-}
+} */
 
 @tailwind base;
 @tailwind components;

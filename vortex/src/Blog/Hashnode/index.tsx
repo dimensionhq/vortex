@@ -236,14 +236,18 @@ const Hashnode: React.FC<BlogProps> = (props) => {
               />
               <div className="flex items-start justify-center flex-col">
                 <h1 className="text-xl font-extrabold">{props.author.name}</h1>
-                <p className="text-sm">
-                  Published on{" "}
-                  <span className="font-extrabold">
-                    {new Date(
-                      props.theme?.twitter?.theme ?? "dark"
-                    ).toLocaleDateString("en-US", options as any)}
-                  </span>
-                </p>
+                {props.date ? (
+                  <p className="text-sm">
+                    Published on{" "}
+                    <span className="font-extrabold">
+                      {new Date(
+                        props.theme?.twitter?.theme ?? "dark"
+                      ).toLocaleDateString("en-US", options as any)}
+                    </span>
+                  </p>
+                ) : (
+                  <></>
+                )}
               </div>
             </div>
           ) : (

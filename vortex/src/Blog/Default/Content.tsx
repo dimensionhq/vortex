@@ -219,7 +219,11 @@ const Content: React.FC<BlogProps> = (props) => {
           {props.header?.subtitle}
         </h5>
       </div>
-      <div className="mt-8 sm:mt-10 md:mt-20 xl:mt-20 2xl:mt-20">
+      <div
+        className={`${
+          props.header ? "mt-8 sm:mt-10 md:mt-20 xl:mt-20 2xl:mt-20" : ""
+        }`}
+      >
         <div className={`flex grid-cols-11 md:grid justify-start flex-col`}>
           {props.author ? (
             <div className="col-span-2 flex items-start justify-start flex-col">
@@ -235,13 +239,16 @@ const Content: React.FC<BlogProps> = (props) => {
               >
                 {props.author.name}
               </h1>
-              <h6
-                className="text-sm"
-                style={{ color: props.theme?.inlineBgColor }}
-              >
-                {new Date(props.date ?? "").toLocaleDateString(
-                  "en-US",
-                  options as any
+              <h6 className="text-sm" style={{ color: props.theme?.dateColor }}>
+                {props.date ? (
+                  <>
+                    {new Date(props.date ?? "").toLocaleDateString(
+                      "en-US",
+                      options as any
+                    )}
+                  </>
+                ) : (
+                  <></>
                 )}
               </h6>
             </div>

@@ -1,5 +1,3 @@
-import { PluggableList } from "react-markdown/lib/react-markdown";
-
 type Themes =
   | "a11yDark"
   | "a11yLight"
@@ -161,7 +159,7 @@ export const defaultTheme: Theme = {
   },
   codeBlockTheme: "atomOneDark",
   primary: "#23272a",
-  dateColor: "white",
+  dateColor: "black",
   inlineTextColor: "#333",
   bgColor: "white",
   linkColor: "#5862f2",
@@ -178,7 +176,7 @@ export const defaultProps: BlogProps = {
     title: "'Inter', sans-serif",
   },
   reactions: undefined,
-  date: Date.now().toString(),
+  date: undefined,
   author: undefined,
   theme: defaultTheme,
   header: undefined,
