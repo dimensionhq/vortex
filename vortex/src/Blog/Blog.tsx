@@ -29,28 +29,40 @@ const Blog: React.FC<BlogProps> = (props) => {
   blog_props.theme = blog_themes;
   if (blog_props.layout === "Default") {
     return (
-      <div className="w-full h-full" style={{ fontFamily: props.font?.body }}>
+      <div
+        className="w-full h-full"
+        style={{ fontFamily: blog_props.font?.body }}
+      >
         <SEOComponent {...blog_props}></SEOComponent>
         <Default {...blog_props} />
       </div>
     );
   } else if (blog_props.layout === "DevTO") {
     return (
-      <div className="w-auto h-full" style={{ fontFamily: props.font?.body }}>
+      <div
+        className="w-auto h-full"
+        style={{ fontFamily: blog_props.font?.body }}
+      >
         <SEOComponent {...blog_props}></SEOComponent>
         <DevTO {...blog_props} />
       </div>
     );
   } else if (blog_props.layout === "Hashnode") {
     return (
-      <div className="w-auto h-full" style={{ fontFamily: props.font?.body }}>
+      <div
+        className="w-auto h-full"
+        style={{ fontFamily: blog_props.font?.body }}
+      >
         <SEOComponent {...blog_props}></SEOComponent>
         <Hashnode {...blog_props} />
       </div>
     );
   } else {
     return (
-      <div className="w-full h-full" style={{ fontFamily: props.font?.body }}>
+      <div
+        className="w-full h-full"
+        style={{ fontFamily: blog_props.font?.body }}
+      >
         <SEOComponent {...blog_props}></SEOComponent>
         <Default {...blog_props} />
       </div>
