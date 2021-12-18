@@ -158,7 +158,7 @@ const Hashnode: React.FC<BlogProps> = (props) => {
     },
     code({ node, inline, className, children, ...propso2 }) {
       const match = /language-(\w+)/.exec(className || "");
-      const theme: string = props.codeblock?.theme as any;
+      const theme: string = props.theme?.codeBlockTheme as any;
       return !inline && match ? (
         <CodeBlock
           children={children}

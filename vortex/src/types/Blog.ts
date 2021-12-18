@@ -121,6 +121,7 @@ export interface Theme {
   linkColor?: string;
   textColor?: string;
   inlineBgColor?: string;
+  codeBlockTheme: Themes;
   twitter?: {
     theme?: "light" | "dark";
   };
@@ -146,9 +147,6 @@ export interface BlogProps {
   };
   layout: "Default" | "DevTO" | "Hashnode";
   content: string;
-  codeblock?: {
-    theme: Themes;
-  };
   date?: string;
   author?: {
     name: string;
@@ -161,6 +159,7 @@ export const defaultTheme: Theme = {
   twitter: {
     theme: "dark",
   },
+  codeBlockTheme: "atomOneDark",
   primary: "#23272a",
   dateColor: "white",
   inlineTextColor: "#333",
@@ -177,9 +176,6 @@ export const defaultProps: BlogProps = {
     category: "'Inter', sans-serif",
     header: "'Inter', sans-serif",
     title: "'Inter', sans-serif",
-  },
-  codeblock: {
-    theme: "atomOneDark",
   },
   reactions: undefined,
   date: Date.now().toString(),
