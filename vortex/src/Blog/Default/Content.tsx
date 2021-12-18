@@ -210,12 +210,14 @@ const Content: React.FC<BlogProps> = (props) => {
       </a>
       <div className="flex items-start flex-col justify-center mt-0 mb-8">
         <h1
-          style={{ fontSize: "3rem", fontFamily: props.font?.title }}
-          className="font-extrabold mb-0"
+          style={{ fontFamily: props.font?.title, margin: "0px" }}
+          className="font-extrabold mb-0 text-2xl md:text-5xl"
         >
           {props.header?.title}
         </h1>
-        <h5 className="mt-0 text-2xl font-normal">{props.header?.subtitle}</h5>
+        <h5 className="mt-0 text-lg md:text-2xl font-normal">
+          {props.header?.subtitle}
+        </h5>
       </div>
       <div className="mt-8 sm:mt-10 md:mt-20 xl:mt-20 2xl:mt-20">
         <div className={`flex grid-cols-11 md:grid justify-start flex-col`}>
