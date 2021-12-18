@@ -14,7 +14,7 @@ function App() {
   return (
     <div className="w-full h-auto overflow-x-hidden flex items-center justify-center">
       <Blog
-        layout="DevTO"
+        layout="Default"
         author={{
           name: "Tiia",
           avatar:

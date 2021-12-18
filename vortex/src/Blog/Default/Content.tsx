@@ -196,7 +196,11 @@ const Content: React.FC<BlogProps> = (props) => {
   return (
     <div
       ref={rootRef}
-      className="mt-16 sm:mt-20 md:mt-72 lg:mt-96  xl:mt-40 2xl:mt-40 flex items-start justify-center w-[98%] sm:w-[90%] 2xl:w-[60%] flex-col"
+      className={`${
+        props.header
+          ? "mt-16 sm:mt-20 md:mt-72 lg:mt-96  xl:mt-40 2xl:mt-40"
+          : ""
+      } flex items-start justify-center w-[98%] sm:w-[90%] 2xl:w-[60%] flex-col`}
     >
       <a
         href={props.header?.category.url}
