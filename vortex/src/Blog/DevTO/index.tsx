@@ -38,7 +38,7 @@ const Hashnode: React.FC<BlogProps> = (props) => {
           color: props.theme?.inlineTextColor,
           fontFamily: props.font?.header,
         }}
-        className="text-xl font-bold xl:text-2xl md:text-3xl 2xl:text-3xl mt-2 mb-3"
+        className="text-xl font-bold xl:text-2xl md:text-3xl 2xl:text-3xl mt-5 mb-3"
       >
         {children}
       </h2>

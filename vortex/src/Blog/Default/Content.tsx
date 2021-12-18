@@ -40,7 +40,7 @@ const Content: React.FC<BlogProps> = (props) => {
           color: props.theme?.textHeaderColor,
           fontFamily: props.font?.header,
         }}
-        className="text-xl font-bold xl:text-3xl md:text-3xl 2xl:text-3xl mt-5 mb-3"
+        className="text-xl font-bold xl:text-3xl md:text-3xl 2xl:text-3xl mt-7 mb-3"
       >
         {children}
       </h2>
@@ -202,16 +202,20 @@ const Content: React.FC<BlogProps> = (props) => {
           : ""
       } flex items-start justify-center w-[98%] sm:w-[90%] 2xl:w-[60%] flex-col`}
     >
-      <a
-        href={props.header?.category.url}
-        style={{
-          color: props.theme?.linkColor,
-          fontFamily: props.font?.category,
-        }}
-        className="uppercase font-bold text-lg no-underline"
-      >
-        {props.header?.category.title}
-      </a>
+      {props.header?.category ? (
+        <a
+          href={props.header?.category?.url}
+          style={{
+            color: props.theme?.linkColor,
+            fontFamily: props.font?.category,
+          }}
+          className="uppercase font-bold text-lg no-underline"
+        >
+          {props.header?.category?.title}
+        </a>
+      ) : (
+        <></>
+      )}
       <div className="flex items-start flex-col justify-center mt-0 mb-8">
         <h1
           style={{ fontFamily: props.font?.title, margin: "0px" }}
