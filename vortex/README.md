@@ -1,20 +1,14 @@
+![image](https://github.com/hydralite/vortex/blob/master/logo.png?raw=true)
 
-<p align="center">
-  <img src="https://github.com/hydralite/vortex/blob/master/logo.png?raw=true" />
-</p>
+Vortex
 
+A hyper-extensible library to build blogs crazy fast.
 
-<h1 align="center">Vortex</h1>
-<h4 align="center">A hyper-extensible library to build blogs crazy fast.</h1>
 <br>
 
-<p align="center">
-  <img src="https://img.shields.io/badge/version-1.0.0-green"> <img src="https://img.shields.io/github/license/hydralite/vortex?color=pink"> <img src="https://img.shields.io/tokei/lines/github/hydralite/vortex?color=white&label=lines%20of%20code"> <img src="https://img.shields.io/github/languages/top/hydralite/vortex?color=%230xfffff">
-</p>
+![badge]("https://img.shields.io/badge/version-1.0.0-green") ![badge](https://img.shields.io/github/license/hydralite/vortex?color=pink) ![]badge(https://img.shields.io/tokei/lines/github/hydralite/vortex?color=white&label=lines%20of%20code) ![badge](https://img.shields.io/github/languages/top/hydralite/vortex?color=%230xfffff)
 
-<p align="center">
 🌟 Don't forget to give us a star if you'd like to support us ❤️
-</p>
 
 # Usage
 
