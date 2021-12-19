@@ -1,4 +1,4 @@
 module.exports = {
-  siteUrl: 'https://nextui.org',
+  siteUrl: "https://vortex.hydralite.io",
   generateRobotsTxt: true,
 };

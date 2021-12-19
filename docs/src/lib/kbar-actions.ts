@@ -1,11 +1,11 @@
-import { Action } from 'kbar';
-import { NextRouter } from 'next/router';
-import { DarkMode } from 'use-dark-mode';
-import { Route } from '@lib/docs/page';
-import { getId } from '../utils/collections';
-import { removeFromLast } from '@utils/index';
+import { Action } from "kbar";
+import { NextRouter } from "next/router";
+import { DarkMode } from "use-dark-mode";
+import { Route } from "@lib/docs/page";
+import { getId } from "../utils/collections";
+import { removeFromLast } from "@utils/index";
 // data imported from manifest
-import docsManifest from '../../content/docs/manifest.json';
+import docsManifest from "../../content/docs/manifest.json";
 
 const docsActions: Action[] = [];
 
@@ -16,16 +16,16 @@ const buildDocsActions = (
 ) => {
   routes.forEach((route: Route) => {
     const routeId = getId();
-    const routePath: any = route.path ? removeFromLast(route.path, '.') : null;
+    const routePath: any = route.path ? removeFromLast(route.path, ".") : null;
     const action: Action = {
       id: routeId,
       name: route.title,
-      section: route.section || '',
+      section: route.section || "",
       parent: parent,
       shortcut: [],
       children: [],
-      keywords: route.keywords || '',
-      subtitle: route.subtitle || ''
+      keywords: route.keywords || "",
+      subtitle: route.subtitle || "",
     };
     if (routePath) {
       action.perform = () => {
@@ -50,10 +50,10 @@ const buildDocsActions = (
 };
 
 const handleExternalLink = (href: string) => {
-  Object.assign(document.createElement('a'), {
-    target: '_blank',
-    rel: 'noopener noreferrer',
-    href
+  Object.assign(document.createElement("a"), {
+    target: "_blank",
+    rel: "noopener noreferrer",
+    href,
   }).click();
 };
 
@@ -63,63 +63,63 @@ const getActions = (router: NextRouter, darkMode: DarkMode): Action[] => {
 
   const staticActions: Action[] = [
     {
-      id: 'twitter',
-      name: 'Twitter',
-      subtitle: '@getnextui',
-      section: 'Social',
+      id: "twitter",
+      name: "Twitter",
+      subtitle: "@hydralite",
+      section: "Social",
       shortcut: [],
-      keywords: 'dm, twitter, contact',
-      icon: 'twitter',
-      perform: () => handleExternalLink('https://twitter.com/getnextui')
+      keywords: "dm, twitter, contact",
+      icon: "twitter",
+      perform: () => handleExternalLink("https://twitter.com/hydralite"),
     },
     {
-      id: 'discord',
-      name: 'Discord',
-      subtitle: 'Join us!',
-      section: 'Social',
+      id: "discord",
+      name: "Discord",
+      subtitle: "Join us!",
+      section: "Social",
       shortcut: [],
-      keywords: 'chat, community, join',
-      icon: 'discord',
-      perform: () => handleExternalLink('https://discord.gg/9b6yyZKmH4')
+      keywords: "chat, community, join",
+      icon: "discord",
+      perform: () => handleExternalLink("https://discord.gg/pRuPhftzbw"),
     },
     {
-      id: 'github',
-      name: 'Github',
-      subtitle: 'nextui-org',
-      section: 'Social',
+      id: "github",
+      name: "Github",
+      subtitle: "hydralite",
+      section: "Social",
       shortcut: [],
-      keywords: 'github, source code, open, code',
-      icon: 'github',
-      perform: () => handleExternalLink('https://github.com/nextui-org/nextui')
+      keywords: "github, source code, open, code",
+      icon: "github",
+      perform: () => handleExternalLink("https://github.com/hydralite/vortex"),
     },
     {
-      id: 'changeTheme',
-      name: 'Change Theme',
-      section: 'General',
+      id: "changeTheme",
+      name: "Change Theme",
+      section: "General",
       shortcut: [],
       keywords:
-        'background, change color, color, change theme, theme, dark, light',
-      icon: 'palette',
-      children: ['darkTheme', 'lightTheme']
+        "background, change color, color, change theme, theme, dark, light",
+      icon: "palette",
+      children: ["darkTheme", "lightTheme"],
     },
     {
-      id: 'darkTheme',
-      name: 'Dark',
-      parent: 'changeTheme',
-      keywords: 'dark',
-      icon: 'moon',
+      id: "darkTheme",
+      name: "Dark",
+      parent: "changeTheme",
+      keywords: "dark",
+      icon: "moon",
       shortcut: [],
-      perform: () => darkMode.enable()
+      perform: () => darkMode.enable(),
     },
     {
-      id: 'lightTheme',
-      name: 'Light',
-      parent: 'changeTheme',
-      keywords: 'light',
+      id: "lightTheme",
+      name: "Light",
+      parent: "changeTheme",
+      keywords: "light",
       shortcut: [],
-      icon: 'sun',
-      perform: () => darkMode.disable()
-    }
+      icon: "sun",
+      perform: () => darkMode.disable(),
+    },
   ];
 
   return [...docsActions, ...staticActions];

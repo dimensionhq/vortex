@@ -3,7 +3,5 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://nextui.org
+Host: https://hydralite.io
 
-# Sitemaps
-Sitemap: https://nextui.org/sitemap.xml
