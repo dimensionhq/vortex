@@ -65,12 +65,12 @@ const getActions = (router: NextRouter, darkMode: DarkMode): Action[] => {
     {
       id: "twitter",
       name: "Twitter",
-      subtitle: "@hydralite",
+      subtitle: "@hydraliteio",
       section: "Social",
       shortcut: [],
       keywords: "dm, twitter, contact",
       icon: "twitter",
-      perform: () => handleExternalLink("https://twitter.com/hydralite"),
+      perform: () => handleExternalLink("https://twitter.com/hydraliteio"),
     },
     {
       id: "discord",
