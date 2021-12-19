@@ -64,7 +64,7 @@ const Hero: React.FC = () => {
               <Row align="center">
                 <Image
                   className="hero__feature-img"
-                  src={"/layout.svg"}
+                  src={isDark ? "/layout-dark.svg" : "/layout-light.svg"}
                   quality={100}
                   width={32}
                   height={32}
