@@ -1,0 +1,31 @@
+---
+title: Customization
+description: Layout customization and in-built layout usage.
+url: https://hydralite.io/vortex/docs/layout/customization
+---
+
+# Layout
+
+Vortex supports a variety of in-built layouts for your blog.
+
+## Usage
+
+Changing the layout of your blog is as simple as changing the `layout` prop.
+
+```jsx
+<Blog
+    // layout is specified using the `layout` prop
+    // this value can be one of the following:
+    // Default - This is the default Vortex layout. It is heavily inspired by the Discord blog layout.
+    // DevTO - This is similar to the layout used by Dev.to.
+    // Hashnode - This is similar to the layout used by Hashnode.
+    layout = "Default"
+    ...
+/>
+```
+
+### Layout Props
+
+| Attribute  | Optional | Accepted Values              | Default |
+| ---------- | -------- | ---------------------------- | ------- |
+| **layout** | `false`  | `Default / Hashnode / DevTO` | `null`  |

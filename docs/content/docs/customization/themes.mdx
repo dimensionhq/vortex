@@ -6,46 +6,70 @@ url: https://hydralite.io/vortex/docs/customization/themes
 
 # Themes
 
-Vortex is entirely customizable! You can customize the look and feel of your blog by the values listed below.
+Vortex makes it easy to customize your blog! Let's see how you can customize its look and feel.
 
-<Spacer y={2} />
+<Spacer y={1} />
 
 ## Usage
 
-```json
-{
-  "textColor": "black",
-  "twitter": {
-    "theme": "dark"
-  },
-  "codeBlockTheme": "atomOneDark",
-  "primary": "#23272a",
-  "dateColor": "white",
-  "inlineTextColor": "#333",
-  "bgColor": "white",
-  "linkColor": "#5862f2",
-  "inlineBgColor": "#ebebeb"
-}
+```jsx
+<Blog
+  // all theme-related content comes under the `theme` prop
+  theme = {
+    // changes the color of blog paragraphs
+    // accepts any color (including hex, rgba, etc)
+    textColor: "black",
+    // customization of Twitter embeds
+    twitter: {
+      // changes the color theme of the Twitter embed
+      // supported values are either `light` or `dark`
+      theme: "dark"
+    },
+    // changes the syntax highlighting theme for code blocks
+    // to see the 90+ available themes, check out hydralite.io/vortex/docs/customization/themes#supported-codeblock-themes
+    codeBlockTheme: "atomOneDark",
+    // changes the primary color of the blog
+    // this should normally be the primary / accent color of your website
+    // accepts any color (including hex, rgba, etc)
+    primary: "#23272a",
+    // changes the color of the `date` specified
+    // accepts any color (including hex, rgba, etc)
+    dateColor: "white",
+    // changes the color of inline text / code
+    // accepts any color (including hex, rgba, etc)
+    inlineTextColor: "#333",
+    // changes the background color of the blog
+    // accepts any color (including hex, rgba, etc)
+    backgroundColor: "white",
+    // changes the color of links on the blog
+    // accepts any color (including hex, rgba, etc)
+    linkColor: "#5862f2",
+    // changes the background color of inline text / code
+    // accepts any color (including hex, rgba, etc)
+    inlineBackgroundColor: "#ebebeb"
+  }
+  ...
+/>
 ```
 
 <Spacer y={2} />
 
 ### Theme Props
 
-| Attribute          | Nullable | Accepted values                                                           | Default       |
-| ------------------ | -------- | ------------------------------------------------------------------------- | ------------- |
-| **textColor**      | true     | `color`                                                                   | `#000`        |
-| **twitter-theme**  | true     | `dark/light`                                                              | `dark`        |
-| **codeBlockTheme** | true     | [Supported Themes](/docs/customization/themes#supported-codeblock-themes) | `atomOneDark` |
-| **primary**        | true     | `color`                                                                   | `#23272a`     |
-| **dateColor**      | true     | `color`                                                                   | `#fff`        |
-| **bgColor**        | true     | `true/false`                                                              | `white`       |
-| **linkColor**      | true     | `color`                                                                   | `#5862f2`     |
-| **inlineBgColor**  | true     | `color (in hex)`                                                          | `#ebebeb`     |
+| Attribute                 | Optional | Accepted Values                                                           | Default       |
+| ------------------------- | -------- | ------------------------------------------------------------------------- | ------------- |
+| **textColor**             | `true`   | `color`                                                                   | `#000`        |
+| **twitter:theme**         | `true`   | `dark/light`                                                              | `dark`        |
+| **codeBlockTheme**        | `true`   | [Supported Themes](/docs/customization/themes#supported-codeblock-themes) | `atomOneDark` |
+| **primary**               | `true`   | `color`                                                                   | `#23272a`     |
+| **dateColor**             | `true`   | `color`                                                                   | `#fff`        |
+| **backgroundColor**       | `true`   | `true/false`                                                              | `white`       |
+| **linkColor**             | `true`   | `color`                                                                   | `#5862f2`     |
+| **inlineBackgroundColor** | `true`   | `color (in hex)`                                                          | `#ebebeb`     |
 
 <Spacer y={2} />
 
-#### Supported codeblock themes
+### Supported Codeblock Themes
 
 ```ts
 type Themes =

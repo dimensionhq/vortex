@@ -1,0 +1,79 @@
+---
+title: Reactions
+description: Reaction events and customization
+url: https://hydralite.io/vortex/docs/customization/themes
+---
+
+# Reactions
+
+Everyone's read your amazing blog and they want to give you a pat on the back!
+
+They can do this by using the reactions feature built-into Vortex!
+
+Let's see how to use it.
+
+## Usage
+
+```jsx
+// if needed, custom components can be used instead of emojis for reaction icons
+// we can return a JSX Element from this Emote component
+function Emote(): JSX.Element {
+  return (
+    <img
+      style = {{ width: "28px" }}
+      src = "https://discord.com/assets/08c0a077780263f3df97613e58e71744.svg"
+      // you can display the closest emoji to your custom emote if there's an issue with rendering your custom emote
+      alt = "👍"
+    />
+  );
+}
+
+
+<Blog
+    reactions = {
+        // name stands for the name of the reaction specified in the `reactions` list
+        // upvoted is whether or not the reaction is being upvoted or un-upvoted
+        onClick: (name: string, upvoted: boolean) => {
+            return console.log(name, upvoted); // logs the name of the reaction and whether it's being upvoted or un-upvoted
+            // eg: 'heart', true
+        },
+        // reactions represents a list of reactions that you would like to have for your blog
+        reactions: [
+            {
+                // `name` stands for the name of the reaction (this will be what you recieve on the `onClick` invocation)
+                name: 'heart',
+                // `upvotes` stands for the number of upvotes for this reaction
+                upvotes: 10,
+                // `upvoted` stands for whether or not the reaction is already upvoted (useful if you're loading values from a database)
+                upvoted: true,
+                // `emote` is the icon that will be displayed for this reaction (see further below for custom emote support)
+                // an emote can be a string or a React component (for custom emotes / icons)
+                emote: '❤️',
+            },
+            {
+                // `name` stands for the name of the reaction (this will be what you recieve on the `onClick` invocation)
+                name: 'thumbs-up',
+                // `upvotes` stands for the number of upvotes for this reaction
+                upvotes: 5,
+                // `upvoted` stands for whether or not the reaction is already upvoted (useful if you're loading values from a database)
+                upvoted: false,
+                // `emote` is the icon that will be displayed for this reaction.
+                // a react component can be passed in if you want to use a custom emote
+                emote: ThumbsUp(),
+            },
+        ],
+    }
+/>
+```
+
+<Spacer y={2} />
+
+### Reaction Props
+
+| Attribute            | Optional | Accepted Values        | Default |
+| -------------------- | -------- | ---------------------- | ------- |
+| **reactions**        | `false`  | `list[string]`         | `null`  |
+| **reaction:name**    | `false`  | `string`               | `null`  |
+| **reaction:upvotes** | `false`  | `integer`              | `null`  |
+| **reaction:upvoted** | `true`   | `string`               | `null`  |
+| **reaction:emoji**   | `false`  | `JSX.Element / string` | `null`  |
