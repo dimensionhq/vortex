@@ -28,7 +28,7 @@ function App() {
           }}
           reactions={{
             onClick: (name: string, upvote: boolean) => {
-              return console.log(val, upvote);
+              return console.log(name, upvote);
             },
             reactions: [
               {

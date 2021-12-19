@@ -11,7 +11,6 @@ import {
   useTheme,
   useBodyScroll,
   NextUIThemes,
-  Text,
 } from "@nextui-org/react";
 import { Route } from "@lib/docs/page";
 import { useRouter } from "next/router";
