@@ -1,13 +1,5 @@
 import React, { useState, useEffect } from "react";
-import {
-  Logo,
-  MenuToggle,
-  Badge,
-  Twitter,
-  Discord,
-  Github,
-  ThemeToggle,
-} from "@components";
+import { MenuToggle, Twitter, Discord, Github, ThemeToggle } from "@components";
 import cn from "classnames";
 import NextLink from "next/link";
 import dynamic from "next/dynamic";
