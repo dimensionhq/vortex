@@ -1,17 +1,17 @@
-const shell = require('shelljs');
-const path = require('path');
+const shell = require("shelljs");
+const path = require("path");
 
-const rootDir = path.join(__dirname, '.');
-const contentDir = path.join(rootDir, 'content');
-const docsDir = path.join(contentDir, 'docs');
-const componentsDocsDir = path.join(docsDir, 'components');
+const rootDir = path.join(__dirname, ".");
+const contentDir = path.join(rootDir, "content");
+const docsDir = path.join(contentDir, "docs");
+const componentsDocsDir = path.join(docsDir, "customization");
 
 const getComponentsName = () => {
   const names = shell
-    .ls('-R', componentsDocsDir)
+    .ls("-R", componentsDocsDir)
     .map((file) => path.join(process.cwd(), componentsDocsDir, file))
-    .filter((file) => file.endsWith('.mdx'))
-    .map((file) => path.basename(file, '.mdx'));
+    .filter((file) => file.endsWith(".mdx"))
+    .map((file) => path.basename(file, ".mdx"));
   return names;
 };
 const getComponentsRoute = (names = []) => {
@@ -29,38 +29,38 @@ async function redirect() {
   return [
     ...getComponentsRoute(componentsName),
     {
-      source: '/docs',
-      destination: '/docs/guide/getting-started',
+      source: "/docs",
+      destination: "/docs/guide/getting-started",
       permanent: true,
     },
     {
-      source: '/docs/getting-started',
-      destination: '/docs/guide/getting-started',
+      source: "/docs/getting-started",
+      destination: "/docs/guide/getting-started",
       permanent: true,
     },
     {
-      source: '/guide',
-      destination: '/docs/guide/getting-started',
+      source: "/guide",
+      destination: "/docs/guide/getting-started",
       permanent: true,
     },
     {
-      source: '/learn',
-      destination: '/docs/guide/getting-started',
+      source: "/learn",
+      destination: "/docs/guide/getting-started",
       permanent: true,
     },
     {
-      source: '/components/:path*',
+      source: "/components/:path*",
       permanent: true,
-      destination: '/docs/components/:path*',
+      destination: "/docs/components/:path*",
     },
     {
-      source: '/docs/components',
-      destination: '/docs/components/text',
+      source: "/docs/components",
+      destination: "/docs/components/text",
       permanent: true,
     },
     {
-      source: '/components',
-      destination: '/docs/components/text',
+      source: "/components",
+      destination: "/docs/components/text",
       permanent: true,
     },
   ];

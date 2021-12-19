@@ -68,9 +68,127 @@ const Navbar: React.FC<Props> = ({ detached, routes }) => {
           <Row justify="flex-start" align="center">
             <NextLink href="/">
               <Link>
-                <Text b size="2rem">
-                  Vortex
-                </Text>
+                {isDark ? (
+                  <svg
+                    width="50"
+                    height="50"
+                    viewBox="0 0 50 50"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M38 0H12C5.37258 0 0 5.37258 0 12V38C0 44.6274 5.37258 50 12 50H38C44.6274 50 50 44.6274 50 38V12C50 5.37258 44.6274 0 38 0Z"
+                      fill="white"
+                    />
+                    <g filter="url(#filter0_i_4691_14648)">
+                      <path
+                        d="M15.122 18.9091H13.46L18.2668 32H19.9032L24.71 18.9091H23.0481L19.1617 29.929H19.0083L15.122 18.9091ZM27.5161 18.9091H25.6497L29.8684 25.4545L25.6497 32H27.5161L30.8911 26.6562H30.9934L34.3684 32H36.2349L32.1184 25.4545L36.2349 18.9091H34.3684L30.9934 24.3551H30.8911L27.5161 18.9091Z"
+                        fill="black"
+                      />
+                    </g>
+                    <defs>
+                      <filter
+                        id="filter0_i_4691_14648"
+                        x="11.46"
+                        y="18.9091"
+                        width="24.7744"
+                        height="13.0909"
+                        filterUnits="userSpaceOnUse"
+                        color-interpolation-filters="sRGB"
+                      >
+                        <feFlood
+                          flood-opacity="0"
+                          result="BackgroundImageFix"
+                        />
+                        <feBlend
+                          mode="normal"
+                          in="SourceGraphic"
+                          in2="BackgroundImageFix"
+                          result="shape"
+                        />
+                        <feColorMatrix
+                          in="SourceAlpha"
+                          type="matrix"
+                          values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                          result="hardAlpha"
+                        />
+                        <feOffset dx="-2" />
+                        <feGaussianBlur stdDeviation="1" />
+                        <feComposite
+                          in2="hardAlpha"
+                          operator="arithmetic"
+                          k2="-1"
+                          k3="1"
+                        />
+                        <feColorMatrix
+                          type="matrix"
+                          values="0 0 0 0 0.233333 0 0 0 0 0.632 0 0 0 0 1 0 0 0 0.59 0"
+                        />
+                        <feBlend
+                          mode="normal"
+                          in2="shape"
+                          result="effect1_innerShadow_4691_14648"
+                        />
+                      </filter>
+                    </defs>
+                  </svg>
+                ) : (
+                  <svg
+                    width="50"
+                    height="50"
+                    viewBox="0 0 50 50"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <rect width="50" height="50" rx="12" fill="black" />
+                    <g filter="url(#filter0_d_4690_14650)">
+                      <path
+                        d="M15.1222 18.9091H13.4602L18.267 32H19.9034L24.7102 18.9091H23.0483L19.1619 29.929H19.0085L15.1222 18.9091ZM27.5163 18.9091H25.6499L29.8686 25.4545L25.6499 32H27.5163L30.8913 26.6562H30.9936L34.3686 32H36.2351L32.1186 25.4545L36.2351 18.9091H34.3686L30.9936 24.3551H30.8913L27.5163 18.9091Z"
+                        fill="white"
+                      />
+                    </g>
+                    <defs>
+                      <filter
+                        id="filter0_d_4690_14650"
+                        x="9.45996"
+                        y="16.9091"
+                        width="26.7754"
+                        height="17.0909"
+                        filterUnits="userSpaceOnUse"
+                        color-interpolation-filters="sRGB"
+                      >
+                        <feFlood
+                          flood-opacity="0"
+                          result="BackgroundImageFix"
+                        />
+                        <feColorMatrix
+                          in="SourceAlpha"
+                          type="matrix"
+                          values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                          result="hardAlpha"
+                        />
+                        <feOffset dx="-2" />
+                        <feGaussianBlur stdDeviation="1" />
+                        <feComposite in2="hardAlpha" operator="out" />
+                        <feColorMatrix
+                          type="matrix"
+                          values="0 0 0 0 0.233333 0 0 0 0 0.632 0 0 0 0 1 0 0 0 0.59 0"
+                        />
+                        <feBlend
+                          mode="normal"
+                          in2="BackgroundImageFix"
+                          result="effect1_dropShadow_4690_14650"
+                        />
+                        <feBlend
+                          mode="normal"
+                          in="SourceGraphic"
+                          in2="effect1_dropShadow_4690_14650"
+                          result="shape"
+                        />
+                      </filter>
+                    </defs>
+                  </svg>
+                )}
               </Link>
             </NextLink>
           </Row>
