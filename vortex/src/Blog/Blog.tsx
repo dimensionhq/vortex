@@ -2,7 +2,7 @@ import { BlogProps, defaultProps, defaultTheme, Theme } from "../types/Blog";
 import Default from "./Default";
 import DevTO from "./DevTO";
 import Hashnode from "./Hashnode";
-// import "../styles.css";
+import "../index.css";
 import SEO from "react-seo-component";
 
 const SEOComponent: React.FC<BlogProps> = (props) => {

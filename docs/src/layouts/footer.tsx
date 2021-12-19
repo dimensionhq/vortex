@@ -3,19 +3,12 @@ import {
   useTheme,
   Container,
   Row,
-  Text,
   Spacer,
-  Link,
   NextUIThemes,
 } from "@nextui-org/react";
-import { useMediaQuery } from "@hooks/use-media-query";
 
 const Footer: React.FC = () => {
   const theme = useTheme() as NextUIThemes;
-  const year = new Date().getFullYear();
-  const isMobile = useMediaQuery(
-    Number(theme.breakpoints.sm.max.replace("px", ""))
-  );
   return (
     <Container fluid className="footer__container" gap={0}>
       <Row>
