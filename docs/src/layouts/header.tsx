@@ -1,10 +1,10 @@
-import React from 'react';
-import Head from 'next/head';
-import withDefaults from '@utils/with-defaults';
-import { toCapitalize } from '@utils/index';
-import { isProd } from '@utils/index';
-import { TWITTER_USER_NAME, SITE_URL } from '@lib/constants';
-import { useTheme } from '@nextui-org/react';
+import React from "react";
+import Head from "next/head";
+import withDefaults from "@utils/with-defaults";
+import { toCapitalize } from "@utils/index";
+import { isProd } from "@utils/index";
+import { TWITTER_USER_NAME, SITE_URL } from "@lib/constants";
+import { useTheme } from "@nextui-org/react";
 
 export interface HeaderProps {
   title?: string;
@@ -14,8 +14,8 @@ export interface HeaderProps {
 }
 
 const defaultProps = {
-  description: 'Beautiful, fast, modern React UI Library',
-  image: '/twitter-cards/nextui.png',
+  description: "Beautiful, fast, modern React UI Library",
+  image: "/twitter-cards/nextui.png",
 };
 
 if (global.document) {
@@ -32,20 +32,20 @@ if (global.document) {
 const Header: React.FC<HeaderProps> = ({ title, description, image, url }) => {
   const theme = useTheme();
 
-  let pageTitle = title ? `${toCapitalize(title)} | ` : '';
-  pageTitle += 'NextUI - Beautiful, fast,modern React UI Library';
+  let pageTitle = title ? `${toCapitalize(title)} | ` : "";
+  pageTitle += "Vortex";
   return (
     <Head>
       <title>{pageTitle}</title>
       <meta name="twitter:site" content={`@${TWITTER_USER_NAME}`} />
       <meta
         name="twitter:card"
-        content={image ? 'summary_large_image' : 'summary'}
+        content={image ? "summary_large_image" : "summary"}
       />
       {image && (
         <meta
           property="og:image"
-          content={image.startsWith('https://') ? image : `${SITE_URL}${image}`}
+          content={image.startsWith("https://") ? image : `${SITE_URL}${image}`}
         />
       )}
       <meta property="og:title" content={pageTitle} key="title" />
@@ -59,7 +59,7 @@ const Header: React.FC<HeaderProps> = ({ title, description, image, url }) => {
         key="viewport"
         content="width=device-width, initial-scale=1.0, maximum-scale=5.0"
       />
-      <link rel="icon" href="/favicon.ico" />
+      <link rel="icon" href="/logo.svg" />
       <link rel="manifest" href="/manifest.json" />
       <link
         rel="apple-touch-icon"
@@ -91,7 +91,7 @@ const Header: React.FC<HeaderProps> = ({ title, description, image, url }) => {
       {isProd && (
         <script
           defer
-          data-domain="nextui.org"
+          data-domain="hydralite.io"
           src="https://plausible.io/js/plausible.js"
         />
       )}

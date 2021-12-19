@@ -13,7 +13,6 @@ import {
   Grid,
   Snippet,
 } from "@nextui-org/react";
-import { ImageBrowser } from "@components";
 import { addColorAlpha } from "@utils/index";
 
 const Hero: React.FC = () => {
@@ -65,18 +64,14 @@ const Hero: React.FC = () => {
               <Row align="center">
                 <Image
                   className="hero__feature-img"
-                  src={
-                    isDark
-                      ? "/light-and-dark_dark.svg"
-                      : "/light-and-dark_light.svg"
-                  }
+                  src={"/layout.svg"}
                   quality={100}
                   width={32}
                   height={32}
                 />
                 <Spacer x={0.6} />
                 <Text b size="1.1rem">
-                  Light and dark UI
+                  Modular
                 </Text>
               </Row>
             </Grid>
@@ -145,9 +140,6 @@ const Hero: React.FC = () => {
             />
           )}
         </Col>
-        <Col span={6} className="hero__right-container">
-          <ImageBrowser className="hero__browser-image" />
-        </Col>
         {isDark && (
           <img
             className="hero__gradient-violet"
@@ -207,6 +199,7 @@ const Hero: React.FC = () => {
         :global(.hero__snippet) {
           border-width: ${isDark ? "0px" : "2px"} !important;
           backdrop-filter: saturate(180%) blur(20px);
+          max-width: 80%;
           background: ${addColorAlpha(theme.palette.accents_2, 0.5)} !important;
           box-shadow: ${isDark ? "0px 5px 20px -5px rgb(0 0 0 / 15%)" : "none"};
         }

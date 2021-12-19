@@ -1,10 +1,10 @@
-import React, { useRef, useMemo, useState, useEffect } from 'react';
-import cn from 'classnames';
-import Image from 'next/image';
-import ArrowRight from '../icons/arrow-right';
-import withDefaults from '@utils/with-defaults';
-import { useTheme, NextUIThemes } from '@nextui-org/react';
-import { Route } from '@lib/docs/page';
+import React, { useRef, useMemo, useState, useEffect } from "react";
+import cn from "classnames";
+import Image from "next/image";
+import ArrowRight from "../icons/arrow-right";
+import withDefaults from "@utils/with-defaults";
+import { useTheme, NextUIThemes } from "@nextui-org/react";
+import { Route } from "@lib/docs/page";
 
 export interface Props {
   level: number;
@@ -39,7 +39,7 @@ const Category: React.FC<React.PropsWithChildren<CategoryProps>> = ({
 }) => {
   const ref = useRef<HTMLDivElement>(null);
   const theme = useTheme() as NextUIThemes;
-  const isDark = theme.type === 'dark';
+  const isDark = theme.type === "dark";
   const [toggle, setToggle] = useState<boolean>(selected || opened);
   const [shouldScroll, setShouldScroll] = useState<boolean>(false);
 
@@ -67,7 +67,7 @@ const Category: React.FC<React.PropsWithChildren<CategoryProps>> = ({
   useEffect(() => {
     if (toggle && shouldScroll) {
       const content = document.querySelector(
-        isMobile ? '.docs-dropdown' : '.sidebar-content'
+        isMobile ? ".docs-dropdown" : ".sidebar-content"
       ) as HTMLDivElement;
       let height = 0;
       // 10 is added for better margin
@@ -82,7 +82,7 @@ const Category: React.FC<React.PropsWithChildren<CategoryProps>> = ({
   return (
     <div
       ref={ref}
-      className={cn('category', levelClass, { open: toggle, selected })}
+      className={cn("category", levelClass, { open: toggle, selected })}
     >
       <div className="label-container" onClick={toggleCategory}>
         {iconUrl && (
@@ -90,7 +90,7 @@ const Category: React.FC<React.PropsWithChildren<CategoryProps>> = ({
             width={24}
             height={24}
             className="category-image"
-            src={iconUrl.replace('.svg', isDark ? '-dark.svg' : '-light.svg')}
+            src={iconUrl.replace(".svg", isDark ? "-dark.svg" : "-light.svg")}
             alt={`${title} icon`}
           />
         )}

@@ -1,17 +1,17 @@
-import React, { useState, useEffect } from 'react';
-import Navbar from './navbar';
-import Footer from './footer';
-import { Container, Row, Col, useTheme, NextUIThemes } from '@nextui-org/react';
-import NextLink from 'next/link';
-import { Route } from '@lib/docs/page';
-import { Sidebar, TableOfContent } from '@components';
-import { Link } from '@nextui-org/react';
-import { Heading, getHeadings } from '@utils/get-headings';
-import { MetaProps } from '@lib/docs/meta';
-import Header from '@layouts/header';
-import { Sticky, PageNav } from '@components';
-import { REPO_NAME, GITHUB_URL } from '@lib/github/constants';
-import { TAG, CONTENT_PATH } from '@lib/docs/config';
+import React, { useState, useEffect } from "react";
+import Navbar from "./navbar";
+import Footer from "./footer";
+import { Container, Row, Col, useTheme, NextUIThemes } from "@nextui-org/react";
+import NextLink from "next/link";
+import { Route } from "@lib/docs/page";
+import { Sidebar, TableOfContent } from "@components";
+import { Link } from "@nextui-org/react";
+import { Heading, getHeadings } from "@utils/get-headings";
+import { MetaProps } from "@lib/docs/meta";
+import Header from "@layouts/header";
+import { Sticky, PageNav } from "@components";
+import { REPO_NAME, GITHUB_URL } from "@lib/github/constants";
+import { TAG, CONTENT_PATH } from "@lib/docs/config";
 
 export interface Props {
   routes: Route[];
@@ -35,15 +35,15 @@ const DocsLayout: React.FC<React.PropsWithChildren<Props>> = ({
 }) => {
   const [headings, setHeadings] = useState<Heading[]>([]);
   const [scrollPosition, setScrollPosition] = useState(
-    (typeof window !== 'undefined' && window.pageYOffset) || 0
+    (typeof window !== "undefined" && window.pageYOffset) || 0
   );
   const theme = useTheme() as NextUIThemes;
-  const isDark = theme.type === 'dark';
+  const isDark = theme.type === "dark";
 
   useEffect(() => {
-    window.addEventListener('scroll', onScroll.bind(this));
+    window.addEventListener("scroll", onScroll.bind(this));
     return () => {
-      window.removeEventListener('scroll', onScroll.bind(this));
+      window.removeEventListener("scroll", onScroll.bind(this));
     };
   }, []);
 
@@ -72,7 +72,7 @@ const DocsLayout: React.FC<React.PropsWithChildren<Props>> = ({
           <PageNav tag={tag} prevRoute={prevRoute} nextRoute={nextRoute} />
           <footer>
             {tag ? (
-              <NextLink href={slug || ''}>
+              <NextLink href={slug || ""}>
                 <Link>
                   <small>Go to the live version of this page</small>
                 </Link>
@@ -110,12 +110,14 @@ const DocsLayout: React.FC<React.PropsWithChildren<Props>> = ({
           }
           :global(.docs__left-sidebar) {
             width: 20%;
+            min-width: 15%;
             max-height: calc(100vh - 4rem);
             overflow: auto;
             display: none;
           }
           :global(.docs__center) {
             z-index: 99;
+            max-width: 75%;
             padding: 0 1.4rem !important;
           }
           :global(.docs__left-sidebar::-webkit-scrollbar) {
@@ -158,6 +160,13 @@ const DocsLayout: React.FC<React.PropsWithChildren<Props>> = ({
           @media only screen and (min-width: ${theme.breakpoints.sm.max}) {
             :global(.docs__left-sidebar) {
               display: block;
+            }
+          }
+          @media only screen and (max-width: ${theme.breakpoints.md.max}) {
+            :global(.docs__center) {
+              padding: 0 1rem !important;
+              max-width: 100%;
+              width: 100%;
             }
           }
           @media only screen and (max-width: ${theme.breakpoints.md.min}) {

@@ -101,23 +101,13 @@ const Navbar: React.FC<Props> = ({ detached, routes }) => {
               <Link
                 aria-disabled
                 className="navbar__disabled-link"
-                href="#"
+                href="https://github.com/hydralite/vortex/graphs/contributors"
                 title="Coming soon.."
               >
                 Contributors
               </Link>
             </NextLink>
             <Spacer x={1} y={0} />
-            <NextLink href="#">
-              <Link
-                aria-disabled
-                className="navbar__disabled-link"
-                href="#"
-                title="Coming soon.."
-              >
-                Feedback
-              </Link>
-            </NextLink>
           </Row>
         </Col>
         <Col className="navbar__search-container">
@@ -130,7 +120,7 @@ const Navbar: React.FC<Props> = ({ detached, routes }) => {
             >
               <Link
                 className="navbar__social-icon"
-                href="https://twitter.com/getnextui"
+                href="https://twitter.com/hydraliteio"
                 target="_blank"
                 rel="noreferrer"
               >
@@ -143,7 +133,7 @@ const Navbar: React.FC<Props> = ({ detached, routes }) => {
               </Link>
               <Link
                 className="navbar__social-icon"
-                href="https://discord.gg/9b6yyZKmH4"
+                href="https://discord.gg/pRuPhftzbw"
                 target="_blank"
                 rel="noreferrer"
               >
@@ -156,7 +146,7 @@ const Navbar: React.FC<Props> = ({ detached, routes }) => {
               </Link>
               <Link
                 className="navbar__social-icon"
-                href="https://github.com/nextui-org/nextui"
+                href="https://github.com/hydralite/vortex"
                 target="_blank"
                 rel="noreferrer"
               >

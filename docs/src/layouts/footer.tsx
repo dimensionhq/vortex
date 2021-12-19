@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   useTheme,
   Container,
@@ -7,28 +7,19 @@ import {
   Spacer,
   Link,
   NextUIThemes,
-} from '@nextui-org/react';
-import { useMediaQuery } from '@hooks/use-media-query';
+} from "@nextui-org/react";
+import { useMediaQuery } from "@hooks/use-media-query";
 
 const Footer: React.FC = () => {
   const theme = useTheme() as NextUIThemes;
   const year = new Date().getFullYear();
   const isMobile = useMediaQuery(
-    Number(theme.breakpoints.sm.max.replace('px', ''))
+    Number(theme.breakpoints.sm.max.replace("px", ""))
   );
   return (
     <Container fluid className="footer__container" gap={0}>
       <Row>
-        <Text span className="footer__copy" size={isMobile ? 12 : 14}>
-          &copy; Copyright&nbsp;{year}&nbsp;NextUI
-        </Text>
         <Spacer x={1} />
-        <Text span className="footer__by" size={isMobile ? 12 : 14}>
-          Created by&nbsp;
-          <Link href="https://jrgarciadev.com" rel="noreferrer" target="_blank">
-            Junior Garcia
-          </Link>
-        </Text>
         <style jsx>{`
           :global(.footer__container) {
             z-index: 99;
