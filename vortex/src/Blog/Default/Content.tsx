@@ -155,9 +155,8 @@ const Content: React.FC<BlogProps> = (props) => {
       } else {
         return (
           <a
+            className="border-b-2 border-blue-500 hover:border-blue-700"
             href={rest.href}
-            className="no-underline hover:underline mt-4 mb-4"
-            style={{ textDecorationColor: props.theme?.linkColor }}
           >
             {children}
           </a>

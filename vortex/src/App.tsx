@@ -14,54 +14,57 @@ function App() {
   return (
     <div className="w-full h-auto overflow-x-hidden flex items-center justify-center">
       <Blog
-        layout="Default"
+        layout="DevTO"
         author={{
           name: "Tiia",
           avatar:
             "https://blog.tiia.rocks/_next/image?url=https%3A%2F%2Fcdn.hashnode.com%2Fres%2Fhashnode%2Fimage%2Fupload%2Fv1631555930761%2FcF4G93tvG.jpeg%3Fw%3D200%26h%3D200%26fit%3Dcrop%26crop%3Dfaces%26auto%3Dcompress%2Cformat%26format%3Dwebp&w=256&q=75",
         }}
-        // theme={{
-        //   bgColor: "#19181a",
-        //   textColor: "#9ca3af",
-        //   inlineBgColor: "#ebebeb",
-        // }}
-        // reactions={{
-        //   onClick: (val: string, upvote: boolean) => {
-        //     return console.log(val, upvote);
-        //   },
-        //   reactions: [
-        //     {
-        //       upvotes: 5,
-        //       emote: Emote(),
-        //       name: "Zap",
-        //     },
-        //     {
-        //       upvotes: 6,
-        //       emote: "💯",
-        //       name: "100",
-        //     },
-        //     {
-        //       emote: "✨",
-        //       name: "Star",
-        //       upvotes: 7,
-        //     },
-        //   ],
-        // }}
+        theme={{
+          bgColor: "#19181a",
+          textColor: "#9ca3af",
+          inlineBgColor: "#ebebeb",
+        }}
+        reactions={{
+          onClick: (val: string, upvote: boolean) => {
+            return console.log(val, upvote);
+          },
+          reactions: [
+            {
+              upvotes: 5,
+              emote: Emote(),
+              name: "Zap",
+            },
+            {
+              upvotes: 6,
+              emote: "💯",
+              name: "100",
+            },
+            {
+              emote: "✨",
+              name: "Star",
+              upvotes: 7,
+            },
+          ],
+        }}
         // font="Inter, sans-serif"
-        // header={{
-        //   title: "GitHub Copilot is here to stay",
-        //   subtitle: "A gimpse into the AI-Future that we can expect",
-        //   category: {
-        //     title: "A",
-        //     url: "B",
-        //   },
-        //   image: {
-        //     borderRadius: "0px",
-        //     src: "https://blog.tiia.rocks/_next/image?url=https%3A%2F%2Fcdn.hashnode.com%2Fres%2Fhashnode%2Fimage%2Fupload%2Fv1638892097010%2FgRkRvLXQh.png%3Fw%3D1600%26h%3D840%26fit%3Dcrop%26crop%3Dentropy%26auto%3Dcompress%2Cformat%26format%3Dwebp&w=1920&q=75",
-        //   },
-        // }}
-        // date="Dec 7, 2021"
+        header={{
+          title: "GitHub Copilot is here to stay",
+          subtitle: "A gimpse into the AI-Future that we can expect",
+          category: {
+            title: "A",
+            url: "B",
+          },
+          image: {
+            borderRadius: "0px",
+            src: "https://blog.tiia.rocks/_next/image?url=https%3A%2F%2Fcdn.hashnode.com%2Fres%2Fhashnode%2Fimage%2Fupload%2Fv1638892097010%2FgRkRvLXQh.png%3Fw%3D1600%26h%3D840%26fit%3Dcrop%26crop%3Dentropy%26auto%3Dcompress%2Cformat%26format%3Dwebp&w=1920&q=75",
+          },
+        }}
+        date="Dec 7, 2021"
         content={`
+
+[This is a link](https://github.com)
+
 AI used to be a buzzword, Just as Crypto or Blockchain is today. It was thrown around inflationary until everyone knew the term but did not really know what it was all about. But mentioning AI made everything new, shiny, modern, and sounded really successful. Products were meant to have AI as a marketing stunt while not really including the AI they overpromised.
 
 I remember talking to someone years ago who launched an AI system that would automatically recognize Creditcard numbers being held into a Webcam. But the system wasn't working on the launch day and so they cheaply hired people who would sit there and type in the credit card numbers manually. They were afterward praised for their flawlessly working text recognition.

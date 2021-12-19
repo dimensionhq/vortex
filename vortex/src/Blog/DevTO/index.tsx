@@ -206,7 +206,7 @@ const Hashnode: React.FC<BlogProps> = (props) => {
           props.reactions ? "lg:w-[75%]" : "lg:w-full"
         }`}
       >
-        <div className="flex flex-col gap-10">
+        <div className="flex flex-col gap-5">
           <img
             src={props.header?.image?.src}
             alt={props.header?.title}
@@ -216,6 +216,15 @@ const Hashnode: React.FC<BlogProps> = (props) => {
             }}
           />
           <div className="px-3">
+            {props.header?.category ? (
+              <div className="flex mb-5">
+                <a href={props.header.category.url}>
+                  {props.header.category.title}
+                </a>
+              </div>
+            ) : (
+              <></>
+            )}
             {props.author ? (
               <div
                 style={{

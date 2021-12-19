@@ -117,9 +117,8 @@ const Hashnode: React.FC<BlogProps> = (props) => {
       } else {
         return (
           <a
+            className="border-b-2 border-blue-500 hover:border-blue-700"
             href={rest.href}
-            className="no-underline hover:underline mt-4 mb-4 text-blue-500"
-            style={{ textDecorationColor: props.theme?.inlineBgColor }}
           >
             {children}
           </a>
@@ -150,9 +149,8 @@ const Hashnode: React.FC<BlogProps> = (props) => {
       } else {
         return (
           <a
+            className="border-b-2 border-blue-500 hover:border-blue-700"
             href={rest.href}
-            className="no-underline hover:underline mt-4 mb-4 text-blue-500"
-            style={{ textDecorationColor: props.theme?.inlineBgColor }}
           >
             {children}
           </a>
@@ -200,7 +198,7 @@ const Hashnode: React.FC<BlogProps> = (props) => {
           props.reactions ? "lg:w-[75%]" : "lg:w-full"
         }`}
       >
-        <div className="flex flex-col gap-10">
+        <div className="flex flex-col gap-4">
           <img
             src={props.header?.image?.src}
             alt={props.header?.title}
@@ -223,6 +221,15 @@ const Hashnode: React.FC<BlogProps> = (props) => {
               {props.header?.subtitle}
             </h5>
           </div>
+          {props.header?.category ? (
+            <div className="flex">
+              <a href={props.header.category.url}>
+                {props.header.category.title}
+              </a>
+            </div>
+          ) : (
+            <></>
+          )}
           {props.author ? (
             <div
               style={{ borderColor: props.theme?.inlineBgColor }}

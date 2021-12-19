@@ -119,7 +119,7 @@ export interface Theme {
   linkColor?: string;
   textColor?: string;
   inlineBgColor?: string;
-  codeBlockTheme: Themes;
+  codeBlockTheme?: Themes;
   twitter?: {
     theme?: "light" | "dark";
   };
