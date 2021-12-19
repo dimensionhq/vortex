@@ -31,6 +31,7 @@ importers:
       rehype-raw: ^6.1.0
       remark-gfm: ^3.0.1
       remark-html: ^15.0.1
+      super-react-gist: ^1.0.4
       tailwindcss: ^3.0.1
       typescript: ^4.4.4
       vite: ^2.7.0
@@ -50,6 +51,7 @@ importers:
       rehype-raw: 6.1.0
       remark-gfm: 3.0.1
       remark-html: 15.0.1
+      super-react-gist: 1.0.4
     devDependencies:
       '@types/node': 16.11.12
       '@types/react': 17.0.37
@@ -1976,6 +1978,18 @@ packages:
       react: 17.0.2
     dev: false
 
+  /react-dom/16.14.0_react@16.14.0:
+    resolution: {integrity: sha512-1gCeQXDLoIqMgqD3IO2Ah9bnf0w9kzhwN5q4FGnHZ67hBm9yePzB5JJAIQCc8x3pFnNlwFq4RidZggNAAkzWWw==}
+    peerDependencies:
+      react: ^16.14.0
+    dependencies:
+      loose-envify: 1.4.0
+      object-assign: 4.1.1
+      prop-types: 15.7.2
+      react: 16.14.0
+      scheduler: 0.19.1
+    dev: false
+
   /react-dom/17.0.2_react@17.0.2:
     resolution: {integrity: sha512-s4h96KtLDUQlsENhMn1ar8t2bEa+q/YAtj8pPPdIjPDGBDIVNsrD9aXNWqspUe6AzKCIG0C1HZZLqLV7qpOBGA==}
     peerDependencies:
@@ -2086,6 +2100,15 @@ packages:
       react: '>=15'
     dependencies:
       react: 17.0.2
+    dev: false
+
+  /react/16.14.0:
+    resolution: {integrity: sha512-0X2CImDkJGApiAlcf0ODKIneSwBPhqJawOa5wCtKbu7ZECrmS26NvtSILynQ66cgkT/RJ4LidJOc3bUESwmU8g==}
+    engines: {node: '>=0.10.0'}
+    dependencies:
+      loose-envify: 1.4.0
+      object-assign: 4.1.1
+      prop-types: 15.7.2
     dev: false
 
   /react/17.0.2:
@@ -2215,6 +2238,13 @@ packages:
     resolution: {integrity: sha512-Gd2UZBJDkXlY7GbJxfsE8/nvKkUEU1G38c1siN6QP6a9PT9MmHB8GnpscSmMJSoF8LOIrt8ud/wPtojys4G6+g==}
     dev: true
 
+  /scheduler/0.19.1:
+    resolution: {integrity: sha512-n/zwRWRYSUj0/3g/otKDRPMh6qv2SYMWNq85IEa8iZyAv8od9zDYpGSnpBEjNgcMNq6Scbu5KfIPxNF72R/2EA==}
+    dependencies:
+      loose-envify: 1.4.0
+      object-assign: 4.1.1
+    dev: false
+
   /scheduler/0.20.2:
     resolution: {integrity: sha512-2eWfGgAqqWFGqtdMmcL5zCMK1U8KlXv8SQFGglL3CEtd0aDVDWgeF/YoCmvln55m5zSk3J/20hTaSBeSObsQDQ==}
     dependencies:
@@ -2256,6 +2286,14 @@ packages:
     resolution: {integrity: sha512-CzFnRRXhzWIdItT3OmF8SQfWyahHhjq3HwcMNCNLn+N7klOOqPjMeG/4JSu77D7ypZdGvSzvkrbyeTMizz2VrA==}
     dependencies:
       inline-style-parser: 0.1.1
+    dev: false
+
+  /super-react-gist/1.0.4:
+    resolution: {integrity: sha512-u2Q+kTah8CJE5ttWbLQuWdrliKQFkw3dcbuN6isPGRqeMo9EHRpEW0pwMQphcLwjvL5fCNNuBDKdbqDu5QMzjg==}
+    dependencies:
+      prop-types: 15.7.2
+      react: 16.14.0
+      react-dom: 16.14.0_react@16.14.0
     dev: false
 
   /supports-color/5.5.0:
