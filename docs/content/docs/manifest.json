@@ -1,0 +1,40 @@
+{
+    "routes": [
+        {
+            "title": "Documentation",
+            "keywords": "docs, doc, documentation, getting started, vortex",
+            "subtitle": "For an advanced search please use the search input",
+            "icon": "note",
+            "section": "Scope",
+            "heading": true,
+            "routes": [
+                {
+                    "title": "Guide",
+                    "open": true,
+                    "keywords": "guide, getting started, start, vortex",
+                    "icon": "/paper.svg",
+                    "routes": [
+                        {
+                            "title": "Getting Started",
+                            "keywords": "getting started, start, vortex",
+                            "path": "/docs/guide/getting-started.mdx"
+                        }
+                    ]
+                },
+                {
+                    "title": "Customization",
+                    "open": true,
+                    "keywords": "Customization, vortex",
+                    "icon": "/category.svg",
+                    "routes": [
+                        {
+                            "title": "Themes",
+                            "keywords": "Themes, vortex, Customization",
+                            "path": "/docs/customization/themes.mdx"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

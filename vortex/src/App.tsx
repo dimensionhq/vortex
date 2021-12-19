@@ -12,7 +12,7 @@ function Emote(): JSX.Element {
 
 function App() {
   return (
-    <div className="w-full h-auto overflow-x-hidden flex items-center justify-center">
+    <div className="w-full h-auto overflow-x-hidden">
       <Blog
         layout="DevTO"
         author={{

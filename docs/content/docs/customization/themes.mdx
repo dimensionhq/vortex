@@ -1,0 +1,149 @@
+---
+title: Themes
+description: Themes supported by vortex
+url: https://hydralite.io/vortex/docs/customization/themes
+---
+
+# Themes
+
+Vortex is entirely customizable! You can customize the look and feel of your blog by the values listed below.
+
+<Spacer y={2} />
+
+## Usage
+
+```json
+{
+  "textColor": "black",
+  "twitter": {
+    "theme": "dark"
+  },
+  "codeBlockTheme": "atomOneDark",
+  "primary": "#23272a",
+  "dateColor": "white",
+  "inlineTextColor": "#333",
+  "bgColor": "white",
+  "linkColor": "#5862f2",
+  "inlineBgColor": "#ebebeb"
+}
+```
+
+<Spacer y={2} />
+
+### Theme Props
+
+| Attribute          | Nullable | Accepted values                                                           | Default       |
+| ------------------ | -------- | ------------------------------------------------------------------------- | ------------- |
+| **textColor**      | true     | `color`                                                                   | `#000`        |
+| **twitter-theme**  | true     | `dark/light`                                                              | `dark`        |
+| **codeBlockTheme** | true     | [Supported Themes](/docs/customization/themes#supported-codeblock-themes) | `atomOneDark` |
+| **primary**        | true     | `color`                                                                   | `#23272a`     |
+| **dateColor**      | true     | `color`                                                                   | `#fff`        |
+| **bgColor**        | true     | `true/false`                                                              | `white`       |
+| **linkColor**      | true     | `color`                                                                   | `#5862f2`     |
+| **inlineBgColor**  | true     | `color (in hex)`                                                          | `#ebebeb`     |
+
+<Spacer y={2} />
+
+#### Supported codeblock themes
+
+```ts
+type Themes =
+  | "a11yDark"
+  | "a11yLight"
+  | "agate"
+  | "anOldHope"
+  | "androidstudio"
+  | "arduinoLight"
+  | "arta"
+  | "ascetic"
+  | "atelierCaveDark"
+  | "atelierCaveLight"
+  | "atelierDuneDark"
+  | "atelierDuneLight"
+  | "atelierEstuaryDark"
+  | "atelierEstuaryLight"
+  | "atelierForestDark"
+  | "atelierForestLight"
+  | "atelierHeathDark"
+  | "atelierHeathLight"
+  | "atelierLakesideDark"
+  | "atelierLakesideLight"
+  | "atelierPlateauDark"
+  | "atelierPlateauLight"
+  | "atelierSavannaDark"
+  | "atelierSavannaLight"
+  | "atelierSeasideDark"
+  | "atelierSeasideLight"
+  | "atelierSulphurpoolDark"
+  | "atelierSulphurpoolLight"
+  | "atomOneDarkReasonable"
+  | "atomOneDark"
+  | "atomOneLight"
+  | "brownPaper"
+  | "codepenEmbed"
+  | "colorBrewer"
+  | "darcula"
+  | "dark"
+  | "defaultStyle"
+  | "docco"
+  | "dracula"
+  | "far"
+  | "foundation"
+  | "githubGist"
+  | "github"
+  | "gml"
+  | "googlecode"
+  | "gradientDark"
+  | "gradientLight"
+  | "grayscale"
+  | "gruvboxDark"
+  | "gruvboxLight"
+  | "hopscotch"
+  | "hybrid"
+  | "idea"
+  | "irBlack"
+  | "isblEditorDark"
+  | "isblEditorLight"
+  | "kimbieDark"
+  | "kimbieLight"
+  | "lightfair"
+  | "lioshi"
+  | "magula"
+  | "monoBlue"
+  | "monokaiSublime"
+  | "monokai"
+  | "nightOwl"
+  | "nnfxDark"
+  | "nnfx"
+  | "nord"
+  | "obsidian"
+  | "ocean"
+  | "paraisoDark"
+  | "paraisoLight"
+  | "pojoaque"
+  | "purebasic"
+  | "qtcreatorDark"
+  | "qtcreatorLight"
+  | "railscasts"
+  | "rainbow"
+  | "routeros"
+  | "schoolBook"
+  | "shadesOfPurple"
+  | "solarizedDark"
+  | "solarizedLight"
+  | "srcery"
+  | "stackoverflowDark"
+  | "stackoverflowLight"
+  | "sunburst"
+  | "tomorrowNightBlue"
+  | "tomorrowNightBright"
+  | "tomorrowNightEighties"
+  | "tomorrowNight"
+  | "tomorrow"
+  | "vs"
+  | "vs2015"
+  | "xcode"
+  | "xt256"
+  | "zenburn";
+```
