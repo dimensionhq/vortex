@@ -4,8 +4,8 @@ function Emote(): JSX.Element {
   return (
     <img
       style={{ width: "28px" }}
-      src="https://blog.tiia.rocks/_next/image?url=https%3A%2F%2Fcdn.hashnode.com%2Fres%2Fhashnode%2Fimage%2Fupload%2Fv1594643793473%2FwxrlC2BFn.png%3Fh%3D64%26w%3D64%26fit%3Dcrop%26crop%3Dentropy%26auto%3Dcompress%26auto%3Dcompress%2Cformat%26format%3Dwebp&w=128&q=75"
-      alt=""
+      src="https://discord.com/assets/08c0a077780263f3df97613e58e71744.svg"
+      alt="👍"
     />
   );
 }
@@ -15,7 +15,7 @@ function App() {
     <div className="w-full h-auto overflow-x-hidden ">
       <div>
         <Blog
-          layout="DevTO"
+          layout="Default"
           author={{
             name: "Tiia",
             avatar:
@@ -27,7 +27,7 @@ function App() {
             inlineBgColor: "#ebebeb",
           }}
           reactions={{
-            onClick: (val: string, upvote: boolean) => {
+            onClick: (name: string, upvote: boolean) => {
               return console.log(val, upvote);
             },
             reactions: [
