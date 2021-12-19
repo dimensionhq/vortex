@@ -3,7 +3,7 @@ import Head from "next/head";
 import withDefaults from "@utils/with-defaults";
 import { toCapitalize } from "@utils/index";
 import { isProd } from "@utils/index";
-import { TWITTER_USER_NAME, SITE_URL } from "@lib/constants";
+import { TWITTER_USER_NAME } from "@lib/constants";
 import { useTheme } from "@nextui-org/react";
 
 export interface HeaderProps {
@@ -29,7 +29,7 @@ if (global.document) {
   }
 }
 
-const Header: React.FC<HeaderProps> = ({ title, description, image, url }) => {
+const Header: React.FC<HeaderProps> = ({ title, url }) => {
   const theme = useTheme();
 
   let pageTitle = title ? `${toCapitalize(title)} | ` : "";
@@ -38,20 +38,10 @@ const Header: React.FC<HeaderProps> = ({ title, description, image, url }) => {
     <Head>
       <title>{pageTitle}</title>
       <meta name="twitter:site" content={`@${TWITTER_USER_NAME}`} />
-      <meta
-        name="twitter:card"
-        content={image ? "summary_large_image" : "summary"}
-      />
-      {image && (
-        <meta
-          property="og:image"
-          content={image.startsWith("https://") ? image : `${SITE_URL}${image}`}
-        />
-      )}
       <meta property="og:title" content={pageTitle} key="title" />
       {url && <meta property="og:url" content={url} />}
-      <meta property="og:description" content={description} />
-      <meta name="description" content={description} />
+      {/* <meta property="og:description" content={description} />
+      <meta name="description" content={description} /> */}
       <meta name="msapplication-TileColor" content={theme.palette.background} />
       <meta name="theme-color" content={theme.palette.background} />
       <meta

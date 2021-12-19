@@ -91,10 +91,8 @@ const Navbar: React.FC<Props> = ({ detached, routes }) => {
             <Spacer x={1} y={0} />
             <NextLink href="#">
               <Link
-                aria-disabled
-                className="navbar__disabled-link"
+                className="navbar__link"
                 href="https://github.com/hydralite/vortex/graphs/contributors"
-                title="Coming soon.."
               >
                 Contributors
               </Link>
