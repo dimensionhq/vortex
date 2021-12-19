@@ -40,7 +40,7 @@ const Blog: React.FC<BlogProps> = (props) => {
   } else if (blog_props.layout === "DevTO") {
     return (
       <div
-        className="w-auto h-full"
+        className="w-auto h-full flex items-center justify-center"
         style={{ fontFamily: blog_props.font?.body }}
       >
         <SEOComponent {...blog_props}></SEOComponent>
@@ -50,7 +50,7 @@ const Blog: React.FC<BlogProps> = (props) => {
   } else if (blog_props.layout === "Hashnode") {
     return (
       <div
-        className="w-auto h-full"
+        className="w-auto h-full flex items-center justify-center"
         style={{ fontFamily: blog_props.font?.body }}
       >
         <SEOComponent {...blog_props}></SEOComponent>

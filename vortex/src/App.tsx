@@ -12,56 +12,57 @@ function Emote(): JSX.Element {
 
 function App() {
   return (
-    <div className="w-full h-auto overflow-x-hidden">
-      <Blog
-        layout="DevTO"
-        author={{
-          name: "Tiia",
-          avatar:
-            "https://blog.tiia.rocks/_next/image?url=https%3A%2F%2Fcdn.hashnode.com%2Fres%2Fhashnode%2Fimage%2Fupload%2Fv1631555930761%2FcF4G93tvG.jpeg%3Fw%3D200%26h%3D200%26fit%3Dcrop%26crop%3Dfaces%26auto%3Dcompress%2Cformat%26format%3Dwebp&w=256&q=75",
-        }}
-        theme={{
-          bgColor: "#19181a",
-          textColor: "#9ca3af",
-          inlineBgColor: "#ebebeb",
-        }}
-        reactions={{
-          onClick: (val: string, upvote: boolean) => {
-            return console.log(val, upvote);
-          },
-          reactions: [
-            {
-              upvotes: 5,
-              emote: Emote(),
-              name: "Zap",
+    <div className="w-full h-auto overflow-x-hidden ">
+      <div>
+        <Blog
+          layout="DevTO"
+          author={{
+            name: "Tiia",
+            avatar:
+              "https://blog.tiia.rocks/_next/image?url=https%3A%2F%2Fcdn.hashnode.com%2Fres%2Fhashnode%2Fimage%2Fupload%2Fv1631555930761%2FcF4G93tvG.jpeg%3Fw%3D200%26h%3D200%26fit%3Dcrop%26crop%3Dfaces%26auto%3Dcompress%2Cformat%26format%3Dwebp&w=256&q=75",
+          }}
+          theme={{
+            bgColor: "#19181a",
+            textColor: "#9ca3af",
+            inlineBgColor: "#ebebeb",
+          }}
+          reactions={{
+            onClick: (val: string, upvote: boolean) => {
+              return console.log(val, upvote);
             },
-            {
-              upvotes: 6,
-              emote: "💯",
-              name: "100",
+            reactions: [
+              {
+                upvotes: 5,
+                emote: Emote(),
+                name: "Zap",
+              },
+              {
+                upvotes: 6,
+                emote: "💯",
+                name: "100",
+              },
+              {
+                emote: "✨",
+                name: "Star",
+                upvotes: 7,
+              },
+            ],
+          }}
+          // font="Inter, sans-serif"
+          header={{
+            title: "GitHub Copilot is here to stay",
+            subtitle: "A gimpse into the AI-Future that we can expect",
+            category: {
+              title: "A",
+              url: "B",
             },
-            {
-              emote: "✨",
-              name: "Star",
-              upvotes: 7,
+            image: {
+              borderRadius: "0px",
+              src: "https://blog.tiia.rocks/_next/image?url=https%3A%2F%2Fcdn.hashnode.com%2Fres%2Fhashnode%2Fimage%2Fupload%2Fv1638892097010%2FgRkRvLXQh.png%3Fw%3D1600%26h%3D840%26fit%3Dcrop%26crop%3Dentropy%26auto%3Dcompress%2Cformat%26format%3Dwebp&w=1920&q=75",
             },
-          ],
-        }}
-        // font="Inter, sans-serif"
-        header={{
-          title: "GitHub Copilot is here to stay",
-          subtitle: "A gimpse into the AI-Future that we can expect",
-          category: {
-            title: "A",
-            url: "B",
-          },
-          image: {
-            borderRadius: "0px",
-            src: "https://blog.tiia.rocks/_next/image?url=https%3A%2F%2Fcdn.hashnode.com%2Fres%2Fhashnode%2Fimage%2Fupload%2Fv1638892097010%2FgRkRvLXQh.png%3Fw%3D1600%26h%3D840%26fit%3Dcrop%26crop%3Dentropy%26auto%3Dcompress%2Cformat%26format%3Dwebp&w=1920&q=75",
-          },
-        }}
-        date="Dec 7, 2021"
-        content={`
+          }}
+          date="Dec 7, 2021"
+          content={`
 
 [This is a link](https://github.com)
 
@@ -154,7 +155,8 @@ I am excited about how it will help me learn and progress. **But I also want to 
 
 ![lol](https://cdn.hashnode.com/res/hashnode/image/upload/v1638906382303/jj3dEbbYC.png?auto=compress,format&format=webp)
         `}
-      />
+        />
+      </div>
     </div>
   );
 }
