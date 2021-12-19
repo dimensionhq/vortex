@@ -6,7 +6,7 @@ A hyper-extensible library to build blogs crazy fast.
 
 <br>
 
-![badge]("https://img.shields.io/badge/version-1.0.0-green") ![badge](https://img.shields.io/github/license/hydralite/vortex?color=pink) ![]badge(https://img.shields.io/tokei/lines/github/hydralite/vortex?color=white&label=lines%20of%20code) ![badge](https://img.shields.io/github/languages/top/hydralite/vortex?color=%230xfffff)
+![badge]("https://img.shields.io/badge/version-1.0.0-green") ![badge](https://img.shields.io/github/license/hydralite/vortex?color=pink) ![badge](https://img.shields.io/tokei/lines/github/hydralite/vortex?color=white&label=lines%20of%20code) ![badge](https://img.shields.io/github/languages/top/hydralite/vortex?color=%230xfffff)
 
 🌟 Don't forget to give us a star if you'd like to support us ❤️
 
