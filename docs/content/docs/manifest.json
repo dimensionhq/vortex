@@ -18,6 +18,11 @@
               "title": "Getting Started",
               "keywords": "getting started, start, vortex",
               "path": "/docs/guide/getting-started.mdx"
+            },
+            {
+              "title": "Usage",
+              "keywords": "usage, start, vortex",
+              "path": "/docs/guide/usage.mdx"
             }
           ]
         },
@@ -28,9 +33,9 @@
           "icon": "/layout.svg",
           "routes": [
             {
-              "title": "Customization",
-              "keywords": "customization, layout, page, page layout, vortex",
-              "path": "/docs/layout/customization.mdx"
+              "title": "Configuration",
+              "keywords": "configuration, layout, page, page layout, vortex",
+              "path": "/docs/layout/configuration.mdx"
             },
             {
               "title": "Default Layout",
@@ -64,6 +69,11 @@
               "title": "Reactions",
               "keywords": "Reactions, vortex, Customization",
               "path": "/docs/customization/reactions.mdx"
+            },
+            {
+              "title": "Typography",
+              "keywords": "Fonts, vortex, Customization",
+              "path": "/docs/customization/typography.mdx"
             }
           ]
         }
