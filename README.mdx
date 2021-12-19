@@ -1,0 +1,224 @@
+
+<p align="center">
+  <img src="https://github.com/electric-package-manager/electric/blob/master/assets/electric-icon-transparent-bg.png" />
+</p>
+
+
+<h1 align="center">Vortex</h1>
+<h4 align="center">A hyper-extensible library to build blogs crazy fast.</h1>
+<br>
+
+# Vortex - Builds Blogs created as fast as Lewis Hamilton drives
+
+# Usage
+
+Let's build our first blog. This walkthrough will take you through Vortex's api and its features.
+
+### Step 1: Install & Import Vortex
+
+Inside your React project directory, install Vortex by running either of the following:
+
+```bash
+npm i @hydralite/vortex
+# or
+yarn add @hydralite/vortex
+# or
+pnpm i @hydralite/vortex
+```
+
+Now that we've installed Vortex, let's import it.
+
+We can do so by importing the `Blog` component directly from the Vortex library.
+
+```jsx
+import Blog from "@hydralite/vortex";
+```
+
+### Step 2: Initializing Our Blog Component
+
+```jsx
+import Blog from "@hydralite/vortex";
+
+function App() {
+  return (
+    <div>
+      <Blog />
+    </div>
+  );
+}
+
+export default App;
+```
+
+From now onwards, we'll be focusing primarily on the `Blog` component for readability purposes.
+
+### Step 3: Choose a layout
+
+The first step to building your blog is to choose a layout. There are 3 in-built layouts bundled-in with Vortex.
+
+To understand more about each layout, check out the [layout guide](/docs/layout/configuration).
+
+For now, we'll be choosing the [default](/docs/layout/default) layout.
+
+```jsx
+<Blog
+    {/* You can also use Hashnode or DevTO instead  */}
+    layout = "Default"
+/>
+```
+
+### Step 4: Add some content
+
+It's time to add some content to our blog!
+
+Vortex supports markdown content, so let's give it some to display!
+
+```jsx
+const content = `
+Everything's supported - a [link](https://example.com), some \`inline\` content, **bold** text, <ins>underlined text</ins>, and even a codeblock with syntax highlighting:
+
+You can specify the language of the codeblock after the backticks (which need to be escaped).
+\`\`\`js
+console.log("Here's some JavaScript code!");
+console.log("it works inside the codeblock!");
+\`\`\`
+
+### Images
+![image](https://images.ctfassets.net/hrltx12pl8hq/7JnR6tVVwDyUM8Cbci3GtJ/bf74366cff2ba271471725d0b0ef418c/shutterstock_376532611-og.jpg)
+
+### Tweet Embeds
+
+Below is a tweet embed:
+[tweet](https://twitter.com/elonmusk/status/1470157804304572420?s=20)
+
+### GitHub Gist Embeds
+
+Here's a GitHub gist:
+[gist](https://gist.github.com/getify/2b53198906d320abe650)
+
+### CodePen Embeds
+[codepen embed](https://codepen.io/alvaromontoro/pen/vYexLGV)
+`;
+```
+
+Now that we've written up some content - let's pass it into the blog!
+
+```jsx
+<Blog layout="Default" content={content} />
+```
+
+### Step 5: Add headers
+
+It's time to spice up our blog with a banner, a title, a subtitle, and maybe even a category!
+
+```jsx
+<Blog
+  layout="Default"
+  content={content}
+  header={{
+    title: "Here is my title",
+    subtitle: "Here's a subtitle",
+    image: {
+      src: "https://images.pexels.com/photos/10437856/pexels-photo-10437856.jpeg?auto=compress&cs=tinysrgb&fit=crop&fp-y=0.53&h=500&sharp=20&w=1400",
+      borderRadius: "20px",
+    },
+    category: {
+      title: "Development & Testing",
+    },
+  }}
+/>
+```
+
+### Step 6: Insert metadata
+
+Let's insert some metadata into our article, like the `author`, and the `date` when it was published!
+
+```jsx
+<Blog
+    layout = "Default"
+    content = {content}
+    header = {{...}}
+    author = {{
+            name: 'Look! It\'s me!',
+            avatar: 'https://avatars.githubusercontent.com/u/63039748?v=4'
+    }}
+    date = '12 December, 2021'
+/>
+```
+
+### Step 7: Add reactions
+
+For more details on this step, check out our [reactions guide](/customization/reactions).
+
+```jsx
+<Blog
+    layout = "Default"
+    content = {content}
+    header = {{...}}
+    author = {{
+            name: 'Look! It\'s me!',
+            avatar: 'https://avatars.githubusercontent.com/u/63039748?v=4'
+    }}
+    date = '12 December, 2021'
+    reactions = {{
+        onClick: () => {},
+        reactions: [
+            {
+                name: 'Heart',
+                emote: '❤',
+                upvotes: 2
+            },
+            {
+                name: 'Thumbs Up',
+                emote: '👍',
+                upvotes: 10
+            }
+        ]
+    }}
+/>
+```
+
+### Step 8: Make it your own
+
+To finish up, let's customize your blog! Follow the [customization and themes documentation](/customization/themes) for more information.
+
+<Spacer y={2} />
+
+### Theme Props
+
+| Attribute                       | Optional | Accepted Values                                                           | Default       |
+| ------------------------------- | -------- | ------------------------------------------------------------------------- | ------------- |
+| **content**                     | `false`  | `string`                                                                  | `null`        |
+| **layout**                      | `false`  | `Default / DevTO / Hashnode`                                              | `null`        |
+| **author**                      | `true`   | `Author`                                                                  | `null`        |
+| **author.name**                 | `false`  | `string`                                                                  | `null`        |
+| **author.avatar**               | `false`  | `string`                                                                  | `null`        |
+| **header**                      | `true`   | `Banner`                                                                  | `null`        |
+| **header.title**                | `true`   | `string`                                                                  | `null`        |
+| **header.category**             | `true`   | `Category`                                                                | `null`        |
+| **header.category.title**       | `false`  | `string`                                                                  | `null`        |
+| **header.category.url**         | `true`   | `string`                                                                  | `null`        |
+| **header.subtitle**             | `true`   | `string`                                                                  | `null`        |
+| **header.image**                | `true`   | `Image`                                                                   | `null`        |
+| **header.image.src**            | `false`  | `string`                                                                  | `null`        |
+| **header.image.borderRadius**   | `true`   | `string`                                                                  | `null`        |
+| **author.avatar**               | `false`  | `string`                                                                  | `null`        |
+| **date**                        | `true`   | `string`                                                                  | `null`        |
+| **font**                        | `true`   | `string`                                                                  | `null`        |
+| **font.title**                  | `false`  | `string`                                                                  | `null`        |
+| **font.category**               | `false`  | `string`                                                                  | `null`        |
+| **font.header**                 | `false`  | `string`                                                                  | `null`        |
+| **font.body**                   | `false`  | `string`                                                                  | `null`        |
+| **theme.textColor**             | `true`   | `color`                                                                   | `#000`        |
+| **theme.twitter.theme**         | `true`   | `dark/light`                                                              | `dark`        |
+| **theme.codeBlockTheme**        | `true`   | [Supported Themes](/docs/customization/themes#supported-codeblock-themes) | `atomOneDark` |
+| **theme.primary**               | `true`   | `color`                                                                   | `#23272a`     |
+| **theme.dateColor**             | `true`   | `color`                                                                   | `#fff`        |
+| **theme.backgroundColor**       | `true`   | `boolean`                                                                 | `white`       |
+| **theme.linkColor**             | `true`   | `color`                                                                   | `#5862f2`     |
+| **theme.inlineBackgroundColor** | `true`   | `color (in hex)`                                                          | `#ebebeb`     |
+| **reactions**                   | `false`  | `list[string]`                                                            | `null`        |
+| **reaction:name**               | `false`  | `string`                                                                  | `null`        |
+| **reaction:upvotes**            | `false`  | `integer`                                                                 | `null`        |
+| **reaction:upvoted**            | `true`   | `string`                                                                  | `null`        |
+| **reaction:emoji**              | `false`  | `JSX.Element / string`                                                    | `null`        |
