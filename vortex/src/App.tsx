@@ -97,8 +97,8 @@ I did write two lines of comments at the bottom of the code I previously wrote, 
 
 \`\`\`py
 with open("data.html", "w") as file:
-    file.write("<html>\\n")
-    file.write("<head>\\n")
+    file.write("\n<html>\n")
+    file.write("<head>\n")
     file.write(
         "<script type=\"text/javascript\" src=\"https://www.gstatic.com/charts/loader.js\"></script>\\n")
     file.write("<script type=\"text/javascript\">\\n")

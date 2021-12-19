@@ -57,7 +57,7 @@ export const CodeBlock: React.FC<Props> = ({
         </svg>
       </div>
       <SyntaxHighlighter
-        children={String(children).replace(/\n$/, "")}
+        children={String(children).replace(/\n$/, "").replace(/\n"/g, '\\n"')}
         customStyle={{
           borderRadius: "5px",
           width: "auto",
