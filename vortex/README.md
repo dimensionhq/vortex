@@ -8,15 +8,15 @@ A hyper-extensible library to build blogs crazy fast.
 
 🌟 Don't forget to give us a star if you'd like to support us ❤️
 
-# Usage
+Vortex is an open-source library that allows you to build themeable, modular and responsive blogs with just a few lines of code!
 
-Let's build our first blog. This walkthrough will take you through Vortex's api and its features.
+<br>
 
-### Step 1: Install & Import Vortex
+# Installation
 
-Inside your React project directory, install Vortex by running either of the following:
+Run either of these commands to install Vortex:
 
-```bash
+```
 npm i @hydralite/vortex
 # or
 yarn add @hydralite/vortex
@@ -24,15 +24,11 @@ yarn add @hydralite/vortex
 pnpm i @hydralite/vortex
 ```
 
-Now that we've installed Vortex, let's import it.
+# Usage
 
-We can do so by importing the `Blog` component directly from the Vortex library.
+Let's build our first blog. This walkthrough will take you through Vortex's api and its features.
 
-```jsx
-import Blog from "@hydralite/vortex";
-```
-
-### Step 2: Initializing Our Blog Component
+### Step 1: Initializing Our Blog Component
 
 ```jsx
 import Blog from "@hydralite/vortex";
@@ -50,7 +46,7 @@ export default App;
 
 From now onwards, we'll be focusing primarily on the `Blog` component for readability purposes.
 
-### Step 3: Choose a layout
+### Step 2: Choose a layout
 
 The first step to building your blog is to choose a layout. There are 3 in-built layouts bundled-in with Vortex.
 
@@ -65,7 +61,7 @@ For now, we'll be choosing the [default](/docs/layout/default) layout.
 />
 ```
 
-### Step 4: Add some content
+### Step 3: Add some content
 
 It's time to add some content to our blog!
 
@@ -105,7 +101,7 @@ Now that we've written up some content - let's pass it into the blog!
 <Blog layout="Default" content={content} />
 ```
 
-### Step 5: Add headers
+### Step 4: Add headers
 
 It's time to spice up our blog with a banner, a title, a subtitle, and maybe even a category!
 
@@ -127,7 +123,7 @@ It's time to spice up our blog with a banner, a title, a subtitle, and maybe eve
 />
 ```
 
-### Step 6: Insert metadata
+### Step 5: Insert metadata
 
 Let's insert some metadata into our article, like the `author`, and the `date` when it was published!
 
@@ -144,7 +140,7 @@ Let's insert some metadata into our article, like the `author`, and the `date` w
 />
 ```
 
-### Step 7: Add reactions
+### Step 6: Add reactions
 
 For more details on this step, check out our [reactions guide](/customization/reactions).
 
@@ -176,50 +172,9 @@ For more details on this step, check out our [reactions guide](/customization/re
 />
 ```
 
-### Step 8: Make it your own
+### Step 7: Make it your own
 
-To finish up, let's customize your blog! Follow the [customization and themes documentation](/customization/themes) for more information.
-
-<Spacer y={2} />
-
-### Theme Props
-
-| Attribute                       | Optional | Accepted Values                                                           | Default       |
-| ------------------------------- | -------- | ------------------------------------------------------------------------- | ------------- |
-| **content**                     | `false`  | `string`                                                                  | `null`        |
-| **layout**                      | `false`  | `Default / DevTO / Hashnode`                                              | `null`        |
-| **author**                      | `true`   | `Author`                                                                  | `null`        |
-| **author.name**                 | `false`  | `string`                                                                  | `null`        |
-| **author.avatar**               | `false`  | `string`                                                                  | `null`        |
-| **header**                      | `true`   | `Banner`                                                                  | `null`        |
-| **header.title**                | `true`   | `string`                                                                  | `null`        |
-| **header.category**             | `true`   | `Category`                                                                | `null`        |
-| **header.category.title**       | `false`  | `string`                                                                  | `null`        |
-| **header.category.url**         | `true`   | `string`                                                                  | `null`        |
-| **header.subtitle**             | `true`   | `string`                                                                  | `null`        |
-| **header.image**                | `true`   | `Image`                                                                   | `null`        |
-| **header.image.src**            | `false`  | `string`                                                                  | `null`        |
-| **header.image.borderRadius**   | `true`   | `string`                                                                  | `null`        |
-| **author.avatar**               | `false`  | `string`                                                                  | `null`        |
-| **date**                        | `true`   | `string`                                                                  | `null`        |
-| **font**                        | `true`   | `string`                                                                  | `null`        |
-| **font.title**                  | `false`  | `string`                                                                  | `null`        |
-| **font.category**               | `false`  | `string`                                                                  | `null`        |
-| **font.header**                 | `false`  | `string`                                                                  | `null`        |
-| **font.body**                   | `false`  | `string`                                                                  | `null`        |
-| **theme.textColor**             | `true`   | `color`                                                                   | `#000`        |
-| **theme.twitter.theme**         | `true`   | `dark/light`                                                              | `dark`        |
-| **theme.codeBlockTheme**        | `true`   | [Supported Themes](/docs/customization/themes#supported-codeblock-themes) | `atomOneDark` |
-| **theme.primary**               | `true`   | `color`                                                                   | `#23272a`     |
-| **theme.dateColor**             | `true`   | `color`                                                                   | `#fff`        |
-| **theme.backgroundColor**       | `true`   | `boolean`                                                                 | `white`       |
-| **theme.linkColor**             | `true`   | `color`                                                                   | `#5862f2`     |
-| **theme.inlineBackgroundColor** | `true`   | `color (in hex)`                                                          | `#ebebeb`     |
-| **reactions**                   | `false`  | `list[string]`                                                            | `null`        |
-| **reaction:name**               | `false`  | `string`                                                                  | `null`        |
-| **reaction:upvotes**            | `false`  | `integer`                                                                 | `null`        |
-| **reaction:upvoted**            | `true`   | `string`                                                                  | `null`        |
-| **reaction:emoji**              | `false`  | `JSX.Element / string`                                                    | `null`        |
+To finish up, let's customize your blog! Follow the [customization and themes documentation](https:/vortex.hydralite.io/vortex/customization/themes) for more information.
 
 ## Credits
 
