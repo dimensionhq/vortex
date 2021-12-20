@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "vite",
     "build": " tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "postinstall": "npm run build"
   },
   "main": "./dist/index.cjs.js",
   "module": "./dist/index.es.js",
