@@ -178,4 +178,4 @@ To finish up, let's customize your blog! Follow the [customization and themes do
 
 ## Credits
 
-Our website and documentation is a direct fork of the incredible [nextui](https://nextui.org/) library. Do check out their incredible work!
+Our website and documentation is a direct fork of the incredible [NextUI](https://nextui.org/) library. Do check out their incredible work!
