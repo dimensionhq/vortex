@@ -174,7 +174,7 @@ For more details on this step, check out our [reactions guide](/customization/re
 
 ### Step 7: Make it your own
 
-To finish up, let's customize your blog! Follow the [customization and themes documentation](https:/vortex.hydralite.io/vortex/customization/themes) for more information.
+To finish up, let's customize your blog! Follow the [customization and themes documentation](https://vortex.hydralite.io/vortex/customization/themes) for more information.
 
 ## Credits
 
