@@ -1,1 +1,34 @@
 # Typography
+
+Customization of fonts is also made simple with Vortex.
+
+Here's a simple guide to font customization for your blog.
+
+## Usage
+
+```jsx
+<Blog
+    font = {{
+        {/* font size of the title */}
+        title: 'Inter, 40px, sans-serif',
+        {/* font size of the category */}
+        category: 'Inter, 22px, sans-serif',
+        {/* font size of the headers */}
+        header: 'Inter, 20px, sans-serif',
+        {/* font size of the body */}
+        body: 'Inter, 15px, sans-serif',
+    }}
+    ...
+/>
+```
+
+<Spacer y={2} />
+
+### Theme Props
+
+| Attribute         | Optional | Accepted Values | Default |
+| ----------------- | -------- | --------------- | ------- |
+| **font.title**    | `false`  | `string`        | `null`  |
+| **font.category** | `false`  | `string`        | `null`  |
+| **font.header**   | `false`  | `string`        | `null`  |
+| **font.body**     | `false`  | `string`        | `null`  |

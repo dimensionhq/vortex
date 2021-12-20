@@ -1,5 +1,5 @@
 import Blog from "@hydralite/vortex";
-import "@hydralite/vortex/dist/style.css";
+
 function Emote(): JSX.Element {
   return (
     <img

@@ -1,4 +1,3 @@
-import "./index.css";
-import Blog from "./Blog/Blog";
+import Blog from "./Blog";
 
 export default Blog;
