@@ -31,7 +31,7 @@ Let's build our first blog. This walkthrough will take you through Vortex's api 
 ### Step 1: Initializing Our Blog Component
 
 ```jsx
-import "@hydralite/vortex/style.css";
+import "@hydralite/vortex/dist/style.css";
 import Blog from "@hydralite/vortex";
 
 function App() {
