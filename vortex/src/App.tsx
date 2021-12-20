@@ -40,6 +40,8 @@ Here's a GitHub gist:
     <div className="w-full h-auto overflow-x-hidden ">
       <div>
         <Blog
+        content={content}
+        layout="Default"
         />
       </div>
     </div>

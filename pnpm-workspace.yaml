@@ -1,4 +1,4 @@
 packages:
   - "vortex"
   - "docs"
-  - "example"
+  # - "example"
