@@ -1,6 +1,4 @@
-![image](https://github.com/hydralite/vortex/blob/master/logo.png?raw=true)
-
-Vortex
+## Vortex
 
 A hyper-extensible library to build blogs crazy fast.
 
