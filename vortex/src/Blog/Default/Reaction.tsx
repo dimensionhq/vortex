@@ -5,10 +5,6 @@ export const Reaction: React.FC<BlogProps> = (props) => {
   let [final_reactions, set_final_reactions] = useState<TReaction[][]>([]);
   let [reaction_visible, set_reaction_visible] = useState(false);
 
-  if (typeof window === "undefined") {
-    return null;
-  }
-
   const setIsVisible = () => {
     if (window.scrollY <= 500) {
       set_reaction_visible(false);
