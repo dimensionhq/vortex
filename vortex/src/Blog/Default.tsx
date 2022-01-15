@@ -87,17 +87,20 @@ const Default: React.FC<BlogProps> = (props) => {
                     <Header  {...props.header}>
                     </Header>
                 ) : <></>}
-                <Body theme={props.theme} style={{ fontFamily: props.font?.body }}>
-                    <div style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "start", marginTop: "2rem" }}>
+                <div style={{ fontFamily: props.font?.title }}>
+
+                    {props.header?.category ? (
+                        <Category theme={props.theme} href={props.header.category.url}>{props.header.category.title}</Category>
+                    ) : <></>}
+                    <Title style={{ marginTop: '20px' }} theme={props.theme}>{props.header?.title}</Title>
+                </div>
+                <Body {...props} theme={props.theme} style={{ fontFamily: props.font?.body }}>
+                    <div style={{ display: "flex", flexDirection: "column", alignItems: "start", justifyContent: "start", marginTop: "2rem" }}>
                         <img style={{ borderRadius: "100%" }} width="68px" src={props.author?.avatar} alt="" />
                         <h1 style={{ fontSize: "1rem" }}>{props.author?.name}</h1>
                         <span>{dayjs(props.date).format("MMMM DD YYYY")}</span>
                     </div>
                     <div>
-                        {props.header?.category ? (
-                            <Category theme={props.theme} href={props.header.category.url}>{props.header.category.title}</Category>
-                        ) : <></>}
-                        <Title theme={props.theme}>{props.header?.title}</Title>
                         <div style={{ font: props.font?.body }}>
                             <ReactMarkdown components={components} remarkPlugins={[remarkGfm]}>
                                 {props.content}

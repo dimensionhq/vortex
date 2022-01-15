@@ -55,15 +55,16 @@ export const Body = styled.div`
       flex-direction: column;
   background-color: ${props => props.theme.bgColor};
     @media (min-width: 900px) {
-  display: grid;
-  grid-template-columns: 0.40fr 1fr 0.35fr;
-  grid-template-rows: 1fr;
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
+      display: grid;
+      grid-template-columns: 0.40fr 1fr 0.35fr;
+      grid-template-rows: 1fr;
+      grid-column-gap: 0px;
+      grid-row-gap: 0px;
     }
 `
 Body.defaultProps = {
-  theme: { ...defaultTheme }
+  theme: { ...defaultTheme },
+  ...defaultProps
 }
 export const Main = styled.main`
     display: flex;
