@@ -1,7 +1,6 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import dts from "vite-plugin-dts";
-import styleInject from "style-inject";
 
 // // https://vitejs.dev/config/
 export default defineConfig({
@@ -10,7 +9,7 @@ export default defineConfig({
     lib: {
       entry: "./src/index.ts",
       name: "vortex",
-      formats: ["cjs", "es", "umd", "iife"],
+      formats: ["cjs", "es"],
       fileName: (format) => `index.${format}.js`,
     },
 
