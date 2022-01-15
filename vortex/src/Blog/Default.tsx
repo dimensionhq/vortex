@@ -88,7 +88,6 @@ const Default: React.FC<BlogProps> = (props) => {
                     </Header>
                 ) : <></>}
                 <div style={{ fontFamily: props.font?.title }}>
-
                     {props.header?.category ? (
                         <Category theme={props.theme} href={props.header.category.url}>{props.header.category.title}</Category>
                     ) : <></>}

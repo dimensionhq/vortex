@@ -1,6 +1,6 @@
 {
-  "name": "vortex",
-  "version": "0.0.0",
+  "name": "@hydralite/vortex",
+  "version": "0.1.4",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
@@ -20,6 +20,9 @@
     "styled-components": "^5.3.3",
     "super-react-gist": "^1.0.4"
   },
+  "main": "./dist/index.cjs.js",
+  "module": "./dist/index.es.js",
+  "types": "./dist/src/index.d.ts",
   "devDependencies": {
     "@types/react": "^17.0.33",
     "@types/react-dom": "^17.0.10",
