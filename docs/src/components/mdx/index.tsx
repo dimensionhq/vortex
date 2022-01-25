@@ -1,12 +1,11 @@
 /* eslint-disable react/display-name */
-import * as React from 'react';
-import Playground from '../playground';
-import Codeblock from './codeblock';
-import CarbonAd from '../carbon-ad';
-import * as Icons from '../icons';
-import { useTheme } from '@nextui-org/react';
-import { Anchor } from '@components';
-import cn from 'classnames';
+import * as React from "react";
+import Playground from "../playground";
+import Codeblock from "./codeblock";
+import * as Icons from "../icons";
+import { useTheme } from "@nextui-org/react";
+import { Anchor } from "@components";
+import cn from "classnames";
 
 const Table: React.FC<React.PropsWithChildren<unknown>> = ({ children }) => {
   return (
@@ -93,7 +92,7 @@ const LinkedHeading: React.FC<LinkedHeadingProps> = ({
   const Component = as;
   return (
     <Component
-      className={cn({ 'linked-heading': linked })}
+      className={cn({ "linked-heading": linked })}
       data-name={props.children}
       {...props}
     >
@@ -126,7 +125,6 @@ const MDXComponents = {
   tr: Trow,
   td: Tcol,
   Playground,
-  CarbonAd,
   code: Codeblock,
 };
 

@@ -90,14 +90,14 @@ const DocsLayout: React.FC<React.PropsWithChildren<Props>> = ({
         {isDark && (
           <img
             className="docs__gradient-blue"
-            src="/gradient-left-dark.svg"
+            src="/vortex/gradient-left-dark.svg"
             alt="gradient blue background"
           />
         )}
         {isDark && (
           <img
             className="docs__gradient-violet"
-            src="/gradient-right-dark.svg"
+            src="/vortex/gradient-right-dark.svg"
             alt="gradient violet background"
           />
         )}

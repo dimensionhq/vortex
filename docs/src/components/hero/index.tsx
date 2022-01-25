@@ -49,7 +49,11 @@ const Hero: React.FC = () => {
               <Row align="center">
                 <Image
                   className="hero__feature-img"
-                  src={isDark ? "/themeable-dark.svg" : "/themeable-light.svg"}
+                  src={
+                    isDark
+                      ? "/vortex/themeable-dark.svg"
+                      : "/vortex/themeable-light.svg"
+                  }
                   quality={100}
                   width={32}
                   height={32}
@@ -64,7 +68,11 @@ const Hero: React.FC = () => {
               <Row align="center">
                 <Image
                   className="hero__feature-img"
-                  src={isDark ? "/layout-dark.svg" : "/layout-light.svg"}
+                  src={
+                    isDark
+                      ? "/vortex/layout-dark.svg"
+                      : "/vortex/layout-light.svg"
+                  }
                   quality={100}
                   width={32}
                   height={32}
@@ -80,7 +88,9 @@ const Hero: React.FC = () => {
                 <Image
                   className="hero__feature-img"
                   src={
-                    isDark ? "/open-source-dark.svg" : "/open-source-light.svg"
+                    isDark
+                      ? "/vortex/open-source-dark.svg"
+                      : "/vortex/open-source-light.svg"
                   }
                   quality={100}
                   width={32}
@@ -97,7 +107,9 @@ const Hero: React.FC = () => {
                 <Image
                   className="hero__feature-img"
                   src={
-                    isDark ? "/responsive-dark.svg" : "/responsive-light.svg"
+                    isDark
+                      ? "/vortex/responsive-dark.svg"
+                      : "/vortex/responsive-light.svg"
                   }
                   width={32}
                   height={32}
@@ -135,7 +147,7 @@ const Hero: React.FC = () => {
           {isDark && (
             <img
               className="hero__gradient-blue"
-              src="/gradient-left-dark.svg"
+              src="/vortex/gradient-left-dark.svg"
               alt="gradient blue background"
             />
           )}
@@ -143,7 +155,7 @@ const Hero: React.FC = () => {
         {isDark && (
           <img
             className="hero__gradient-violet"
-            src="/gradient-right-dark.svg"
+            src="/vortex/gradient-right-dark.svg"
             alt="gradient violet background"
           />
         )}

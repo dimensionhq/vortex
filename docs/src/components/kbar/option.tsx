@@ -1,13 +1,13 @@
-import React, { useCallback } from 'react';
-import cn from 'classnames';
-import Image from 'next/image';
-import { useTheme } from '@nextui-org/react';
-import { addColorAlpha } from '@utils/index';
-import Keyboard from '../keyboard';
-import useDarkMode from 'use-dark-mode';
-import Icon from '../icons/map-icons';
-import { isEmpty } from 'lodash';
-import { Action, ResultHandlers, ResultState } from './types';
+import React, { useCallback } from "react";
+import cn from "classnames";
+import Image from "next/image";
+import { useTheme } from "@nextui-org/react";
+import { addColorAlpha } from "@utils/index";
+import Keyboard from "../keyboard";
+import useDarkMode from "use-dark-mode";
+import Icon from "../icons/map-icons";
+import { isEmpty } from "lodash";
+import { Action, ResultHandlers, ResultState } from "./types";
 
 interface Props {
   action: Action;
@@ -33,9 +33,9 @@ const KBarOption: React.FC<Props> = ({ action, handlers, state }) => {
           }
           // @ts-ignore
           element.scrollIntoView({
-            block: 'nearest',
-            behavior: 'smooth',
-            inline: 'start'
+            block: "nearest",
+            behavior: "smooth",
+            inline: "start",
           });
         })
       );
@@ -55,23 +55,23 @@ const KBarOption: React.FC<Props> = ({ action, handlers, state }) => {
     }
     if (
       action.icon &&
-      typeof action.icon === 'string' &&
-      action.icon.includes('.svg')
+      typeof action.icon === "string" &&
+      action.icon.includes(".svg")
     ) {
       return (
         <div className="option-icon">
           <Image
             width={24}
             height={24}
-            src={action.icon?.replace(
-              '.svg',
-              isDark ? '-dark.svg' : '-light.svg'
-            )}
+            src={
+              "/vortex/" +
+              action.icon?.replace(".svg", isDark ? "-dark.svg" : "-light.svg")
+            }
             alt={`${action.name} icon`}
           />
         </div>
       );
-    } else if (action.icon && typeof action.icon === 'string') {
+    } else if (action.icon && typeof action.icon === "string") {
       return (
         <div className="option-icon">
           <Icon
@@ -86,7 +86,7 @@ const KBarOption: React.FC<Props> = ({ action, handlers, state }) => {
 
   return (
     <li ref={ownRef} className="kbar-option" {...handlers}>
-      <div className={cn('option-container', { active })}>
+      <div className={cn("option-container", { active })}>
         <div className="option-left-container">
           {renderIcon()}
           <div className="option-text-container">

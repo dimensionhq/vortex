@@ -90,7 +90,10 @@ const Category: React.FC<React.PropsWithChildren<CategoryProps>> = ({
             width={24}
             height={24}
             className="category-image"
-            src={iconUrl.replace(".svg", isDark ? "-dark.svg" : "-light.svg")}
+            src={
+              "/vortex/" +
+              iconUrl.replace(".svg", isDark ? "-dark.svg" : "-light.svg")
+            }
             alt={`${title} icon`}
           />
         )}
