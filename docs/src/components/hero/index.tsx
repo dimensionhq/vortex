@@ -22,7 +22,7 @@ const Hero: React.FC = () => {
   const router = useRouter();
 
   const handleGetStartedClick = () => {
-    router.push("vortex/docs/guide/getting-started");
+    router.push("/docs/guide/getting-started");
   };
 
   return (
