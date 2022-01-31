@@ -79,6 +79,11 @@ Main.defaultProps = {
   ...defaultProps
 }
 
+
+export const BodyConfig = styled.div`
+width: 75%;
+`
+
 export const Category = styled.a`
   font-size: 1.5rem;
   font-weight: 600;

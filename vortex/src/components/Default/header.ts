@@ -9,12 +9,11 @@ export const Header = styled.header`
   background-repeat: no-repeat;
   background-position: center;
   background-image: url(${props => props.image.src});
-    /* height: 150px; */
-  @media (max-width: 600px) {
+  @media (min-width: 600px) {
     height: 200px;
   }
   @media (max-width: 1024px) {
-    min-height: 440px;
+    height: 440px;
   }
   @media (min-width: 1024px) {
     min-height: 540px;
