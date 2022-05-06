@@ -2,6 +2,7 @@ import * as React from 'react';
 import { connectStateResults } from 'react-instantsearch-dom';
 import { NextUIThemes, useTheme, Loading } from '@nextui-org/react';
 import { Search, Close } from '../icons';
+import { useMediaQuery } from '@hooks/use-media-query';
 
 export interface InputProps {
   value: string;
@@ -16,9 +17,14 @@ const Input: React.FC<InputProps> = ({
   ...inputProps
 }) => {
   const theme = useTheme() as NextUIThemes;
+
+  const isMobile = useMediaQuery(
+    Number(theme.breakpoints.sm.max.replace('px', ''))
+  );
+
   return (
     <div className="search__input-container">
-      <input {...inputProps} value={value} />
+      <input style={{ width: isMobile ? "50px" : "100%" }} {...inputProps} value={value} />
       {!value ? (
         <span className="search__placeholder-container">
           <Search
