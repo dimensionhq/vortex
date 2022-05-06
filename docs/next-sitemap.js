@@ -1,4 +1,4 @@
 module.exports = {
-  siteUrl: "https://vortex.hydralite.io",
+  siteUrl: "https://vortex.dimension.dev",
   generateRobotsTxt: true,
 };

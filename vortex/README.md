@@ -2,7 +2,7 @@
 
 A hyper-extensible library to build blogs crazy fast.
 
-![badge](https://img.shields.io/github/license/hydralite/vortex?color=pink) ![badge](https://img.shields.io/tokei/lines/github/hydralite/vortex?color=white&label=lines%20of%20code) ![badge](https://img.shields.io/github/languages/top/hydralite/vortex?color=%230xfffff)
+![badge](https://img.shields.io/github/license/dimensionhq/vortex?color=pink) ![badge](https://img.shields.io/tokei/lines/github/dimensionhq/vortex?color=white&label=lines%20of%20code) ![badge](https://img.shields.io/github/languages/top/dimensionhq/vortex?color=%230xfffff)
 
 🌟 Don't forget to give us a star if you'd like to support us ❤️
 
@@ -15,11 +15,11 @@ Vortex is an open-source library that allows you to build themeable, modular and
 Run either of these commands to install Vortex:
 
 ```
-npm i @hydralite/vortex
+npm i @dimensionhq/vortex
 # or
-yarn add @hydralite/vortex
+yarn add @dimensionhq/vortex
 # or
-pnpm i @hydralite/vortex
+pnpm i @dimensionhq/vortex
 ```
 
 # Usage
@@ -29,8 +29,8 @@ Let's build our first blog. This walkthrough will take you through Vortex's api 
 ### Step 1: Initializing Our Blog Component
 
 ```jsx
-import "@hydralite/vortex/dist/style.css";
-import Blog from "@hydralite/vortex";
+import "@dimensionhq/vortex/dist/style.css";
+import Blog from "@dimensionhq/vortex";
 
 function App() {
   return (
@@ -173,7 +173,7 @@ For more details on this step, check out our [reactions guide](/customization/re
 
 ### Step 7: Make it your own
 
-To finish up, let's customize your blog! Follow the [customization and themes documentation](https://vortex.hydralite.io/vortex/customization/themes) for more information.
+To finish up, let's customize your blog! Follow the [customization and themes documentation](https://vortex.dimension.dev/vortex/customization/themes) for more information.
 
 ## Credits
 

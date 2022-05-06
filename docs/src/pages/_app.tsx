@@ -14,12 +14,12 @@ import { KBarProvider } from "kbar";
 type AppPropsType<
   R extends NextRouter = NextRouter,
   P = {}
-> = AppInitialProps & {
-  Component: NextComponent<P>;
-  router: R;
-  __N_SSG?: boolean;
-  __N_SSP?: boolean;
-};
+  > = AppInitialProps & {
+    Component: NextComponent<P>;
+    router: R;
+    __N_SSG?: boolean;
+    __N_SSP?: boolean;
+  };
 
 type AppProps<P = {}> = AppPropsType<Router, P>;
 
@@ -28,6 +28,7 @@ const KbarComponent = dynamic(() => import("../components/kbar"), {
 });
 
 const Application: NextPage<AppProps<{}>> = ({ Component, pageProps }) => {
+  // @ts-ignore
   const [customTheme, setCustomTheme] = useState<DeepPartial<NextUIThemes>>({
     ...sharedTheme,
   });

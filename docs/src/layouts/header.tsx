@@ -81,7 +81,7 @@ const Header: React.FC<HeaderProps> = ({ title, url }) => {
       {isProd && (
         <script
           defer
-          data-domain="hydralite.io"
+          data-domain="dimension.dev"
           src="https://plausible.io/js/plausible.js"
         />
       )}

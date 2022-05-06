@@ -209,7 +209,7 @@ const Navbar: React.FC<Props> = ({ detached, routes }) => {
             <NextLink href="#">
               <Link
                 className="navbar__link"
-                href="https://github.com/hydralite/vortex/graphs/contributors"
+                href="https://github.com/dimensionhq/vortex/graphs/contributors"
               >
                 Contributors
               </Link>
@@ -227,7 +227,7 @@ const Navbar: React.FC<Props> = ({ detached, routes }) => {
             >
               <Link
                 className="navbar__social-icon"
-                href="https://twitter.com/hydraliteio"
+                href="https://twitter.com/joindimension"
                 target="_blank"
                 rel="noreferrer"
               >
@@ -240,7 +240,7 @@ const Navbar: React.FC<Props> = ({ detached, routes }) => {
               </Link>
               <Link
                 className="navbar__social-icon"
-                href="https://discord.gg/pRuPhftzbw"
+                href="https://discord.gg/qgytYy6vTP"
                 target="_blank"
                 rel="noreferrer"
               >
@@ -253,7 +253,7 @@ const Navbar: React.FC<Props> = ({ detached, routes }) => {
               </Link>
               <Link
                 className="navbar__social-icon"
-                href="https://github.com/hydralite/vortex"
+                href="https://github.com/dimensionhq/vortex"
                 target="_blank"
                 rel="noreferrer"
               >
@@ -345,11 +345,11 @@ const Navbar: React.FC<Props> = ({ detached, routes }) => {
             top: 0;
             position: fixed;
             background: ${showBlur
-              ? addColorAlpha(theme.palette.background, 0.6)
-              : "transparent"};
+          ? addColorAlpha(theme.palette.background, 0.6)
+          : "transparent"};
             box-shadow: ${detached
-              ? "0px 5px 20px -5px rgba(2, 1, 1, 0.1)"
-              : "none"};
+          ? "0px 5px 20px -5px rgba(2, 1, 1, 0.1)"
+          : "none"};
             min-height: 64px;
             max-height: 64px;
           }
@@ -362,8 +362,8 @@ const Navbar: React.FC<Props> = ({ detached, routes }) => {
           ) {
             :global(.navbar__container) {
               backdrop-filter: ${showBlur
-                ? "saturate(180%) blur(10px)"
-                : "none"};
+          ? "saturate(180%) blur(10px)"
+          : "none"};
             }
           }
           @supports (

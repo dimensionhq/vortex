@@ -9,4 +9,5 @@ const themeFont: NextUIThemesFont = {
 
 export default {
   font: themeFont,
+  type: "dark"
 };

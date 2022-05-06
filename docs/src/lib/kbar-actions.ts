@@ -90,7 +90,7 @@ const getActions = (router: NextRouter, darkMode: DarkMode): Action[] => {
       shortcut: [],
       keywords: "github, source code, open, code",
       icon: "github",
-      perform: () => handleExternalLink("https://github.com/hydralite/vortex"),
+      perform: () => handleExternalLink("https://github.com/dimensionhq/vortex"),
     },
     {
       id: "changeTheme",

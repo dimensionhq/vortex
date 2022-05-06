@@ -1,4 +1,5 @@
-import Blog from "@hydralite/vortex";
+import Blog from "@dimensionhq/vortex";
+import "@dimensionhq/vortex/dist/style.css"
 
 function Emote(): JSX.Element {
   return (
@@ -21,21 +22,11 @@ function App() {
             avatar:
               "https://blog.tiia.rocks/_next/image?url=https%3A%2F%2Fcdn.hashnode.com%2Fres%2Fhashnode%2Fimage%2Fupload%2Fv1631555930761%2FcF4G93tvG.jpeg%3Fw%3D200%26h%3D200%26fit%3Dcrop%26crop%3Dfaces%26auto%3Dcompress%2Cformat%26format%3Dwebp&w=256&q=75",
           }}
-          theme={{
-            bgColor: "#19181a",
-            textColor: "#9ca3af",
-            inlineBgColor: "#ebebeb",
-          }}
           reactions={{
             onClick: (name: string, upvote: boolean) => {
               return console.log(name, upvote);
             },
             reactions: [
-              {
-                upvotes: 5,
-                emote: Emote(),
-                name: "Zap",
-              },
               {
                 upvotes: 6,
                 emote: "💯",

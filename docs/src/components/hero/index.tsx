@@ -128,7 +128,7 @@ const Hero: React.FC = () => {
                 bordered={!isDark}
                 tooltipColor="primary"
               >
-                npm install @hydralite/vortex
+                npm install @dimensionhq/vortex
               </Snippet>
             </Grid>
           </Grid.Container>
@@ -162,8 +162,8 @@ const Hero: React.FC = () => {
         }
         :global(.hero__title-smooth) {
           color: ${theme.type === "dark"
-            ? theme.palette.accents_6
-            : theme.palette.accents_3} !important;
+          ? theme.palette.accents_6
+          : theme.palette.accents_3} !important;
         }
         :global(.hero__left-container, .hero__right-container) {
           position: relative;
