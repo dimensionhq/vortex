@@ -35,7 +35,7 @@
     "react-markdown": "^6.0.2",
     "remark-autolink-headings": "^6.0.1",
     "remark-slug": "^6.0.0",
-    "shelljs": "^0.8.4",
+    "shelljs": "^0.8.5",
     "styled-jsx": "^4.0.1",
     "use-dark-mode": "^2.3.1",
     "util.promisify": "^1.1.1",
